@@ -17,8 +17,21 @@ export type Predicate =
   | 'portInventory'
   | 'moduleSupport'
   | 'entitlement'
-  | 'coexistence';
+  | 'coexistence'
+  | 'physicalEthernetPorts'
+  | 'cellular'
+  | 'wireless'
+  | 'operatingTemperature'
+  | 'powerRequirements'
+  | 'industrialProtocols'
+  | 'certifications'
+  | 'operatingSystems'
+  | 'securityFeatures'
+  | 'poeStandards'
+  | 'replacement'
+  | 'licensingRule';
 export interface Source {
+  manufacturerId?: string;
   id: string;
   title: string;
   url: string;
@@ -27,6 +40,16 @@ export interface Source {
     | 'official-support'
     | 'official-lifecycle'
     | 'community';
+  kind?:
+    | 'datasheet'
+    | 'ordering-guide'
+    | 'configuration-guide'
+    | 'installation-guide'
+    | 'licensing'
+    | 'release-notes'
+    | 'compatibility'
+    | 'lifecycle'
+    | 'support-index';
   status: 'pending' | 'blocked' | 'checked' | 'reviewed';
   documentDate: string | null;
   lastCheckedAt: string | null;
@@ -47,8 +70,13 @@ export interface Applicability {
   configuration: string | null;
   effectiveFrom: string | null;
   assetLimit: number | null;
+  featureIds?: string[];
+  licenseAnyOfIds?: string[];
+  qualifyingOrderFrom?: string | null;
+  qualifyingUpgradeFrom?: string | null;
 }
 export interface PortGroup {
+  connector?: 'rj45' | 'm12-x' | 'm12-d' | 'sfp' | 'sfp-plus';
   role: 'access' | 'uplink' | 'flexible';
   medium: 'copper' | 'fiber' | 'combo' | 'sfp' | 'sfp-plus';
   count: number;
@@ -77,6 +105,8 @@ export interface Assertion {
   requiresHumanReview: boolean;
 }
 export interface Product {
+  description?: string;
+  documentationIds?: string[];
   id: string;
   pid: string;
   modelId: string;
@@ -100,10 +130,11 @@ export interface Candidate {
 }
 export interface Catalog {
   schemaVersion: string;
-  manufacturers: { id: string; name: string }[];
+  manufacturers: { id: string; name: string; officialDomains?: string[] }[];
   families: Family[];
   models: { id: string; familyId: string; name: string }[];
   pids: Product[];
+  versions: { id: string; softwareId: string; name: string }[];
   software: { id: string; manufacturerId: string; name: string }[];
   managementModes: { id: string; name: string }[];
   licenses: {
@@ -118,6 +149,23 @@ export interface Catalog {
   candidates: Candidate[];
 }
 export interface Requirements {
+  physicalPorts: number;
+  portsAtSpeed: number;
+  requiredPortSpeedMbps: number;
+  operatingMinC: number | null;
+  operatingMaxC: number | null;
+  cellular: boolean;
+  wireless: boolean;
+  sea: boolean;
+  poeStandard: string;
+  protocolIds: string[];
+  certificationIds: string[];
+  softwareVersionId: string;
+  architecture: string;
+  endpointCount: number;
+  orderDate: string;
+  upgradeDate: string;
+  asOfDate: string;
   copperPorts: number;
   fiberPorts: number;
   sfpSlots: number;
@@ -144,4 +192,16 @@ export interface MatchResult {
   score: number | null;
   findings: Finding[];
   preferenceMatches: string[];
+}
+
+export interface AuditSummary {
+  id: string;
+  generatedAt: string;
+  path: string;
+  sourcesChecked: number;
+  changedSources: number;
+  unreachableSources: number;
+  staleClaims: number;
+  potentiallyOutdatedClaims: number;
+  requiresHumanReview: boolean;
 }

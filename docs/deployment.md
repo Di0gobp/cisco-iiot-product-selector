@@ -1,20 +1,30 @@
 # GitHub Pages deployment and review
 
-The application can run entirely on GitHub Pages, which is public hosting for this MVP. A public repository or Pages site is not a restricted Cisco-only service. No login or confidential data is included.
+Phase A is published through GitHub Pages. At Phase B inspection, the repository used `build_type: workflow`, and `github-pages` required review by `Di0gobp`. This branch preserves the existing deployment workflow and does not change environment protections or dispatch a deployment.
 
-Do not dispatch a deployment until the required reviewer is configured.
+Public Pages hosting is not a restricted Cisco-only service. The public MVP has no login, private data, analytics or embedded secrets.
 
-The `Deploy GitHub Pages` workflow is manual (`workflow_dispatch`). It installs the frozen lockfile, validates data, lints, runs unit tests, builds and runs browser tests before uploading a Pages artifact. The build uses `GITHUB_REPOSITORY` to set Vite's repository base path. Hash links preserve deep links under that base. Workflow Actions use pinned upstream commit SHAs. Deployment grants only `pages:write` and `id-token:write` to its deploy job; normal jobs use `contents:read`.
+## Review and release
 
-## Publish after reviewing the evidence
+1. Review and merge the Phase B development PR after checking the cited source excerpts, exact PID identities, lifecycle milestones, conditional software mappings and open issues. Source review by Codex is not independent human sign-off.
+2. Confirm CI is green. It validates catalog/audit integrity, types, lint, TypeScript and Python tests, production build and Playwright flows/accessibility.
+3. Run **Actions → Deploy GitHub Pages → Run workflow → main** after review. It rebuilds and tests before uploading the artifact.
+4. Review and approve the pending `github-pages` deployment through the existing required-reviewer gate. Do not remove or bypass that protection.
+5. After deployment succeeds, smoke-test the actual published site, an exact-PID deep link, official source actions and a 2-PID comparison. A local build or waiting deployment is not a production release.
 
-1. Review the exact-PID claims, source excerpts, conditional software/management statements and open issues. The source review is by Codex, not a completed independent human review. Do not treat documented ordering-table identity as a live sales/lifecycle guarantee.
-2. In repository **Settings → Pages → Build and deployment**, choose **GitHub Actions** if it is not already selected. The setup integration was denied permission to enable Pages (HTTP 403); a repository administrator must do this in the UI.
-3. In **Settings → Environments → github-pages**, add or retain `Di0gobp` as a required reviewer for deployments. The integration used during setup was denied permission to create this protection rule (HTTP 403); a repository administrator must apply it in the UI. This implements the brief's human-review requirement. Do not remove the gate to bypass review.
-4. Open **Actions → Deploy GitHub Pages → Run workflow**, select `main` and run it if a run is not already pending.
-5. When the build passes, review the pending `github-pages` deployment and approve it only after completing the claim review. The generated deployment URL is reported by GitHub after the deploy job succeeds. A queued/waiting deployment is not a live site.
-6. Smoke-test the actual published URL, a product deep link, source actions and a 2-PID comparison after deployment. Current-machine/browser validation is not proof of public deployment.
+Vite uses `GITHUB_REPOSITORY` for the repository base when `GITHUB_ACTIONS=true`. To validate that path locally, use the same two variables for both build and preview:
 
-No API or source-audit credential is required. The monthly source audit writes artifacts and never deploys. Reviewed data changes should go through CI and a pull request; the Pages deployment remains explicit and reviewer gated. Future EoX credentials belong in server-side GitHub Actions secrets only.
+```sh
+GITHUB_ACTIONS=true GITHUB_REPOSITORY=Di0gobp/cisco-iiot-product-selector npm run build
+GITHUB_ACTIONS=true GITHUB_REPOSITORY=Di0gobp/cisco-iiot-product-selector npm run preview -- --port 4174 --strictPort
+```
 
-For a custom domain or a user/organization root Pages site, adjust the Vite base deliberately and rerun production-path checks. Do not point at an assumed URL or report a public site as deployed before the Pages job succeeds.
+Use the repository subpath and hash routes for internal validation. Normal dev/root preview uses `npm run dev` or `npm run preview` without those variables.
+
+## Monthly history proposals
+
+The observation job reads public Cisco documents and uploads its report even when a source fails. It preserves the underlying failed outcome. A separate writer job proposes only `data/audits` history with citations and validation context. No claim, license, lifecycle baseline or deployment is updated automatically.
+
+The writer validates catalog/audit integrity, TypeScript and the production build before opening its PR. PRs opened with `GITHUB_TOKEN` do not trigger ordinary follow-on CI workflows; review that proposal job's checks. Changes to technical code or claims require the regular validation suite before merging.
+
+If GitHub denies automatic PR creation, enable **Settings → Actions → General → Workflow permissions → Allow GitHub Actions to create and approve pull requests** if your repository/organization policy allows it. No token needs to be placed in the frontend. The writer declares only `contents:write` and `pull-requests:write`; the observation and ordinary CI jobs remain read-only. Human review remains required even if this setting permits creation.

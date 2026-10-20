@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://example.invalid/iiot/catalog-1.0.0.schema.json",
-  "title": "IIoT normalized catalog v1",
+  "$id": "https://example.invalid/iiot/catalog-1.1.0.schema.json",
+  "title": "IIoT normalized catalog v1.1",
   "type": "object",
   "additionalProperties": false,
   "properties": {
     "schemaVersion": {
-      "const": "1.0.0"
+      "const": "1.1.0"
     },
     "manufacturers": {
       "type": "array",
@@ -122,6 +122,14 @@
         "name": {
           "type": "string",
           "minLength": 1
+        },
+        "officialDomains": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*\\.[a-z]{2,}$"
+          }
         }
       },
       "required": ["id", "name"]
@@ -193,6 +201,17 @@
         },
         "reviewStatus": {
           "enum": ["pending", "approved", "rejected"]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "documentationIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
         }
       },
       "required": [
@@ -462,6 +481,9 @@
         },
         "comboGroup": {
           "type": ["string", "null"]
+        },
+        "connector": {
+          "enum": ["rj45", "m12-x", "m12-d", "sfp", "sfp-plus"]
         }
       },
       "required": [
@@ -530,6 +552,28 @@
         "assetLimit": {
           "type": ["integer", "null"],
           "minimum": 0
+        },
+        "licenseAnyOfIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "qualifyingOrderFrom": {
+          "type": ["string", "null"],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "qualifyingUpgradeFrom": {
+          "type": ["string", "null"],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "featureIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
         }
       },
       "required": [
@@ -574,7 +618,19 @@
             "portInventory",
             "moduleSupport",
             "entitlement",
-            "coexistence"
+            "coexistence",
+            "physicalEthernetPorts",
+            "cellular",
+            "wireless",
+            "operatingTemperature",
+            "powerRequirements",
+            "industrialProtocols",
+            "certifications",
+            "operatingSystems",
+            "securityFeatures",
+            "poeStandards",
+            "replacement",
+            "licensingRule"
           ]
         },
         "value": {},
@@ -824,6 +880,349 @@
                   "quantity",
                   "durationMonths"
                 ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "predicate": {
+                "const": "physicalEthernetPorts"
+              }
+            },
+            "required": ["predicate"]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "predicate": {
+                "const": "cellular"
+              }
+            },
+            "required": ["predicate"]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "predicate": {
+                "const": "wireless"
+              }
+            },
+            "required": ["predicate"]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "predicate": {
+                "const": "operatingTemperature"
+              }
+            },
+            "required": ["predicate"]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["ranges", "complete"],
+                "properties": {
+                  "ranges": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": ["minC", "maxC", "conditions"],
+                      "properties": {
+                        "minC": {
+                          "type": "number"
+                        },
+                        "maxC": {
+                          "type": "number"
+                        },
+                        "conditions": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    }
+                  },
+                  "complete": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "predicate": {
+                "const": "powerRequirements"
+              }
+            },
+            "required": ["predicate"]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["summary"],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "predicate": {
+                "const": "industrialProtocols"
+              }
+            },
+            "required": ["predicate"]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["items", "complete"],
+                "properties": {
+                  "items": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "complete": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "predicate": {
+                "const": "certifications"
+              }
+            },
+            "required": ["predicate"]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["items", "complete"],
+                "properties": {
+                  "items": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "complete": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "predicate": {
+                "const": "operatingSystems"
+              }
+            },
+            "required": ["predicate"]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["items", "complete"],
+                "properties": {
+                  "items": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "complete": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "predicate": {
+                "const": "securityFeatures"
+              }
+            },
+            "required": ["predicate"]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["items", "complete"],
+                "properties": {
+                  "items": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "complete": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "predicate": {
+                "const": "poeStandards"
+              }
+            },
+            "required": ["predicate"]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["items", "complete"],
+                "properties": {
+                  "items": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "complete": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "predicate": {
+                "const": "replacement"
+              }
+            },
+            "required": ["predicate"]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["pidIds", "note"],
+                "properties": {
+                  "pidIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "uniqueItems": true
+                  },
+                  "note": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "predicate": {
+                "const": "licensingRule"
+              }
+            },
+            "required": ["predicate"]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["summary", "rule"],
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "rule": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
               }
             }
           }

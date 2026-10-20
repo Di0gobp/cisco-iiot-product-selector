@@ -6,7 +6,10 @@
     "kind": "typo",
     "title": "IR1005 ordering description repeats IR1001",
     "detail": "Table 11 lists the IR1005-G2 SKU under IR1005 routers but its description says IR1001-G2. Identity uses the SKU column and the distinct Table 2 comparison. Do not copy the description as IR1005 specifications.",
-    "requiresHumanReview": true
+    "requiresHumanReview": true,
+    "status": "open",
+    "resolution": null,
+    "resolvedAt": null
   },
   {
     "id": "ie3505-ordering-conflict",
@@ -15,16 +18,27 @@
     "kind": "conflict",
     "title": "IE3505 PoE ordering table duplicates the -A PID",
     "detail": "Table 3 lists -E and -A variants, while Table 21 repeats IE-3505-8P3S-A against both Essential and Advantage descriptions. These variants are withheld from the starter catalog pending clarification.",
-    "requiresHumanReview": true
+    "requiresHumanReview": true,
+    "status": "partially-resolved",
+    "resolution": "Unambiguous IE-3505-8T3S-E/-A ordering rows are now published; the duplicated PoE -A row remains unresolved and those PoE variants are withheld.",
+    "resolvedAt": null
   },
   {
     "id": "meraki-coexistence-gap",
-    "sourceIds": ["cisco-ie3500-ds"],
+    "sourceIds": [
+      "cisco-ie3500-ds",
+      "cisco-cv56-rn",
+      "cisco-cv-supported",
+      "cisco-cv-prepare"
+    ],
     "subjectIds": [],
     "kind": "gap",
     "title": "Meraki plus on-device security coexistence is unverified",
-    "detail": "The data sheet describes base-switch Meraki management from IOS XE 26.1.1 and IOx security features separately. This does not establish simultaneous Cyber Vision or SEA support in Meraki mode.",
-    "requiresHumanReview": true
+    "detail": "Reviewed IE3500 data sheet, CV 5.6.x release notes, current sensor support and preparation guides. These establish IOx/platform prerequisites but do not explicitly support Cyber Vision or SEA simultaneously with Meraki management for an exact PID/release/license. The combination remains not yet verified.",
+    "requiresHumanReview": true,
+    "status": "open",
+    "resolution": null,
+    "resolvedAt": null
   },
   {
     "id": "lifecycle-gap",
@@ -33,7 +47,10 @@
     "kind": "gap",
     "title": "Lifecycle not independently checked",
     "detail": "A current data sheet and an ordering-table entry do not prove that a PID is still on sale. No lifecycle assertions are published; new-deployment suitability stays unknown. EoX integration is optional future work.",
-    "requiresHumanReview": true
+    "requiresHumanReview": true,
+    "status": "partially-resolved",
+    "resolution": "Phase B adds exact-PID milestone and migration evidence for selected IE2000/3000/4000/4010/5000 and IR829 variants. Remaining PIDs retain unknown lifecycle; absence of a bulletin is not active-sales proof.",
+    "resolvedAt": null
   },
   {
     "id": "software-matrix-gap",
@@ -47,6 +64,57 @@
     "kind": "gap",
     "title": "Exact-version security support matrices still needed",
     "detail": "Platform-level hosting statements and commercial bundles do not prove a deployable PID/version/license combination. Cyber Vision and SEA support remain conditional; omitted platforms and comparison-table dashes remain unknown.",
-    "requiresHumanReview": true
+    "requiresHumanReview": true,
+    "status": "partially-resolved",
+    "resolution": "CV 5.6.x release notes now constrain selected hardware to documented firmware trains and IE3300 memory/VID prerequisites. Exact licensing, revision and management coexistence gaps remain visible.",
+    "resolvedAt": null
+  },
+  {
+    "id": "ir8300-cv56-version-ambiguity",
+    "sourceIds": ["cisco-cv56-rn"],
+    "subjectIds": ["pid-ir8340-k9"],
+    "kind": "conflict",
+    "title": "CV 5.6 IR8300 row has two firmware conditions",
+    "detail": "The product cell says running IOS XE 17.15.x with at least 3 GB allocated to IOx; the supported-release cell says minimum 17.9.x. Both statements are preserved; compatibility remains conditional pending clarification.",
+    "requiresHumanReview": true,
+    "status": "open",
+    "resolution": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "wireless-concrete-pid-gap",
+    "sourceIds": ["cisco-iw9165-ds", "cisco-iw9167-ds"],
+    "subjectIds": ["iw9165", "iw9167"],
+    "kind": "gap",
+    "title": "Wireless ordering needs concrete mode/domain evidence",
+    "detail": "Ordering tables contain x-domain templates plus AP/WGB/URWB variants. Family-level wireless references are available, but no mode/domain concatenations have been promoted to source-reviewed exact PIDs.",
+    "requiresHumanReview": true,
+    "status": "open",
+    "resolution": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "ie9300-hd-identity-gap",
+    "sourceIds": ["cisco-switches-index"],
+    "subjectIds": ["ie9300-hd"],
+    "kind": "gap",
+    "title": "Separate IE9300 Heavy Duty identity not located",
+    "detail": "The checked official portfolio lists IE9300 Rugged. A distinct Heavy Duty exact-PID ordering source was not located; this is an unresolved research target, not a declaration that it does not exist.",
+    "requiresHumanReview": true,
+    "status": "open",
+    "resolution": null,
+    "resolvedAt": null
+  },
+  {
+    "id": "sea-sra-release-scope",
+    "sourceIds": ["cisco-sea-ds", "cisco-cv56-rn"],
+    "subjectIds": ["sea"],
+    "kind": "gap",
+    "title": "SEA-to-SRA rename is not an updated compatibility matrix",
+    "detail": "The April 2026 SEA data sheet documents separate-agent coexistence limits. CV 5.6.x in October renames SEA to SRA. Do not assume this renaming changes licenses or establishes current SRA deployment/agent compatibility; older separate-agent limits are scoped to that architecture.",
+    "requiresHumanReview": true,
+    "status": "open",
+    "resolution": null,
+    "resolvedAt": null
   }
 ]

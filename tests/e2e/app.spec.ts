@@ -16,7 +16,7 @@ test('research preview search, category filters, and source disclosure', async (
     ),
   ).toBeVisible();
   await expect(page.locator('.product-card:not(.research-card)')).toHaveCount(
-    10,
+    24,
   );
   await page.getByRole('searchbox').fill('IR1001-G2');
   await expect(page.locator('.product-card:not(.research-card)')).toHaveCount(
@@ -42,14 +42,18 @@ test('catalog table and category filters work', async ({ page }) => {
   await page.goto('/#/catalog');
   await page.getByRole('button', { name: 'Routing', exact: true }).click();
   await expect(page.locator('.product-card:not(.research-card)')).toHaveCount(
-    2,
+    10,
   );
   await page.getByRole('button', { name: 'Table view' }).click();
   await expect(page.getByRole('table')).toBeVisible();
-  await expect(page.locator('tbody tr')).toHaveCount(2);
+  await expect(page.locator('tbody tr')).toHaveCount(10);
   await page.getByRole('button', { name: 'Wireless', exact: true }).click();
+  await expect(page.locator('.research-card')).toHaveCount(0);
+  await expect(page.locator('tbody tr')).toHaveCount(2);
   await expect(
-    page.getByRole('heading', { name: 'No records found' }),
+    page.getByText('IW9165 regulatory / operating-mode ordering', {
+      exact: true,
+    }),
   ).toBeVisible();
 });
 test('requirements reset and keyboard search work', async ({ page }) => {
@@ -91,12 +95,12 @@ test('audit distinguishes source retrieval from scoped source review', async ({
   await page.goto('/#/audit');
   await expect(
     page.getByRole('heading', {
-      name: 'Official sources reached · review in progress',
+      name: 'Official sources · scoped technical review',
     }),
   ).toBeVisible();
   await expect(
     page.locator('.source-row').getByText('Source reviewed', { exact: true }),
-  ).toHaveCount(4);
+  ).toHaveCount(35);
   await expect(
     page.getByRole('heading', {
       name: 'IE3505 PoE ordering table duplicates the -A PID',
@@ -189,8 +193,8 @@ test('synthetic reviewed products support exact-PID detail and 2-PID comparison 
   ).toBeVisible();
   await page.getByText('Evidence · published', { exact: true }).click();
   await expect(
-    page.getByRole('link', { name: 'View official source' }),
-  ).toHaveCount(1);
+    page.getByRole('link', { name: 'View official source' }).first(),
+  ).toHaveAttribute('href', source.url);
 });
 
 for (const route of ['selector', 'software', 'product/IR1005-G2']) {
@@ -208,3 +212,89 @@ for (const route of ['selector', 'software', 'product/IR1005-G2']) {
     ).toEqual([]);
   });
 }
+
+test('legacy lifecycle warnings and official replacement links remain discoverable', async ({
+  page,
+}) => {
+  await page.goto('/#/product/IE-3000-8TC');
+  await expect(
+    page.getByText('end-of-support', { exact: true }).first(),
+  ).toBeVisible();
+  await expect(
+    page.getByRole('link', { name: 'IE-3300-8T2S-E →', exact: true }),
+  ).toBeVisible();
+  await page.goto('/');
+  await page.getByRole('searchbox').fill('IE-3000-8TC');
+  await expect(
+    page.getByRole('heading', { name: 'No eligible products found' }),
+  ).toBeVisible();
+  await page.getByRole('checkbox', { name: /Show excluded products/ }).check();
+  await expect(
+    page.getByRole('link', { name: 'IE-3000-8TC', exact: true }),
+  ).toBeVisible();
+  await page.getByText('Why this result?', { exact: true }).click();
+  await expect(
+    page.getByText('Verified incompatible', { exact: true }).first(),
+  ).toBeVisible();
+});
+test('advanced technical filters and family selection preserve explicit uncertainty', async ({
+  page,
+}) => {
+  await page.goto('/');
+  await page
+    .getByRole('combobox', { name: 'Product family', exact: true })
+    .selectOption('ir1800');
+  await expect(page.locator('.product-card:not(.research-card)')).toHaveCount(
+    2,
+  );
+  await page
+    .getByText('Technical & licensing requirements', { exact: true })
+    .click();
+  await page
+    .getByRole('checkbox', { name: 'Cyber Vision support', exact: true })
+    .check();
+  await page
+    .getByRole('checkbox', {
+      name: 'SEA / Cyber Vision SRA support',
+      exact: true,
+    })
+    .check();
+  await page
+    .getByRole('combobox', { name: 'Security deployment architecture' })
+    .selectOption('separate-cv-sea-agents');
+  await expect(
+    page.getByRole('heading', { name: 'No eligible products found' }),
+  ).toBeVisible();
+  await page.getByRole('checkbox', { name: /Show excluded products/ }).check();
+  await page.getByText('Why this result?', { exact: true }).first().click();
+  await expect(
+    page
+      .getByText('Cyber Vision + SEA simultaneous deployment', { exact: true })
+      .first(),
+  ).toBeVisible();
+});
+test('family reference never promotes a wildcard wireless SKU and audit history is downloadable', async ({
+  page,
+}) => {
+  await page.goto('/#/family/iw9165');
+  await expect(
+    page.getByRole('heading', { name: 'IW9165', exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByText('Exact identity / ordering unresolved'),
+  ).toBeVisible();
+  await expect(
+    page.getByRole('button', { name: 'Add to comparison' }),
+  ).toHaveCount(0);
+  await page.goto('/#/audit');
+  await expect(
+    page.getByRole('heading', { name: 'Portfolio coverage by family' }),
+  ).toBeVisible();
+  const report = page.locator('a[href*="/data/audits/"]').first();
+  await expect(report).toHaveAttribute('target', '_blank');
+  const response = await page.request.get(
+    (await report.getAttribute('href')) ?? '',
+  );
+  expect(response.ok()).toBe(true);
+  expect((await response.json()).summary.sourcesChecked).toBe(35);
+});

@@ -1,7 +1,7 @@
 {
   "name": "cisco-iiot-product-selector",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "engines": {
     "node": ">=24.19 <25"
@@ -11,13 +11,14 @@
     "build": "npm run validate:data && tsc -b && vite build",
     "preview": "vite preview --host 0.0.0.0",
     "lint": "eslint . --max-warnings 0",
-    "validate:data": "node scripts/validate-data.mjs",
-    "test": "vitest run",
+    "validate:data": "node scripts/validate-data.mjs && node scripts/validate-audits.mjs",
+    "test": "vitest run && npm run test:audits",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "audit:sources": "python3 scripts/audit_sources.py",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "test:audits": "python3 -m unittest discover -s tests/python -v"
   },
   "dependencies": {
     "ajv": "8.20.0",

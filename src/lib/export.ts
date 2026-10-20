@@ -1,5 +1,5 @@
 import { sourceById, specRows } from './catalog';
-import { resolveFact } from './rules';
+import { resolveFact, formatFact } from './rules';
 import type { Assertion, Product, Requirements } from './types';
 const cell = (value: unknown) =>
   '"' +
@@ -21,7 +21,7 @@ export function comparisonCsv(
       rows.push([
         p.pid,
         label,
-        fact.state === 'unknown' ? 'Unknown' : JSON.stringify(fact.value),
+        fact.state === 'unknown' ? 'Unknown' : formatFact(fact.value),
         fact.state,
         fact.detail,
         fact.assertionIds

@@ -1827,3 +1827,94 @@ tr:last-child th {
 .device-art text {
   fill: #536c66;
 }
+.advanced-filters {
+  grid-column: 1 / -1;
+  margin: 12px 0 18px;
+  border-top: 1px solid var(--line);
+  padding-top: 17px;
+}
+.advanced-filters > summary {
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  color: #295f50;
+  line-height: 1.6;
+}
+.advanced-filters fieldset {
+  margin-top: 16px;
+}
+.family-toolbar {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 12px 0 18px;
+}
+.family-toolbar .field {
+  min-width: 170px;
+  max-width: 330px;
+  flex: 1;
+  margin: 0;
+}
+.family-toolbar .check-field {
+  margin: 20px 0 0;
+  font-size: 11px;
+}
+.documentation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.documentation-grid article {
+  border: 1px solid var(--line);
+  padding: 17px;
+  border-radius: 7px;
+}
+.documentation-grid h3 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+.documentation-grid article p {
+  font-size: 10px;
+}
+.related-pids {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 17px 0;
+}
+.related-pids a {
+  border: 1px solid #c8dacf;
+  padding: 8px 11px;
+  border-radius: 5px;
+  color: #24694f;
+  font-size: 11px;
+}
+.software-evidence h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.table-scroll td .badge {
+  white-space: normal;
+}
+.panel .table-scroll {
+  max-width: 100%;
+}
+@media (max-width: 600px) {
+  .documentation-grid {
+    grid-template-columns: 1fr;
+  }
+  .family-toolbar {
+    display: block;
+  }
+  .family-toolbar .field {
+    max-width: none;
+  }
+  .advanced-filters[open] {
+    display: block;
+  }
+  .filters .advanced-filters fieldset:first-of-type {
+    grid-row: auto;
+  }
+}

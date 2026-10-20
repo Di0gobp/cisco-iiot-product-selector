@@ -67,6 +67,8 @@ export function validateData(catalog, sources, battlecards = [], issues = []) {
       errors.push(`Duplicate PID: ${p.pid}`);
     pidNames.add(p.pid.toUpperCase());
     check(p.modelId, catalog.models, 'model');
+    for (const id of p.documentationIds ?? [])
+      check(id, sources, 'product document');
     check(p.familyId, catalog.families, 'PID family');
     if (catalog.models.find((m) => m.id === p.modelId)?.familyId !== p.familyId)
       errors.push(`Model/family mismatch: ${p.id}`);
@@ -114,15 +116,35 @@ export function validateData(catalog, sources, battlecards = [], issues = []) {
   for (const e of catalog.lifecycleEvents)
     check(e.assertionId, catalog.assertions, 'lifecycle evidence');
   for (const source of sources) {
-    const url = new URL(source.url);
+    let url;
+    try {
+      url = new URL(source.url);
+    } catch {
+      errors.push(`Invalid source URL: ${source.id}`);
+      continue;
+    }
     if (url.username || url.password || url.protocol !== 'https:')
       errors.push(`Unsafe source URL: ${source.id}`);
+    if (source.manufacturerId)
+      check(
+        source.manufacturerId,
+        catalog.manufacturers,
+        'source manufacturer',
+      );
+    const officialDomains = source.manufacturerId
+      ? (catalog.manufacturers.find((m) => m.id === source.manufacturerId)
+          ?.officialDomains ?? [])
+      : ['cisco.com'];
     if (
       source.type.startsWith('official-') &&
-      url.hostname !== 'cisco.com' &&
-      !url.hostname.endsWith('.cisco.com')
+      !officialDomains.some(
+        (domain) =>
+          url.hostname === domain || url.hostname.endsWith('.' + domain),
+      )
     )
-      errors.push(`Non-Cisco official source: ${source.id}`);
+      errors.push(
+        `Official source host outside declared manufacturer domains: ${source.id}`,
+      );
     if (
       source.status === 'reviewed' &&
       (!source.verifiedAt || !source.contentHash)
@@ -138,8 +160,10 @@ export function validateData(catalog, sources, battlecards = [], issues = []) {
       ['licenseIds', catalog.licenses],
       ['softwareVersionIds', catalog.versions],
       ['managementModeIds', catalog.managementModes],
+      ['featureIds', catalog.features],
+      ['licenseAnyOfIds', catalog.licenses],
     ])
-      for (const id of a.applicability[key]) check(id, group, key);
+      for (const id of a.applicability[key] ?? []) check(id, group, key);
     for (const id of [...a.supersedes, ...a.conflictsWith]) {
       check(id, catalog.assertions, 'related assertion');
       if (id === a.id) errors.push(`Self-referencing assertion: ${a.id}`);
@@ -172,6 +196,13 @@ export function validateData(catalog, sources, battlecards = [], issues = []) {
         if (port.medium === 'combo' && !port.comboGroup)
           errors.push(`Combo port lacks shared group: ${a.id}`);
       }
+    if (a.predicate === 'operatingTemperature')
+      for (const range of a.value.ranges)
+        if (range.minC > range.maxC)
+          errors.push(`Invalid operating range: ${a.id}`);
+    if (a.predicate === 'replacement')
+      for (const id of a.value.pidIds)
+        check(id, catalog.pids, 'replacement PID');
     if (a.predicate === 'moduleSupport')
       check(a.value.moduleId, catalog.modules, 'supported module');
     if (a.predicate === 'entitlement') {
@@ -188,6 +219,7 @@ export function validateData(catalog, sources, battlecards = [], issues = []) {
         (a.predicate !== 'entitlement' ||
           (b.value.featureId === a.value.featureId &&
             b.value.licenseId === a.value.licenseId)) &&
+        (a.predicate !== 'licensingRule' || a.value.rule === b.value.rule) &&
         canonical(b.applicability) === canonical(a.applicability) &&
         (b.status !== a.status ||
           JSON.stringify(b.value) !== JSON.stringify(a.value)),
@@ -219,12 +251,28 @@ export function validateData(catalog, sources, battlecards = [], issues = []) {
       if (
         !Number.isFinite(parsed.valueOf()) ||
         parsed.toISOString().slice(0, 10) !== day ||
-        parsed.valueOf() > Date.now() + 86400000
+        ([
+          'verifiedAt',
+          'lastCheckedAt',
+          'lastMaterialChangeAt',
+          'documentDate',
+          'resolvedAt',
+        ].includes(key) &&
+          parsed.valueOf() > Date.now() + 86400000)
       )
         errors.push(`Invalid or future date: ${key}=${value}`);
     }
   }
   for (const issue of issues) {
+    if (
+      issue.status === 'resolved' &&
+      (!issue.resolution?.trim() ||
+        !issue.resolvedAt ||
+        issue.requiresHumanReview)
+    )
+      errors.push(
+        `Resolved issue lacks completed review metadata: ${issue.id}`,
+      );
     for (const id of issue.sourceIds) check(id, sources, 'review issue source');
     for (const id of issue.subjectIds)
       if (!all.has(id)) errors.push(`Orphaned review issue subject: ${id}`);
@@ -234,6 +282,7 @@ export function validateData(catalog, sources, battlecards = [], issues = []) {
     (a) =>
       a.reviewStatus === 'approved' &&
       [
+        'physicalEthernetPorts',
         'builtInCopperPorts',
         'builtInFiberPorts',
         'builtInSfpSlots',
@@ -254,19 +303,38 @@ export function validateData(catalog, sources, battlecards = [], issues = []) {
     }
     const built = inventory.value.filter((p) => p.origin === 'built-in');
     const expected =
-      a.predicate === 'maxPortSpeedMbps'
-        ? Math.max(0, ...built.flatMap((p) => p.speedsMbps))
-        : built
-            .filter((p) =>
-              a.predicate === 'builtInCopperPorts'
-                ? p.medium === 'copper'
-                : a.predicate === 'builtInFiberPorts'
-                  ? p.medium === 'fiber'
-                  : a.predicate === 'builtInSfpSlots'
-                    ? ['sfp', 'sfp-plus'].includes(p.medium)
-                    : p.role === 'uplink',
-            )
-            .reduce((n, p) => n + p.count, 0);
+      a.predicate === 'physicalEthernetPorts'
+        ? built.reduce(
+            (acc, p) => (p.medium === 'combo' ? acc : acc + p.count),
+            0,
+          ) +
+          [
+            ...new Map(
+              built
+                .filter((p) => p.medium === 'combo')
+                .map((p) => [
+                  p.comboGroup,
+                  Math.max(
+                    ...built
+                      .filter((b) => b.comboGroup === p.comboGroup)
+                      .map((b) => b.count),
+                  ),
+                ]),
+            ).values(),
+          ].reduce((a, b) => a + b, 0)
+        : a.predicate === 'maxPortSpeedMbps'
+          ? Math.max(0, ...built.flatMap((p) => p.speedsMbps))
+          : built
+              .filter((p) =>
+                a.predicate === 'builtInCopperPorts'
+                  ? p.medium === 'copper'
+                  : a.predicate === 'builtInFiberPorts'
+                    ? p.medium === 'fiber'
+                    : a.predicate === 'builtInSfpSlots'
+                      ? ['sfp', 'sfp-plus'].includes(p.medium)
+                      : p.role === 'uplink',
+              )
+              .reduce((n, p) => n + p.count, 0);
     if (a.value !== expected)
       errors.push(
         `Port inventory/count mismatch: ${a.id}; expected ${expected}, got ${a.value}`,
@@ -275,6 +343,7 @@ export function validateData(catalog, sources, battlecards = [], issues = []) {
   dates(catalog);
   dates(sources);
   dates(battlecards);
+  dates(issues);
   for (const b of battlecards) {
     for (const id of b.ciscoSubjectIds)
       if (!all.has(id)) errors.push(`Orphaned battlecard subject: ${id}`);
