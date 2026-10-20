@@ -1,0 +1,72 @@
+[
+  {
+    "id": "cisco-ir1000-ds",
+    "title": "Cisco IR1000 Rugged Series Secure Routers Data Sheet",
+    "url": "https://www.cisco.com/site/us/en/products/collateral/networking/industrial-routers-gateways/ir1000-rugged-series-secure-routers-ds.html",
+    "type": "official-datasheet",
+    "status": "reviewed",
+    "documentDate": "2026-06-17",
+    "lastCheckedAt": "2026-10-20T15:42:41Z",
+    "verifiedAt": "2026-10-20T15:45:42Z",
+    "lastMaterialChangeAt": null,
+    "contentHash": "sha256:35418fd76f927290d5395888220a8491f8dafe0a225a04ed05b9eb6ceb025e0c",
+    "supersedes": [],
+    "note": "Official document retrieved over verified HTTPS. Reviewed excerpts only; not an exhaustive support-matrix review. Initial reviewer: Codex."
+  },
+  {
+    "id": "cisco-ie3500-ds",
+    "title": "Cisco IE3500 Rugged Series Data Sheet",
+    "url": "https://www.cisco.com/c/en/us/products/collateral/networking/industrial-switches/ie3500-rugged-series/ie3500-rugged-series-ds.html",
+    "type": "official-datasheet",
+    "status": "reviewed",
+    "documentDate": "2026-09-22",
+    "lastCheckedAt": "2026-10-20T15:42:44Z",
+    "verifiedAt": "2026-10-20T15:45:42Z",
+    "lastMaterialChangeAt": null,
+    "contentHash": "sha256:3939ef21187b16e09c99270215ceb200d6d544c6951cc0704dd2ba2a84bb8146",
+    "supersedes": [],
+    "note": "Official document retrieved over verified HTTPS. Reviewed excerpts only; not an exhaustive support-matrix review. Initial reviewer: Codex."
+  },
+  {
+    "id": "cisco-ie3500hd-ds",
+    "title": "Cisco IE3500 Heavy Duty Data Sheet",
+    "url": "https://www.cisco.com/c/en/us/products/collateral/networking/industrial-switches/ie3500-heavy-duty-series/ie3500-heavy-duty-series-ds.html",
+    "type": "official-datasheet",
+    "status": "checked",
+    "documentDate": null,
+    "lastCheckedAt": "2026-10-20T15:42:46Z",
+    "verifiedAt": null,
+    "lastMaterialChangeAt": null,
+    "contentHash": "sha256:c172c760590c3e1fd2ad4ffb62adb78ef06705ec71bc8ca91761f0cd4f95a61b",
+    "supersedes": [],
+    "note": "Official document retrieved and fingerprinted; content not reviewed for product claims."
+  },
+  {
+    "id": "cisco-cybervision-ds",
+    "title": "Cisco Cyber Vision Data Sheet",
+    "url": "https://www.cisco.com/c/en/us/products/collateral/security/cyber-vision/cyber-vision-ds.html",
+    "type": "official-datasheet",
+    "status": "reviewed",
+    "documentDate": "2026-04-14",
+    "lastCheckedAt": "2026-10-20T15:42:47Z",
+    "verifiedAt": "2026-10-20T15:45:42Z",
+    "lastMaterialChangeAt": null,
+    "contentHash": "sha256:9f39c53a6242dffb989696a72ad02cdfb8e3ef601c580f816118ee74b5a535fb",
+    "supersedes": [],
+    "note": "Official document retrieved over verified HTTPS. Reviewed excerpts only; not an exhaustive support-matrix review. Initial reviewer: Codex."
+  },
+  {
+    "id": "cisco-sea-ds",
+    "title": "Cisco Secure Equipment Access Data Sheet",
+    "url": "https://www.cisco.com/c/en/us/products/collateral/security/industrial-security/secure-equipment-access/sec-equipment-access-ds.html",
+    "type": "official-datasheet",
+    "status": "reviewed",
+    "documentDate": "2026-04-14",
+    "lastCheckedAt": "2026-10-20T15:42:49Z",
+    "verifiedAt": "2026-10-20T15:45:42Z",
+    "lastMaterialChangeAt": null,
+    "contentHash": "sha256:40dfebade94f6c725f97c814cedb153a8fe5caac9e93b13466b1625a0e9bf29d",
+    "supersedes": [],
+    "note": "Official document retrieved over verified HTTPS. Reviewed excerpts only; not an exhaustive support-matrix review. Initial reviewer: Codex."
+  }
+]

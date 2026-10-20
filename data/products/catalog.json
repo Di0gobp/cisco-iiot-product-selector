@@ -1,0 +1,3953 @@
+{
+  "schemaVersion": "1.0.0",
+  "manufacturers": [
+    {
+      "id": "cisco",
+      "name": "Cisco"
+    }
+  ],
+  "families": [
+    {
+      "id": "ir1000",
+      "manufacturerId": "cisco",
+      "name": "IR1000",
+      "category": "router"
+    },
+    {
+      "id": "ie3500",
+      "manufacturerId": "cisco",
+      "name": "IE3500",
+      "category": "switch"
+    }
+  ],
+  "models": [
+    {
+      "id": "model-ir1001-g2",
+      "familyId": "ir1000",
+      "name": "IR1001-G2"
+    },
+    {
+      "id": "model-ir1005-g2",
+      "familyId": "ir1000",
+      "name": "IR1005-G2"
+    },
+    {
+      "id": "model-ie-3500-8t3s",
+      "familyId": "ie3500",
+      "name": "IE-3500-8T3S"
+    },
+    {
+      "id": "model-ie-3500-8p3s",
+      "familyId": "ie3500",
+      "name": "IE-3500-8P3S"
+    },
+    {
+      "id": "model-ie-3500-8t3x",
+      "familyId": "ie3500",
+      "name": "IE-3500-8T3X"
+    },
+    {
+      "id": "model-ie-3500-8u3x",
+      "familyId": "ie3500",
+      "name": "IE-3500-8U3X"
+    }
+  ],
+  "pids": [
+    {
+      "id": "pid-ir1001-g2",
+      "pid": "IR1001-G2",
+      "modelId": "model-ir1001-g2",
+      "familyId": "ir1000",
+      "orderabilityAssertionId": "pid-ir1001-g2-orderability",
+      "reviewStatus": "approved"
+    },
+    {
+      "id": "pid-ir1005-g2",
+      "pid": "IR1005-G2",
+      "modelId": "model-ir1005-g2",
+      "familyId": "ir1000",
+      "orderabilityAssertionId": "pid-ir1005-g2-orderability",
+      "reviewStatus": "approved"
+    },
+    {
+      "id": "pid-ie-3500-8t3s-e",
+      "pid": "IE-3500-8T3S-E",
+      "modelId": "model-ie-3500-8t3s",
+      "familyId": "ie3500",
+      "orderabilityAssertionId": "pid-ie-3500-8t3s-e-orderability",
+      "reviewStatus": "approved"
+    },
+    {
+      "id": "pid-ie-3500-8t3s-a",
+      "pid": "IE-3500-8T3S-A",
+      "modelId": "model-ie-3500-8t3s",
+      "familyId": "ie3500",
+      "orderabilityAssertionId": "pid-ie-3500-8t3s-a-orderability",
+      "reviewStatus": "approved"
+    },
+    {
+      "id": "pid-ie-3500-8p3s-e",
+      "pid": "IE-3500-8P3S-E",
+      "modelId": "model-ie-3500-8p3s",
+      "familyId": "ie3500",
+      "orderabilityAssertionId": "pid-ie-3500-8p3s-e-orderability",
+      "reviewStatus": "approved"
+    },
+    {
+      "id": "pid-ie-3500-8p3s-a",
+      "pid": "IE-3500-8P3S-A",
+      "modelId": "model-ie-3500-8p3s",
+      "familyId": "ie3500",
+      "orderabilityAssertionId": "pid-ie-3500-8p3s-a-orderability",
+      "reviewStatus": "approved"
+    },
+    {
+      "id": "pid-ie-3500-8t3x-e",
+      "pid": "IE-3500-8T3X-E",
+      "modelId": "model-ie-3500-8t3x",
+      "familyId": "ie3500",
+      "orderabilityAssertionId": "pid-ie-3500-8t3x-e-orderability",
+      "reviewStatus": "approved"
+    },
+    {
+      "id": "pid-ie-3500-8t3x-a",
+      "pid": "IE-3500-8T3X-A",
+      "modelId": "model-ie-3500-8t3x",
+      "familyId": "ie3500",
+      "orderabilityAssertionId": "pid-ie-3500-8t3x-a-orderability",
+      "reviewStatus": "approved"
+    },
+    {
+      "id": "pid-ie-3500-8u3x-e",
+      "pid": "IE-3500-8U3X-E",
+      "modelId": "model-ie-3500-8u3x",
+      "familyId": "ie3500",
+      "orderabilityAssertionId": "pid-ie-3500-8u3x-e-orderability",
+      "reviewStatus": "approved"
+    },
+    {
+      "id": "pid-ie-3500-8u3x-a",
+      "pid": "IE-3500-8U3X-A",
+      "modelId": "model-ie-3500-8u3x",
+      "familyId": "ie3500",
+      "orderabilityAssertionId": "pid-ie-3500-8u3x-a-orderability",
+      "reviewStatus": "approved"
+    }
+  ],
+  "revisions": [],
+  "modules": [],
+  "software": [
+    {
+      "id": "ios-xe",
+      "manufacturerId": "cisco",
+      "name": "Cisco IOS XE"
+    },
+    {
+      "id": "cyber-vision",
+      "manufacturerId": "cisco",
+      "name": "Cisco Cyber Vision"
+    },
+    {
+      "id": "sea",
+      "manufacturerId": "cisco",
+      "name": "Cisco Secure Equipment Access"
+    },
+    {
+      "id": "meraki-dashboard-software",
+      "manufacturerId": "cisco",
+      "name": "Meraki Dashboard"
+    }
+  ],
+  "versions": [],
+  "licenses": [
+    {
+      "id": "network-essentials",
+      "softwareId": "ios-xe",
+      "offer": "Network Essentials",
+      "level": "Essentials",
+      "termMonths": null,
+      "assertionIds": []
+    },
+    {
+      "id": "network-advantage",
+      "softwareId": "ios-xe",
+      "offer": "Network Advantage",
+      "level": "Advantage",
+      "termMonths": null,
+      "assertionIds": []
+    },
+    {
+      "id": "cv-advantage-bundle",
+      "softwareId": "cyber-vision",
+      "offer": "IE3500 included Cyber Vision Advantage entitlement",
+      "level": "Advantage",
+      "termMonths": 36,
+      "assertionIds": [
+        "pid-ie-3500-8t3s-a-entitlement-cv",
+        "pid-ie-3500-8p3s-a-entitlement-cv",
+        "pid-ie-3500-8t3x-a-entitlement-cv",
+        "pid-ie-3500-8u3x-a-entitlement-cv"
+      ]
+    },
+    {
+      "id": "sea-advantage-bundle",
+      "softwareId": "sea",
+      "offer": "IE3500 included Secure Equipment Access Advantage entitlement",
+      "level": "Advantage",
+      "termMonths": 36,
+      "assertionIds": [
+        "pid-ie-3500-8t3s-a-entitlement-sea",
+        "pid-ie-3500-8p3s-a-entitlement-sea",
+        "pid-ie-3500-8t3x-a-entitlement-sea",
+        "pid-ie-3500-8u3x-a-entitlement-sea"
+      ]
+    },
+    {
+      "id": "meraki-enterprise",
+      "softwareId": "meraki-dashboard-software",
+      "offer": "LIC-IE3500-E",
+      "level": "Enterprise",
+      "termMonths": null,
+      "assertionIds": []
+    },
+    {
+      "id": "meraki-advantage",
+      "softwareId": "meraki-dashboard-software",
+      "offer": "LIC-IE3500-A",
+      "level": "Advantage",
+      "termMonths": null,
+      "assertionIds": []
+    }
+  ],
+  "features": [
+    {
+      "id": "cv-visibility",
+      "name": "Cyber Vision endpoint visibility"
+    },
+    {
+      "id": "sea-remote-access",
+      "name": "Secure Equipment Access endpoint access"
+    }
+  ],
+  "managementModes": [
+    {
+      "id": "local",
+      "name": "Local CLI / WebUI"
+    },
+    {
+      "id": "meraki",
+      "name": "Meraki Dashboard"
+    },
+    {
+      "id": "catalyst-center",
+      "name": "Catalyst Center"
+    },
+    {
+      "id": "sd-wan",
+      "name": "SD-WAN Manager"
+    },
+    {
+      "id": "iot-fnd",
+      "name": "IoT Field Network Director"
+    }
+  ],
+  "lifecycleEvents": [],
+  "assertions": [
+    {
+      "id": "pid-ir1001-g2-orderability",
+      "subjectId": "pid-ir1001-g2",
+      "predicate": "orderability",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ir1000-ds",
+      "evidence": {
+        "excerpt": "IR1001-G2 | Cisco IR1001-G2 Rugged Series Secure Router with IR-OS-S-E or IR-OS-S-A software license",
+        "section": "Table 11. Ordering information; IR1001-G2 hardware SKU row. IR1005 description repeats IR1001; use SKU column for identity, Table 2 for differences."
+      },
+      "applicability": {
+        "pidIds": ["pid-ir1001-g2"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ir1001-g2-portInventory",
+      "subjectId": "pid-ir1001-g2",
+      "predicate": "portInventory",
+      "value": [
+        {
+          "role": "flexible",
+          "medium": "copper",
+          "count": 2,
+          "speedsMbps": [10, 100, 1000],
+          "origin": "built-in",
+          "moduleId": null,
+          "poeStandards": [],
+          "comboGroup": null
+        }
+      ],
+      "status": "supported",
+      "sourceId": "cisco-ir1000-ds",
+      "evidence": {
+        "excerpt": "Ethernet Ports | 2 GE ports (LAN or WAN) | 2 GE ports (LAN or WAN). WAN/LAN interfaces: 2x 10/100/1000 Gigabit Ethernet port (L2/L3).",
+        "section": "Table 2. Platform comparison, and Table 7. Interfaces on the base platform; Figure 1 base-platform front view and Figure 2 product highlights identify the two Ethernet RJ45 connectors (media visually reviewed; not inferred from serial RJ45)."
+      },
+      "applicability": {
+        "pidIds": ["pid-ir1001-g2"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ir1001-g2-builtInCopperPorts",
+      "subjectId": "pid-ir1001-g2",
+      "predicate": "builtInCopperPorts",
+      "value": 2,
+      "status": "supported",
+      "sourceId": "cisco-ir1000-ds",
+      "evidence": {
+        "excerpt": "Ethernet Ports | IR1001-G2: 2 GE ports (LAN or WAN) | IR1005-G2: 2 GE ports (LAN or WAN)",
+        "section": "Table 2. Cisco IR1000 platform comparison; Figure 1 base-platform front view and Figure 2 product highlights identify the two Ethernet RJ45 connectors (media visually reviewed; not inferred from serial RJ45)."
+      },
+      "applicability": {
+        "pidIds": ["pid-ir1001-g2"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ir1001-g2-maxPortSpeedMbps",
+      "subjectId": "pid-ir1001-g2",
+      "predicate": "maxPortSpeedMbps",
+      "value": 1000,
+      "status": "supported",
+      "sourceId": "cisco-ir1000-ds",
+      "evidence": {
+        "excerpt": "WAN/LAN interfaces: 2x 10/100/1000 Gigabit Ethernet port (L2/L3)",
+        "section": "Table 7. Interfaces on the base platform"
+      },
+      "applicability": {
+        "pidIds": ["pid-ir1001-g2"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ir1001-g2-dinRail",
+      "subjectId": "pid-ir1001-g2",
+      "predicate": "dinRail",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ir1000-ds",
+      "evidence": {
+        "excerpt": "Mounting options | Panel, wall, and din rail (vertical and horizontal) mount",
+        "section": "Table 7. System specifications; mounting accessories ordered separately"
+      },
+      "applicability": {
+        "pidIds": ["pid-ir1001-g2"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ir1001-g2-cyberVision",
+      "subjectId": "pid-ir1001-g2",
+      "predicate": "cyberVision",
+      "value": false,
+      "status": "unknown",
+      "sourceId": "cisco-ir1000-ds",
+      "evidence": {
+        "excerpt": "Cyber Vision and ThousandEyes Assurance | IR1001-G2: - | IR1005-G2: \u2713",
+        "section": "Table 2. Cisco IR1000 platform comparison"
+      },
+      "applicability": {
+        "pidIds": ["pid-ir1001-g2"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "A dash is not treated as an explicit unsupported statement. No affirmative IR1001-G2 support established; support-matrix review required.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "editorial",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ir1005-g2-orderability",
+      "subjectId": "pid-ir1005-g2",
+      "predicate": "orderability",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ir1000-ds",
+      "evidence": {
+        "excerpt": "IR1005-G2 | Cisco IR1001-G2 Rugged Series Secure Router with IR-OS-S-E or IR-OS-S-A software license",
+        "section": "Table 11. Ordering information; IR1005-G2 hardware SKU row. IR1005 description repeats IR1001; use SKU column for identity, Table 2 for differences."
+      },
+      "applicability": {
+        "pidIds": ["pid-ir1005-g2"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ir1005-g2-portInventory",
+      "subjectId": "pid-ir1005-g2",
+      "predicate": "portInventory",
+      "value": [
+        {
+          "role": "flexible",
+          "medium": "copper",
+          "count": 2,
+          "speedsMbps": [10, 100, 1000],
+          "origin": "built-in",
+          "moduleId": null,
+          "poeStandards": [],
+          "comboGroup": null
+        }
+      ],
+      "status": "supported",
+      "sourceId": "cisco-ir1000-ds",
+      "evidence": {
+        "excerpt": "Ethernet Ports | 2 GE ports (LAN or WAN) | 2 GE ports (LAN or WAN). WAN/LAN interfaces: 2x 10/100/1000 Gigabit Ethernet port (L2/L3).",
+        "section": "Table 2. Platform comparison, and Table 7. Interfaces on the base platform; Figure 1 base-platform front view and Figure 2 product highlights identify the two Ethernet RJ45 connectors (media visually reviewed; not inferred from serial RJ45)."
+      },
+      "applicability": {
+        "pidIds": ["pid-ir1005-g2"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ir1005-g2-builtInCopperPorts",
+      "subjectId": "pid-ir1005-g2",
+      "predicate": "builtInCopperPorts",
+      "value": 2,
+      "status": "supported",
+      "sourceId": "cisco-ir1000-ds",
+      "evidence": {
+        "excerpt": "Ethernet Ports | IR1001-G2: 2 GE ports (LAN or WAN) | IR1005-G2: 2 GE ports (LAN or WAN)",
+        "section": "Table 2. Cisco IR1000 platform comparison; Figure 1 base-platform front view and Figure 2 product highlights identify the two Ethernet RJ45 connectors (media visually reviewed; not inferred from serial RJ45)."
+      },
+      "applicability": {
+        "pidIds": ["pid-ir1005-g2"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ir1005-g2-maxPortSpeedMbps",
+      "subjectId": "pid-ir1005-g2",
+      "predicate": "maxPortSpeedMbps",
+      "value": 1000,
+      "status": "supported",
+      "sourceId": "cisco-ir1000-ds",
+      "evidence": {
+        "excerpt": "WAN/LAN interfaces: 2x 10/100/1000 Gigabit Ethernet port (L2/L3)",
+        "section": "Table 7. Interfaces on the base platform"
+      },
+      "applicability": {
+        "pidIds": ["pid-ir1005-g2"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ir1005-g2-dinRail",
+      "subjectId": "pid-ir1005-g2",
+      "predicate": "dinRail",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ir1000-ds",
+      "evidence": {
+        "excerpt": "Mounting options | Panel, wall, and din rail (vertical and horizontal) mount",
+        "section": "Table 7. System specifications; mounting accessories ordered separately"
+      },
+      "applicability": {
+        "pidIds": ["pid-ir1005-g2"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ir1005-g2-cyberVision",
+      "subjectId": "pid-ir1005-g2",
+      "predicate": "cyberVision",
+      "value": true,
+      "status": "conditional",
+      "sourceId": "cisco-ir1000-ds",
+      "evidence": {
+        "excerpt": "Cyber Vision and ThousandEyes Assurance | IR1001-G2: - | IR1005-G2: \u2713",
+        "section": "Table 2. Cisco IR1000 platform comparison"
+      },
+      "applicability": {
+        "pidIds": ["pid-ir1005-g2"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Platform capability only. Cyber Vision version, minimum firmware, license, deployment architecture and management coexistence require a detailed support-matrix review.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-e-orderability",
+      "subjectId": "pid-ie-3500-8t3s-e",
+      "predicate": "orderability",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3S-E | IE3500 with 8 GE Copper and 3 GE SFP, Modular, Network Essential",
+        "section": "Table 21. Ordering Information, exact Product ID row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-e-portInventory",
+      "subjectId": "pid-ie-3500-8t3s-e",
+      "predicate": "portInventory",
+      "value": [
+        {
+          "role": "access",
+          "medium": "copper",
+          "count": 8,
+          "speedsMbps": [10, 100, 1000],
+          "origin": "built-in",
+          "moduleId": null,
+          "poeStandards": [],
+          "comboGroup": null
+        },
+        {
+          "role": "uplink",
+          "medium": "sfp",
+          "count": 3,
+          "speedsMbps": [100, 1000],
+          "origin": "built-in",
+          "moduleId": null,
+          "poeStandards": [],
+          "comboGroup": null
+        }
+      ],
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3S-E | 11 | 8 | 3x 1G/100M | - | - | - | Network Essentials",
+        "section": "Table 3. Hardware Configurations and Expansion Modules; column headers: total ports, copper, SFP, multigig copper, base PoE, total with module, license"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-e-builtInCopperPorts",
+      "subjectId": "pid-ie-3500-8t3s-e",
+      "predicate": "builtInCopperPorts",
+      "value": 8,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3S-E | 11 | 8 | 3x 1G/100M | - | - | - | Network Essentials",
+        "section": "Table 3. Hardware Configurations; built-in RJ45 copper column"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-e-builtInSfpSlots",
+      "subjectId": "pid-ie-3500-8t3s-e",
+      "predicate": "builtInSfpSlots",
+      "value": 3,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3S-E | 11 | 8 | 3x 1G/100M | - | - | - | Network Essentials",
+        "section": "Table 3. Hardware Configurations; SFP column. Slots require separately selected transceivers; no installed fiber ports assumed."
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-e-uplinkPorts",
+      "subjectId": "pid-ie-3500-8t3s-e",
+      "predicate": "uplinkPorts",
+      "value": 3,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Packs up to 11 ports ... 3 ports of 1GE Small Form-Factor Pluggable (SFP) uplinks or 3 ports of 10GE Small Form-Factor Pluggable (SFP+) and 8 ports of 1GE Data or PoE+/4PPoE RJ45 downlinks",
+        "section": "Table 1. Ethernet Interfaces, scoped by exact Table 3 hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-e-maxPortSpeedMbps",
+      "subjectId": "pid-ie-3500-8t3s-e",
+      "predicate": "maxPortSpeedMbps",
+      "value": 1000,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3S-E | 11 | 8 | 3x 1G/100M | - | - | - | Network Essentials",
+        "section": "Table 3. Hardware Configurations; highest supported base port rate"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-e-dinRail",
+      "subjectId": "pid-ie-3500-8t3s-e",
+      "predicate": "dinRail",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3S | DIN rail",
+        "section": "Table 6. IE3500 physical configurations; mounting column"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-e-poeBudgetWatts",
+      "subjectId": "pid-ie-3500-8t3s-e",
+      "predicate": "poeBudgetWatts",
+      "value": 0,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3S-E | 11 | 8 | 3x 1G/100M | - | - | - | Network Essentials",
+        "section": "Table 3. Base switch PoE column is not applicable for this data-only hardware."
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-e-cyberVision",
+      "subjectId": "pid-ie-3500-8t3s-e",
+      "predicate": "cyberVision",
+      "value": true,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Family-level IOx hosting statement applied to this listed exact PID. Exact Cyber Vision/SEA release, firmware and deployment support require a detailed matrix. Meraki mode coexistence is unverified. License/entitlement is a separate claim.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-e-sea",
+      "subjectId": "pid-ie-3500-8t3s-e",
+      "predicate": "sea",
+      "value": true,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Family-level IOx hosting statement applied to this listed exact PID. Exact Cyber Vision/SEA release, firmware and deployment support require a detailed matrix. Meraki mode coexistence is unverified. License/entitlement is a separate claim.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-e-management",
+      "subjectId": "pid-ie-3500-8t3s-e",
+      "predicate": "management",
+      "value": "meraki",
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Cloud based managed via Meraki dashboard. Base switch supported on IOS XE 26.1.1 and above, expansion module support with future IOS XE release.",
+        "section": "Table 1. Flexible Management with footnote 2; Table 14. Meraki license offers"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-e"],
+        "firmwareMin": "26.1.1",
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "Base switch only. Meraki Enterprise (LIC-IE3500-E) or Advantage (LIC-IE3500-A) licensing must be confirmed for deployment; Cyber Vision/SEA coexistence is not established. Expansion-module support is described as future release.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-a-orderability",
+      "subjectId": "pid-ie-3500-8t3s-a",
+      "predicate": "orderability",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3S-A | IE3500 with 8 GE Copper and 3 GE SFP, Modular, Network Advantage",
+        "section": "Table 21. Ordering Information, exact Product ID row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-a-portInventory",
+      "subjectId": "pid-ie-3500-8t3s-a",
+      "predicate": "portInventory",
+      "value": [
+        {
+          "role": "access",
+          "medium": "copper",
+          "count": 8,
+          "speedsMbps": [10, 100, 1000],
+          "origin": "built-in",
+          "moduleId": null,
+          "poeStandards": [],
+          "comboGroup": null
+        },
+        {
+          "role": "uplink",
+          "medium": "sfp",
+          "count": 3,
+          "speedsMbps": [100, 1000],
+          "origin": "built-in",
+          "moduleId": null,
+          "poeStandards": [],
+          "comboGroup": null
+        }
+      ],
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3S-A | 11 | 8 | 3x 1G/100M | - | - | - | Network Advantage",
+        "section": "Table 3. Hardware Configurations and Expansion Modules; column headers: total ports, copper, SFP, multigig copper, base PoE, total with module, license"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-a-builtInCopperPorts",
+      "subjectId": "pid-ie-3500-8t3s-a",
+      "predicate": "builtInCopperPorts",
+      "value": 8,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3S-A | 11 | 8 | 3x 1G/100M | - | - | - | Network Advantage",
+        "section": "Table 3. Hardware Configurations; built-in RJ45 copper column"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-a-builtInSfpSlots",
+      "subjectId": "pid-ie-3500-8t3s-a",
+      "predicate": "builtInSfpSlots",
+      "value": 3,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3S-A | 11 | 8 | 3x 1G/100M | - | - | - | Network Advantage",
+        "section": "Table 3. Hardware Configurations; SFP column. Slots require separately selected transceivers; no installed fiber ports assumed."
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-a-uplinkPorts",
+      "subjectId": "pid-ie-3500-8t3s-a",
+      "predicate": "uplinkPorts",
+      "value": 3,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Packs up to 11 ports ... 3 ports of 1GE Small Form-Factor Pluggable (SFP) uplinks or 3 ports of 10GE Small Form-Factor Pluggable (SFP+) and 8 ports of 1GE Data or PoE+/4PPoE RJ45 downlinks",
+        "section": "Table 1. Ethernet Interfaces, scoped by exact Table 3 hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-a-maxPortSpeedMbps",
+      "subjectId": "pid-ie-3500-8t3s-a",
+      "predicate": "maxPortSpeedMbps",
+      "value": 1000,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3S-A | 11 | 8 | 3x 1G/100M | - | - | - | Network Advantage",
+        "section": "Table 3. Hardware Configurations; highest supported base port rate"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-a-dinRail",
+      "subjectId": "pid-ie-3500-8t3s-a",
+      "predicate": "dinRail",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3S | DIN rail",
+        "section": "Table 6. IE3500 physical configurations; mounting column"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-a-poeBudgetWatts",
+      "subjectId": "pid-ie-3500-8t3s-a",
+      "predicate": "poeBudgetWatts",
+      "value": 0,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3S-A | 11 | 8 | 3x 1G/100M | - | - | - | Network Advantage",
+        "section": "Table 3. Base switch PoE column is not applicable for this data-only hardware."
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-a-cyberVision",
+      "subjectId": "pid-ie-3500-8t3s-a",
+      "predicate": "cyberVision",
+      "value": true,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Family-level IOx hosting statement applied to this listed exact PID. Exact Cyber Vision/SEA release, firmware and deployment support require a detailed matrix. Meraki mode coexistence is unverified. License/entitlement is a separate claim.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-a-sea",
+      "subjectId": "pid-ie-3500-8t3s-a",
+      "predicate": "sea",
+      "value": true,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Family-level IOx hosting statement applied to this listed exact PID. Exact Cyber Vision/SEA release, firmware and deployment support require a detailed matrix. Meraki mode coexistence is unverified. License/entitlement is a separate claim.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-a-management",
+      "subjectId": "pid-ie-3500-8t3s-a",
+      "predicate": "management",
+      "value": "meraki",
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Cloud based managed via Meraki dashboard. Base switch supported on IOS XE 26.1.1 and above, expansion module support with future IOS XE release.",
+        "section": "Table 1. Flexible Management with footnote 2; Table 14. Meraki license offers"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-a"],
+        "firmwareMin": "26.1.1",
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "Base switch only. Meraki Enterprise (LIC-IE3500-E) or Advantage (LIC-IE3500-A) licensing must be confirmed for deployment; Cyber Vision/SEA coexistence is not established. Expansion-module support is described as future release.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-a-entitlement-cv",
+      "subjectId": "pid-ie-3500-8t3s-a",
+      "predicate": "entitlement",
+      "value": {
+        "licenseId": "cv-advantage-bundle",
+        "featureId": "cv-visibility",
+        "quantity": 24,
+        "durationMonths": 36
+      },
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Cisco IE3500 Rugged Series ordered with a Network Advantage license on or after August 23rd, 2025 or upgraded to a Network Advantage license on or after October 20th, 2025 come with a 3-year limited term and 24 endpoints Advantage license of Cisco Cyber Vision and Secure Equipment Access at no extra cost.",
+        "section": "Ordering information, paragraph before Table 21"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": ["network-advantage"],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Order with Network Advantage on/after 2025-08-23, or upgrade on/after 2025-10-20; entitlement lasts 3 years, for 24 endpoints. Verify actual order/activation and remaining term. This commercial inclusion does not establish technical deployment compatibility.",
+        "effectiveFrom": "2025-08-23",
+        "assetLimit": 24
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3s-a-entitlement-sea",
+      "subjectId": "pid-ie-3500-8t3s-a",
+      "predicate": "entitlement",
+      "value": {
+        "licenseId": "sea-advantage-bundle",
+        "featureId": "sea-remote-access",
+        "quantity": 24,
+        "durationMonths": 36
+      },
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Cisco IE3500 Rugged Series ordered with a Network Advantage license on or after August 23rd, 2025 or upgraded to a Network Advantage license on or after October 20th, 2025 come with a 3-year limited term and 24 endpoints Advantage license of Cisco Cyber Vision and Secure Equipment Access at no extra cost.",
+        "section": "Ordering information, paragraph before Table 21"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": ["network-advantage"],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Order with Network Advantage on/after 2025-08-23, or upgrade on/after 2025-10-20; entitlement lasts 3 years, for 24 endpoints. Verify actual order/activation and remaining term. This commercial inclusion does not establish technical deployment compatibility.",
+        "effectiveFrom": "2025-08-23",
+        "assetLimit": 24
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-e-orderability",
+      "subjectId": "pid-ie-3500-8p3s-e",
+      "predicate": "orderability",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8P3S-E | IE3500 with 8 GE PoE/PoE+, 3 GE SFP, Modular, Network Essential",
+        "section": "Table 21. Ordering Information, exact Product ID row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-e-portInventory",
+      "subjectId": "pid-ie-3500-8p3s-e",
+      "predicate": "portInventory",
+      "value": [
+        {
+          "role": "access",
+          "medium": "copper",
+          "count": 8,
+          "speedsMbps": [10, 100, 1000],
+          "origin": "built-in",
+          "moduleId": null,
+          "poeStandards": ["802.3af", "802.3at"],
+          "comboGroup": null
+        },
+        {
+          "role": "uplink",
+          "medium": "sfp",
+          "count": 3,
+          "speedsMbps": [100, 1000],
+          "origin": "built-in",
+          "moduleId": null,
+          "poeStandards": [],
+          "comboGroup": null
+        }
+      ],
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8P3S-E | 11 | 8 PoE/PoE+ | 3x 1G/100M | - | 240W | 360W | Network Essentials",
+        "section": "Table 3. Hardware Configurations and Expansion Modules; column headers: total ports, copper, SFP, multigig copper, base PoE, total with module, license; IEEE standards compliance section for 802.3af/at/bt mapping"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-e-builtInCopperPorts",
+      "subjectId": "pid-ie-3500-8p3s-e",
+      "predicate": "builtInCopperPorts",
+      "value": 8,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8P3S-E | 11 | 8 PoE/PoE+ | 3x 1G/100M | - | 240W | 360W | Network Essentials",
+        "section": "Table 3. Hardware Configurations; built-in RJ45 copper column"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-e-builtInSfpSlots",
+      "subjectId": "pid-ie-3500-8p3s-e",
+      "predicate": "builtInSfpSlots",
+      "value": 3,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8P3S-E | 11 | 8 PoE/PoE+ | 3x 1G/100M | - | 240W | 360W | Network Essentials",
+        "section": "Table 3. Hardware Configurations; SFP column. Slots require separately selected transceivers; no installed fiber ports assumed."
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-e-uplinkPorts",
+      "subjectId": "pid-ie-3500-8p3s-e",
+      "predicate": "uplinkPorts",
+      "value": 3,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Packs up to 11 ports ... 3 ports of 1GE Small Form-Factor Pluggable (SFP) uplinks or 3 ports of 10GE Small Form-Factor Pluggable (SFP+) and 8 ports of 1GE Data or PoE+/4PPoE RJ45 downlinks",
+        "section": "Table 1. Ethernet Interfaces, scoped by exact Table 3 hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-e-maxPortSpeedMbps",
+      "subjectId": "pid-ie-3500-8p3s-e",
+      "predicate": "maxPortSpeedMbps",
+      "value": 1000,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8P3S-E | 11 | 8 PoE/PoE+ | 3x 1G/100M | - | 240W | 360W | Network Essentials",
+        "section": "Table 3. Hardware Configurations; highest supported base port rate"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-e-dinRail",
+      "subjectId": "pid-ie-3500-8p3s-e",
+      "predicate": "dinRail",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8P3S | DIN rail",
+        "section": "Table 6. IE3500 physical configurations; mounting column"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-e-poeBudgetWatts",
+      "subjectId": "pid-ie-3500-8p3s-e",
+      "predicate": "poeBudgetWatts",
+      "value": 240,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8P3S-E | 11 | 8 PoE/PoE+ | 3x 1G/100M | - | 240W | 360W | Network Essentials; The selected power supply must have sufficient capacity to power the switch, the expansion module, and the connected PoE load.",
+        "section": "Table 3. Base switch only PoE column; Table 4 footnote 1 and Table 8 power specifications"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Maximum base-switch budget, not guaranteed delivered power. Requires sufficient external PSU capacity for chassis plus PoE load; Table 8 states 48VDC for PoE and 54VDC for PoE+. Verify power design separately.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-e-cyberVision",
+      "subjectId": "pid-ie-3500-8p3s-e",
+      "predicate": "cyberVision",
+      "value": true,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Family-level IOx hosting statement applied to this listed exact PID. Exact Cyber Vision/SEA release, firmware and deployment support require a detailed matrix. Meraki mode coexistence is unverified. License/entitlement is a separate claim.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-e-sea",
+      "subjectId": "pid-ie-3500-8p3s-e",
+      "predicate": "sea",
+      "value": true,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Family-level IOx hosting statement applied to this listed exact PID. Exact Cyber Vision/SEA release, firmware and deployment support require a detailed matrix. Meraki mode coexistence is unverified. License/entitlement is a separate claim.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-e-management",
+      "subjectId": "pid-ie-3500-8p3s-e",
+      "predicate": "management",
+      "value": "meraki",
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Cloud based managed via Meraki dashboard. Base switch supported on IOS XE 26.1.1 and above, expansion module support with future IOS XE release.",
+        "section": "Table 1. Flexible Management with footnote 2; Table 14. Meraki license offers"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-e"],
+        "firmwareMin": "26.1.1",
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "Base switch only. Meraki Enterprise (LIC-IE3500-E) or Advantage (LIC-IE3500-A) licensing must be confirmed for deployment; Cyber Vision/SEA coexistence is not established. Expansion-module support is described as future release.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-a-orderability",
+      "subjectId": "pid-ie-3500-8p3s-a",
+      "predicate": "orderability",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8P3S-A | IE3500 with 8 GE PoE/PoE+, 3 GE SFP, Modular, Network Advantage",
+        "section": "Table 21. Ordering Information, exact Product ID row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-a-portInventory",
+      "subjectId": "pid-ie-3500-8p3s-a",
+      "predicate": "portInventory",
+      "value": [
+        {
+          "role": "access",
+          "medium": "copper",
+          "count": 8,
+          "speedsMbps": [10, 100, 1000],
+          "origin": "built-in",
+          "moduleId": null,
+          "poeStandards": ["802.3af", "802.3at"],
+          "comboGroup": null
+        },
+        {
+          "role": "uplink",
+          "medium": "sfp",
+          "count": 3,
+          "speedsMbps": [100, 1000],
+          "origin": "built-in",
+          "moduleId": null,
+          "poeStandards": [],
+          "comboGroup": null
+        }
+      ],
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8P3S-A | 11 | 8 PoE/PoE+ | 3x 1G/100M | - | 240W | 360W | Network Advantage",
+        "section": "Table 3. Hardware Configurations and Expansion Modules; column headers: total ports, copper, SFP, multigig copper, base PoE, total with module, license; IEEE standards compliance section for 802.3af/at/bt mapping"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-a-builtInCopperPorts",
+      "subjectId": "pid-ie-3500-8p3s-a",
+      "predicate": "builtInCopperPorts",
+      "value": 8,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8P3S-A | 11 | 8 PoE/PoE+ | 3x 1G/100M | - | 240W | 360W | Network Advantage",
+        "section": "Table 3. Hardware Configurations; built-in RJ45 copper column"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-a-builtInSfpSlots",
+      "subjectId": "pid-ie-3500-8p3s-a",
+      "predicate": "builtInSfpSlots",
+      "value": 3,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8P3S-A | 11 | 8 PoE/PoE+ | 3x 1G/100M | - | 240W | 360W | Network Advantage",
+        "section": "Table 3. Hardware Configurations; SFP column. Slots require separately selected transceivers; no installed fiber ports assumed."
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-a-uplinkPorts",
+      "subjectId": "pid-ie-3500-8p3s-a",
+      "predicate": "uplinkPorts",
+      "value": 3,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Packs up to 11 ports ... 3 ports of 1GE Small Form-Factor Pluggable (SFP) uplinks or 3 ports of 10GE Small Form-Factor Pluggable (SFP+) and 8 ports of 1GE Data or PoE+/4PPoE RJ45 downlinks",
+        "section": "Table 1. Ethernet Interfaces, scoped by exact Table 3 hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-a-maxPortSpeedMbps",
+      "subjectId": "pid-ie-3500-8p3s-a",
+      "predicate": "maxPortSpeedMbps",
+      "value": 1000,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8P3S-A | 11 | 8 PoE/PoE+ | 3x 1G/100M | - | 240W | 360W | Network Advantage",
+        "section": "Table 3. Hardware Configurations; highest supported base port rate"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-a-dinRail",
+      "subjectId": "pid-ie-3500-8p3s-a",
+      "predicate": "dinRail",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8P3S | DIN rail",
+        "section": "Table 6. IE3500 physical configurations; mounting column"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-a-poeBudgetWatts",
+      "subjectId": "pid-ie-3500-8p3s-a",
+      "predicate": "poeBudgetWatts",
+      "value": 240,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8P3S-A | 11 | 8 PoE/PoE+ | 3x 1G/100M | - | 240W | 360W | Network Advantage; The selected power supply must have sufficient capacity to power the switch, the expansion module, and the connected PoE load.",
+        "section": "Table 3. Base switch only PoE column; Table 4 footnote 1 and Table 8 power specifications"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Maximum base-switch budget, not guaranteed delivered power. Requires sufficient external PSU capacity for chassis plus PoE load; Table 8 states 48VDC for PoE and 54VDC for PoE+. Verify power design separately.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-a-cyberVision",
+      "subjectId": "pid-ie-3500-8p3s-a",
+      "predicate": "cyberVision",
+      "value": true,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Family-level IOx hosting statement applied to this listed exact PID. Exact Cyber Vision/SEA release, firmware and deployment support require a detailed matrix. Meraki mode coexistence is unverified. License/entitlement is a separate claim.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-a-sea",
+      "subjectId": "pid-ie-3500-8p3s-a",
+      "predicate": "sea",
+      "value": true,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Family-level IOx hosting statement applied to this listed exact PID. Exact Cyber Vision/SEA release, firmware and deployment support require a detailed matrix. Meraki mode coexistence is unverified. License/entitlement is a separate claim.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-a-management",
+      "subjectId": "pid-ie-3500-8p3s-a",
+      "predicate": "management",
+      "value": "meraki",
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Cloud based managed via Meraki dashboard. Base switch supported on IOS XE 26.1.1 and above, expansion module support with future IOS XE release.",
+        "section": "Table 1. Flexible Management with footnote 2; Table 14. Meraki license offers"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-a"],
+        "firmwareMin": "26.1.1",
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "Base switch only. Meraki Enterprise (LIC-IE3500-E) or Advantage (LIC-IE3500-A) licensing must be confirmed for deployment; Cyber Vision/SEA coexistence is not established. Expansion-module support is described as future release.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-a-entitlement-cv",
+      "subjectId": "pid-ie-3500-8p3s-a",
+      "predicate": "entitlement",
+      "value": {
+        "licenseId": "cv-advantage-bundle",
+        "featureId": "cv-visibility",
+        "quantity": 24,
+        "durationMonths": 36
+      },
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Cisco IE3500 Rugged Series ordered with a Network Advantage license on or after August 23rd, 2025 or upgraded to a Network Advantage license on or after October 20th, 2025 come with a 3-year limited term and 24 endpoints Advantage license of Cisco Cyber Vision and Secure Equipment Access at no extra cost.",
+        "section": "Ordering information, paragraph before Table 21"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": ["network-advantage"],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Order with Network Advantage on/after 2025-08-23, or upgrade on/after 2025-10-20; entitlement lasts 3 years, for 24 endpoints. Verify actual order/activation and remaining term. This commercial inclusion does not establish technical deployment compatibility.",
+        "effectiveFrom": "2025-08-23",
+        "assetLimit": 24
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8p3s-a-entitlement-sea",
+      "subjectId": "pid-ie-3500-8p3s-a",
+      "predicate": "entitlement",
+      "value": {
+        "licenseId": "sea-advantage-bundle",
+        "featureId": "sea-remote-access",
+        "quantity": 24,
+        "durationMonths": 36
+      },
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Cisco IE3500 Rugged Series ordered with a Network Advantage license on or after August 23rd, 2025 or upgraded to a Network Advantage license on or after October 20th, 2025 come with a 3-year limited term and 24 endpoints Advantage license of Cisco Cyber Vision and Secure Equipment Access at no extra cost.",
+        "section": "Ordering information, paragraph before Table 21"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8p3s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": ["network-advantage"],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Order with Network Advantage on/after 2025-08-23, or upgrade on/after 2025-10-20; entitlement lasts 3 years, for 24 endpoints. Verify actual order/activation and remaining term. This commercial inclusion does not establish technical deployment compatibility.",
+        "effectiveFrom": "2025-08-23",
+        "assetLimit": 24
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-e-orderability",
+      "subjectId": "pid-ie-3500-8t3x-e",
+      "predicate": "orderability",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3X-E | IE3500 with 8 GE Copper and 3 10G SFP, Modular, Network Essential",
+        "section": "Table 21. Ordering Information, exact Product ID row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-e-portInventory",
+      "subjectId": "pid-ie-3500-8t3x-e",
+      "predicate": "portInventory",
+      "value": [
+        {
+          "role": "access",
+          "medium": "copper",
+          "count": 8,
+          "speedsMbps": [10, 100, 1000],
+          "origin": "built-in",
+          "moduleId": null,
+          "poeStandards": [],
+          "comboGroup": null
+        },
+        {
+          "role": "uplink",
+          "medium": "sfp-plus",
+          "count": 3,
+          "speedsMbps": [1000, 10000],
+          "origin": "built-in",
+          "moduleId": null,
+          "poeStandards": [],
+          "comboGroup": null
+        }
+      ],
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3X-E | 11 | 8 | 3x 10G/1G | - | - | - | Network Essentials",
+        "section": "Table 3. Hardware Configurations and Expansion Modules; column headers: total ports, copper, SFP, multigig copper, base PoE, total with module, license"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-e-builtInCopperPorts",
+      "subjectId": "pid-ie-3500-8t3x-e",
+      "predicate": "builtInCopperPorts",
+      "value": 8,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3X-E | 11 | 8 | 3x 10G/1G | - | - | - | Network Essentials",
+        "section": "Table 3. Hardware Configurations; built-in RJ45 copper column"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-e-builtInSfpSlots",
+      "subjectId": "pid-ie-3500-8t3x-e",
+      "predicate": "builtInSfpSlots",
+      "value": 3,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3X-E | 11 | 8 | 3x 10G/1G | - | - | - | Network Essentials",
+        "section": "Table 3. Hardware Configurations; SFP column. Slots require separately selected transceivers; no installed fiber ports assumed."
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-e-uplinkPorts",
+      "subjectId": "pid-ie-3500-8t3x-e",
+      "predicate": "uplinkPorts",
+      "value": 3,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Packs up to 11 ports ... 3 ports of 1GE Small Form-Factor Pluggable (SFP) uplinks or 3 ports of 10GE Small Form-Factor Pluggable (SFP+) and 8 ports of 1GE Data or PoE+/4PPoE RJ45 downlinks",
+        "section": "Table 1. Ethernet Interfaces, scoped by exact Table 3 hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-e-maxPortSpeedMbps",
+      "subjectId": "pid-ie-3500-8t3x-e",
+      "predicate": "maxPortSpeedMbps",
+      "value": 10000,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3X-E | 11 | 8 | 3x 10G/1G | - | - | - | Network Essentials",
+        "section": "Table 3. Hardware Configurations; highest supported base port rate"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-e-dinRail",
+      "subjectId": "pid-ie-3500-8t3x-e",
+      "predicate": "dinRail",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3X | DIN rail",
+        "section": "Table 6. IE3500 physical configurations; mounting column"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-e-poeBudgetWatts",
+      "subjectId": "pid-ie-3500-8t3x-e",
+      "predicate": "poeBudgetWatts",
+      "value": 0,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3X-E | 11 | 8 | 3x 10G/1G | - | - | - | Network Essentials",
+        "section": "Table 3. Base switch PoE column is not applicable for this data-only hardware."
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-e-cyberVision",
+      "subjectId": "pid-ie-3500-8t3x-e",
+      "predicate": "cyberVision",
+      "value": true,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Family-level IOx hosting statement applied to this listed exact PID. Exact Cyber Vision/SEA release, firmware and deployment support require a detailed matrix. Meraki mode coexistence is unverified. License/entitlement is a separate claim.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-e-sea",
+      "subjectId": "pid-ie-3500-8t3x-e",
+      "predicate": "sea",
+      "value": true,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Family-level IOx hosting statement applied to this listed exact PID. Exact Cyber Vision/SEA release, firmware and deployment support require a detailed matrix. Meraki mode coexistence is unverified. License/entitlement is a separate claim.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-e-management",
+      "subjectId": "pid-ie-3500-8t3x-e",
+      "predicate": "management",
+      "value": "meraki",
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Cloud based managed via Meraki dashboard. Base switch supported on IOS XE 26.1.1 and above, expansion module support with future IOS XE release.",
+        "section": "Table 1. Flexible Management with footnote 2; Table 14. Meraki license offers"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-e"],
+        "firmwareMin": "26.1.1",
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "Base switch only. Meraki Enterprise (LIC-IE3500-E) or Advantage (LIC-IE3500-A) licensing must be confirmed for deployment; Cyber Vision/SEA coexistence is not established. Expansion-module support is described as future release.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-a-orderability",
+      "subjectId": "pid-ie-3500-8t3x-a",
+      "predicate": "orderability",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3X-A | IE3500 with 8 GE Copper and 3 10G SFP, Modular, Network Advantage",
+        "section": "Table 21. Ordering Information, exact Product ID row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-a-portInventory",
+      "subjectId": "pid-ie-3500-8t3x-a",
+      "predicate": "portInventory",
+      "value": [
+        {
+          "role": "access",
+          "medium": "copper",
+          "count": 8,
+          "speedsMbps": [10, 100, 1000],
+          "origin": "built-in",
+          "moduleId": null,
+          "poeStandards": [],
+          "comboGroup": null
+        },
+        {
+          "role": "uplink",
+          "medium": "sfp-plus",
+          "count": 3,
+          "speedsMbps": [1000, 10000],
+          "origin": "built-in",
+          "moduleId": null,
+          "poeStandards": [],
+          "comboGroup": null
+        }
+      ],
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3X-A | 11 | 8 | 3x 10G/1G | - | - | - | Network Advantage",
+        "section": "Table 3. Hardware Configurations and Expansion Modules; column headers: total ports, copper, SFP, multigig copper, base PoE, total with module, license"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-a-builtInCopperPorts",
+      "subjectId": "pid-ie-3500-8t3x-a",
+      "predicate": "builtInCopperPorts",
+      "value": 8,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3X-A | 11 | 8 | 3x 10G/1G | - | - | - | Network Advantage",
+        "section": "Table 3. Hardware Configurations; built-in RJ45 copper column"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-a-builtInSfpSlots",
+      "subjectId": "pid-ie-3500-8t3x-a",
+      "predicate": "builtInSfpSlots",
+      "value": 3,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3X-A | 11 | 8 | 3x 10G/1G | - | - | - | Network Advantage",
+        "section": "Table 3. Hardware Configurations; SFP column. Slots require separately selected transceivers; no installed fiber ports assumed."
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-a-uplinkPorts",
+      "subjectId": "pid-ie-3500-8t3x-a",
+      "predicate": "uplinkPorts",
+      "value": 3,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Packs up to 11 ports ... 3 ports of 1GE Small Form-Factor Pluggable (SFP) uplinks or 3 ports of 10GE Small Form-Factor Pluggable (SFP+) and 8 ports of 1GE Data or PoE+/4PPoE RJ45 downlinks",
+        "section": "Table 1. Ethernet Interfaces, scoped by exact Table 3 hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-a-maxPortSpeedMbps",
+      "subjectId": "pid-ie-3500-8t3x-a",
+      "predicate": "maxPortSpeedMbps",
+      "value": 10000,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3X-A | 11 | 8 | 3x 10G/1G | - | - | - | Network Advantage",
+        "section": "Table 3. Hardware Configurations; highest supported base port rate"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-a-dinRail",
+      "subjectId": "pid-ie-3500-8t3x-a",
+      "predicate": "dinRail",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3X | DIN rail",
+        "section": "Table 6. IE3500 physical configurations; mounting column"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-a-poeBudgetWatts",
+      "subjectId": "pid-ie-3500-8t3x-a",
+      "predicate": "poeBudgetWatts",
+      "value": 0,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8T3X-A | 11 | 8 | 3x 10G/1G | - | - | - | Network Advantage",
+        "section": "Table 3. Base switch PoE column is not applicable for this data-only hardware."
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-a-cyberVision",
+      "subjectId": "pid-ie-3500-8t3x-a",
+      "predicate": "cyberVision",
+      "value": true,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Family-level IOx hosting statement applied to this listed exact PID. Exact Cyber Vision/SEA release, firmware and deployment support require a detailed matrix. Meraki mode coexistence is unverified. License/entitlement is a separate claim.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-a-sea",
+      "subjectId": "pid-ie-3500-8t3x-a",
+      "predicate": "sea",
+      "value": true,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Family-level IOx hosting statement applied to this listed exact PID. Exact Cyber Vision/SEA release, firmware and deployment support require a detailed matrix. Meraki mode coexistence is unverified. License/entitlement is a separate claim.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-a-management",
+      "subjectId": "pid-ie-3500-8t3x-a",
+      "predicate": "management",
+      "value": "meraki",
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Cloud based managed via Meraki dashboard. Base switch supported on IOS XE 26.1.1 and above, expansion module support with future IOS XE release.",
+        "section": "Table 1. Flexible Management with footnote 2; Table 14. Meraki license offers"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-a"],
+        "firmwareMin": "26.1.1",
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "Base switch only. Meraki Enterprise (LIC-IE3500-E) or Advantage (LIC-IE3500-A) licensing must be confirmed for deployment; Cyber Vision/SEA coexistence is not established. Expansion-module support is described as future release.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-a-entitlement-cv",
+      "subjectId": "pid-ie-3500-8t3x-a",
+      "predicate": "entitlement",
+      "value": {
+        "licenseId": "cv-advantage-bundle",
+        "featureId": "cv-visibility",
+        "quantity": 24,
+        "durationMonths": 36
+      },
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Cisco IE3500 Rugged Series ordered with a Network Advantage license on or after August 23rd, 2025 or upgraded to a Network Advantage license on or after October 20th, 2025 come with a 3-year limited term and 24 endpoints Advantage license of Cisco Cyber Vision and Secure Equipment Access at no extra cost.",
+        "section": "Ordering information, paragraph before Table 21"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": ["network-advantage"],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Order with Network Advantage on/after 2025-08-23, or upgrade on/after 2025-10-20; entitlement lasts 3 years, for 24 endpoints. Verify actual order/activation and remaining term. This commercial inclusion does not establish technical deployment compatibility.",
+        "effectiveFrom": "2025-08-23",
+        "assetLimit": 24
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8t3x-a-entitlement-sea",
+      "subjectId": "pid-ie-3500-8t3x-a",
+      "predicate": "entitlement",
+      "value": {
+        "licenseId": "sea-advantage-bundle",
+        "featureId": "sea-remote-access",
+        "quantity": 24,
+        "durationMonths": 36
+      },
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Cisco IE3500 Rugged Series ordered with a Network Advantage license on or after August 23rd, 2025 or upgraded to a Network Advantage license on or after October 20th, 2025 come with a 3-year limited term and 24 endpoints Advantage license of Cisco Cyber Vision and Secure Equipment Access at no extra cost.",
+        "section": "Ordering information, paragraph before Table 21"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8t3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": ["network-advantage"],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Order with Network Advantage on/after 2025-08-23, or upgrade on/after 2025-10-20; entitlement lasts 3 years, for 24 endpoints. Verify actual order/activation and remaining term. This commercial inclusion does not establish technical deployment compatibility.",
+        "effectiveFrom": "2025-08-23",
+        "assetLimit": 24
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-e-orderability",
+      "subjectId": "pid-ie-3500-8u3x-e",
+      "predicate": "orderability",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8U3X-E | IE3500 with 8 GE PoE/PoE+/4PPoE, 3 10G SFP, Modular, Network Essential",
+        "section": "Table 21. Ordering Information, exact Product ID row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-e-portInventory",
+      "subjectId": "pid-ie-3500-8u3x-e",
+      "predicate": "portInventory",
+      "value": [
+        {
+          "role": "access",
+          "medium": "copper",
+          "count": 8,
+          "speedsMbps": [10, 100, 1000],
+          "origin": "built-in",
+          "moduleId": null,
+          "poeStandards": ["802.3af", "802.3at", "802.3bt"],
+          "comboGroup": null
+        },
+        {
+          "role": "uplink",
+          "medium": "sfp-plus",
+          "count": 3,
+          "speedsMbps": [1000, 10000],
+          "origin": "built-in",
+          "moduleId": null,
+          "poeStandards": [],
+          "comboGroup": null
+        }
+      ],
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8U3X-E | 11 | 8 PoE/PoE+/4PPoE | 3x 10G/1G | - | 480W | 480W | Network Essentials",
+        "section": "Table 3. Hardware Configurations and Expansion Modules; column headers: total ports, copper, SFP, multigig copper, base PoE, total with module, license; IEEE standards compliance section for 802.3af/at/bt mapping"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-e-builtInCopperPorts",
+      "subjectId": "pid-ie-3500-8u3x-e",
+      "predicate": "builtInCopperPorts",
+      "value": 8,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8U3X-E | 11 | 8 PoE/PoE+/4PPoE | 3x 10G/1G | - | 480W | 480W | Network Essentials",
+        "section": "Table 3. Hardware Configurations; built-in RJ45 copper column"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-e-builtInSfpSlots",
+      "subjectId": "pid-ie-3500-8u3x-e",
+      "predicate": "builtInSfpSlots",
+      "value": 3,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8U3X-E | 11 | 8 PoE/PoE+/4PPoE | 3x 10G/1G | - | 480W | 480W | Network Essentials",
+        "section": "Table 3. Hardware Configurations; SFP column. Slots require separately selected transceivers; no installed fiber ports assumed."
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-e-uplinkPorts",
+      "subjectId": "pid-ie-3500-8u3x-e",
+      "predicate": "uplinkPorts",
+      "value": 3,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Packs up to 11 ports ... 3 ports of 1GE Small Form-Factor Pluggable (SFP) uplinks or 3 ports of 10GE Small Form-Factor Pluggable (SFP+) and 8 ports of 1GE Data or PoE+/4PPoE RJ45 downlinks",
+        "section": "Table 1. Ethernet Interfaces, scoped by exact Table 3 hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-e-maxPortSpeedMbps",
+      "subjectId": "pid-ie-3500-8u3x-e",
+      "predicate": "maxPortSpeedMbps",
+      "value": 10000,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8U3X-E | 11 | 8 PoE/PoE+/4PPoE | 3x 10G/1G | - | 480W | 480W | Network Essentials",
+        "section": "Table 3. Hardware Configurations; highest supported base port rate"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-e-dinRail",
+      "subjectId": "pid-ie-3500-8u3x-e",
+      "predicate": "dinRail",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8U3X | DIN rail",
+        "section": "Table 6. IE3500 physical configurations; mounting column"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-e-poeBudgetWatts",
+      "subjectId": "pid-ie-3500-8u3x-e",
+      "predicate": "poeBudgetWatts",
+      "value": 480,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8U3X-E | 11 | 8 PoE/PoE+/4PPoE | 3x 10G/1G | - | 480W | 480W | Network Essentials; The selected power supply must have sufficient capacity to power the switch, the expansion module, and the connected PoE load.",
+        "section": "Table 3. Base switch only PoE column; Table 4 footnote 1 and Table 8 power specifications"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Maximum base-switch budget, not guaranteed delivered power. Requires sufficient external PSU capacity for chassis plus PoE load; Table 8 states 48VDC for PoE and 54VDC for PoE+. Verify power design separately.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-e-cyberVision",
+      "subjectId": "pid-ie-3500-8u3x-e",
+      "predicate": "cyberVision",
+      "value": true,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Family-level IOx hosting statement applied to this listed exact PID. Exact Cyber Vision/SEA release, firmware and deployment support require a detailed matrix. Meraki mode coexistence is unverified. License/entitlement is a separate claim.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-e-sea",
+      "subjectId": "pid-ie-3500-8u3x-e",
+      "predicate": "sea",
+      "value": true,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Family-level IOx hosting statement applied to this listed exact PID. Exact Cyber Vision/SEA release, firmware and deployment support require a detailed matrix. Meraki mode coexistence is unverified. License/entitlement is a separate claim.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-e-management",
+      "subjectId": "pid-ie-3500-8u3x-e",
+      "predicate": "management",
+      "value": "meraki",
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Cloud based managed via Meraki dashboard. Base switch supported on IOS XE 26.1.1 and above, expansion module support with future IOS XE release.",
+        "section": "Table 1. Flexible Management with footnote 2; Table 14. Meraki license offers"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-e"],
+        "firmwareMin": "26.1.1",
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "Base switch only. Meraki Enterprise (LIC-IE3500-E) or Advantage (LIC-IE3500-A) licensing must be confirmed for deployment; Cyber Vision/SEA coexistence is not established. Expansion-module support is described as future release.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-a-orderability",
+      "subjectId": "pid-ie-3500-8u3x-a",
+      "predicate": "orderability",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8U3X-A | IE3500 with 8 GE PoE/PoE+/4PPoE, 3 10G SFP, Modular, Network Advantage",
+        "section": "Table 21. Ordering Information, exact Product ID row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-a-portInventory",
+      "subjectId": "pid-ie-3500-8u3x-a",
+      "predicate": "portInventory",
+      "value": [
+        {
+          "role": "access",
+          "medium": "copper",
+          "count": 8,
+          "speedsMbps": [10, 100, 1000],
+          "origin": "built-in",
+          "moduleId": null,
+          "poeStandards": ["802.3af", "802.3at", "802.3bt"],
+          "comboGroup": null
+        },
+        {
+          "role": "uplink",
+          "medium": "sfp-plus",
+          "count": 3,
+          "speedsMbps": [1000, 10000],
+          "origin": "built-in",
+          "moduleId": null,
+          "poeStandards": [],
+          "comboGroup": null
+        }
+      ],
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8U3X-A | 11 | 8 PoE/PoE+/4PPoE | 3x 10G/1G | - | 480W | 480W | Network Advantage",
+        "section": "Table 3. Hardware Configurations and Expansion Modules; column headers: total ports, copper, SFP, multigig copper, base PoE, total with module, license; IEEE standards compliance section for 802.3af/at/bt mapping"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-a-builtInCopperPorts",
+      "subjectId": "pid-ie-3500-8u3x-a",
+      "predicate": "builtInCopperPorts",
+      "value": 8,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8U3X-A | 11 | 8 PoE/PoE+/4PPoE | 3x 10G/1G | - | 480W | 480W | Network Advantage",
+        "section": "Table 3. Hardware Configurations; built-in RJ45 copper column"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-a-builtInSfpSlots",
+      "subjectId": "pid-ie-3500-8u3x-a",
+      "predicate": "builtInSfpSlots",
+      "value": 3,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8U3X-A | 11 | 8 PoE/PoE+/4PPoE | 3x 10G/1G | - | 480W | 480W | Network Advantage",
+        "section": "Table 3. Hardware Configurations; SFP column. Slots require separately selected transceivers; no installed fiber ports assumed."
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-a-uplinkPorts",
+      "subjectId": "pid-ie-3500-8u3x-a",
+      "predicate": "uplinkPorts",
+      "value": 3,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Packs up to 11 ports ... 3 ports of 1GE Small Form-Factor Pluggable (SFP) uplinks or 3 ports of 10GE Small Form-Factor Pluggable (SFP+) and 8 ports of 1GE Data or PoE+/4PPoE RJ45 downlinks",
+        "section": "Table 1. Ethernet Interfaces, scoped by exact Table 3 hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-a-maxPortSpeedMbps",
+      "subjectId": "pid-ie-3500-8u3x-a",
+      "predicate": "maxPortSpeedMbps",
+      "value": 10000,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8U3X-A | 11 | 8 PoE/PoE+/4PPoE | 3x 10G/1G | - | 480W | 480W | Network Advantage",
+        "section": "Table 3. Hardware Configurations; highest supported base port rate"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-a-dinRail",
+      "subjectId": "pid-ie-3500-8u3x-a",
+      "predicate": "dinRail",
+      "value": true,
+      "status": "supported",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8U3X | DIN rail",
+        "section": "Table 6. IE3500 physical configurations; mounting column"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": null,
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-a-poeBudgetWatts",
+      "subjectId": "pid-ie-3500-8u3x-a",
+      "predicate": "poeBudgetWatts",
+      "value": 480,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IE-3500-8U3X-A | 11 | 8 PoE/PoE+/4PPoE | 3x 10G/1G | - | 480W | 480W | Network Advantage; The selected power supply must have sufficient capacity to power the switch, the expansion module, and the connected PoE load.",
+        "section": "Table 3. Base switch only PoE column; Table 4 footnote 1 and Table 8 power specifications"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Maximum base-switch budget, not guaranteed delivered power. Requires sufficient external PSU capacity for chassis plus PoE load; Table 8 states 48VDC for PoE and 54VDC for PoE+. Verify power design separately.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-a-cyberVision",
+      "subjectId": "pid-ie-3500-8u3x-a",
+      "predicate": "cyberVision",
+      "value": true,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Family-level IOx hosting statement applied to this listed exact PID. Exact Cyber Vision/SEA release, firmware and deployment support require a detailed matrix. Meraki mode coexistence is unverified. License/entitlement is a separate claim.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-a-sea",
+      "subjectId": "pid-ie-3500-8u3x-a",
+      "predicate": "sea",
+      "value": true,
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Family-level IOx hosting statement applied to this listed exact PID. Exact Cyber Vision/SEA release, firmware and deployment support require a detailed matrix. Meraki mode coexistence is unverified. License/entitlement is a separate claim.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-a-management",
+      "subjectId": "pid-ie-3500-8u3x-a",
+      "predicate": "management",
+      "value": "meraki",
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Cloud based managed via Meraki dashboard. Base switch supported on IOS XE 26.1.1 and above, expansion module support with future IOS XE release.",
+        "section": "Table 1. Flexible Management with footnote 2; Table 14. Meraki license offers"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-a"],
+        "firmwareMin": "26.1.1",
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "Base switch only. Meraki Enterprise (LIC-IE3500-E) or Advantage (LIC-IE3500-A) licensing must be confirmed for deployment; Cyber Vision/SEA coexistence is not established. Expansion-module support is described as future release.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-a-entitlement-cv",
+      "subjectId": "pid-ie-3500-8u3x-a",
+      "predicate": "entitlement",
+      "value": {
+        "licenseId": "cv-advantage-bundle",
+        "featureId": "cv-visibility",
+        "quantity": 24,
+        "durationMonths": 36
+      },
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Cisco IE3500 Rugged Series ordered with a Network Advantage license on or after August 23rd, 2025 or upgraded to a Network Advantage license on or after October 20th, 2025 come with a 3-year limited term and 24 endpoints Advantage license of Cisco Cyber Vision and Secure Equipment Access at no extra cost.",
+        "section": "Ordering information, paragraph before Table 21"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": ["network-advantage"],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Order with Network Advantage on/after 2025-08-23, or upgrade on/after 2025-10-20; entitlement lasts 3 years, for 24 endpoints. Verify actual order/activation and remaining term. This commercial inclusion does not establish technical deployment compatibility.",
+        "effectiveFrom": "2025-08-23",
+        "assetLimit": 24
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-3500-8u3x-a-entitlement-sea",
+      "subjectId": "pid-ie-3500-8u3x-a",
+      "predicate": "entitlement",
+      "value": {
+        "licenseId": "sea-advantage-bundle",
+        "featureId": "sea-remote-access",
+        "quantity": 24,
+        "durationMonths": 36
+      },
+      "status": "conditional",
+      "sourceId": "cisco-ie3500-ds",
+      "evidence": {
+        "excerpt": "Cisco IE3500 Rugged Series ordered with a Network Advantage license on or after August 23rd, 2025 or upgraded to a Network Advantage license on or after October 20th, 2025 come with a 3-year limited term and 24 endpoints Advantage license of Cisco Cyber Vision and Secure Equipment Access at no extra cost.",
+        "section": "Ordering information, paragraph before Table 21"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-3500-8u3x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": ["network-advantage"],
+        "softwareVersionIds": [],
+        "managementModeIds": [],
+        "architecture": null,
+        "configuration": "Order with Network Advantage on/after 2025-08-23, or upgrade on/after 2025-10-20; entitlement lasts 3 years, for 24 endpoints. Verify actual order/activation and remaining term. This commercial inclusion does not establish technical deployment compatibility.",
+        "effectiveFrom": "2025-08-23",
+        "assetLimit": 24
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex initial source review (publisher review required)",
+      "verifiedAt": "2026-10-20T15:45:42Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    }
+  ],
+  "candidates": [
+    {
+      "id": "candidate-ie3505-poe-ordering",
+      "label": "IE3505 PoE ordering discrepancy",
+      "familyId": "ie3500",
+      "sourceId": "cisco-ie3500-ds",
+      "kind": "family",
+      "note": "Table 3 lists IE-3505-8P3S-E and -A, but Table 21 repeats IE-3505-8P3S-A for both descriptions. This variant is withheld pending authoritative clarification."
+    }
+  ]
+}

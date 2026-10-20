@@ -1,0 +1,52 @@
+[
+  {
+    "id": "ir1005-description-typo",
+    "sourceIds": ["cisco-ir1000-ds"],
+    "subjectIds": ["pid-ir1005-g2"],
+    "kind": "typo",
+    "title": "IR1005 ordering description repeats IR1001",
+    "detail": "Table 11 lists the IR1005-G2 SKU under IR1005 routers but its description says IR1001-G2. Identity uses the SKU column and the distinct Table 2 comparison. Do not copy the description as IR1005 specifications.",
+    "requiresHumanReview": true
+  },
+  {
+    "id": "ie3505-ordering-conflict",
+    "sourceIds": ["cisco-ie3500-ds"],
+    "subjectIds": [],
+    "kind": "conflict",
+    "title": "IE3505 PoE ordering table duplicates the -A PID",
+    "detail": "Table 3 lists -E and -A variants, while Table 21 repeats IE-3505-8P3S-A against both Essential and Advantage descriptions. These variants are withheld from the starter catalog pending clarification.",
+    "requiresHumanReview": true
+  },
+  {
+    "id": "meraki-coexistence-gap",
+    "sourceIds": ["cisco-ie3500-ds"],
+    "subjectIds": [],
+    "kind": "gap",
+    "title": "Meraki plus on-device security coexistence is unverified",
+    "detail": "The data sheet describes base-switch Meraki management from IOS XE 26.1.1 and IOx security features separately. This does not establish simultaneous Cyber Vision or SEA support in Meraki mode.",
+    "requiresHumanReview": true
+  },
+  {
+    "id": "lifecycle-gap",
+    "sourceIds": ["cisco-ir1000-ds", "cisco-ie3500-ds"],
+    "subjectIds": [],
+    "kind": "gap",
+    "title": "Lifecycle not independently checked",
+    "detail": "A current data sheet and an ordering-table entry do not prove that a PID is still on sale. No lifecycle assertions are published; new-deployment suitability stays unknown. EoX integration is optional future work.",
+    "requiresHumanReview": true
+  },
+  {
+    "id": "software-matrix-gap",
+    "sourceIds": [
+      "cisco-ir1000-ds",
+      "cisco-ie3500-ds",
+      "cisco-cybervision-ds",
+      "cisco-sea-ds"
+    ],
+    "subjectIds": [],
+    "kind": "gap",
+    "title": "Exact-version security support matrices still needed",
+    "detail": "Platform-level hosting statements and commercial bundles do not prove a deployable PID/version/license combination. Cyber Vision and SEA support remain conditional; omitted platforms and comparison-table dashes remain unknown.",
+    "requiresHumanReview": true
+  }
+]

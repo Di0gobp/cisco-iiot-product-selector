@@ -1,0 +1,1 @@
+Software products, license offers and scoped entitlement assertions are normalized in `../products/catalog.json` for v1. Avoid duplicate sources of truth. Exact support/feature matrices expand in Phase B.

@@ -1,0 +1,236 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
+      },
+      "ciscoSubjectIds": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
+        },
+        "uniqueItems": true
+      },
+      "competitor": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "manufacturer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "exactSku": {
+            "type": "string",
+            "minLength": 1
+          },
+          "category": {
+            "type": "string",
+            "minLength": 1
+          },
+          "datasheetSourceId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
+          }
+        },
+        "required": [
+          "manufacturer",
+          "exactSku",
+          "category",
+          "datasheetSourceId"
+        ]
+      },
+      "assertionIds": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
+        },
+        "uniqueItems": true
+      },
+      "conditionSpecificParity": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "condition": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parity": {
+              "enum": ["parity", "non-parity", "unknown"]
+            },
+            "assertionIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": ["condition", "parity", "assertionIds"]
+        }
+      },
+      "ciscoStrengths": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
+        },
+        "uniqueItems": true
+      },
+      "ciscoWeaknesses": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
+        },
+        "uniqueItems": true
+      },
+      "competitorStrengths": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
+        },
+        "uniqueItems": true
+      },
+      "competitorWeaknesses": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
+        },
+        "uniqueItems": true
+      },
+      "deploymentModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "assertionIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
+            },
+            "uniqueItems": true
+          }
+        },
+        "required": ["description", "assertionIds"]
+      },
+      "licenseTerms": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "assertionIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
+            },
+            "uniqueItems": true
+          }
+        },
+        "required": ["description", "assertionIds"]
+      },
+      "userEvidence": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "sourceId": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
+            },
+            "credibility": {
+              "enum": ["isolated", "corroborated", "independent-study"]
+            },
+            "note": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": ["sourceId", "credibility", "note"]
+        }
+      },
+      "discoveryQuestions": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "objections": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "objection": {
+              "type": "string",
+              "minLength": 1
+            },
+            "balancedResponse": {
+              "type": "string",
+              "minLength": 1
+            },
+            "assertionIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": ["objection", "balancedResponse", "assertionIds"]
+        }
+      },
+      "verifiedAt": {
+        "type": ["string", "null"],
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?Z$"
+      },
+      "confidence": {
+        "enum": ["high", "medium", "low"]
+      },
+      "reviewStatus": {
+        "enum": ["pending", "approved", "rejected"]
+      }
+    },
+    "required": [
+      "id",
+      "ciscoSubjectIds",
+      "competitor",
+      "assertionIds",
+      "conditionSpecificParity",
+      "ciscoStrengths",
+      "ciscoWeaknesses",
+      "competitorStrengths",
+      "competitorWeaknesses",
+      "deploymentModel",
+      "licenseTerms",
+      "userEvidence",
+      "discoveryQuestions",
+      "objections",
+      "verifiedAt",
+      "confidence",
+      "reviewStatus"
+    ]
+  }
+}

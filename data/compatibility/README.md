@@ -1,0 +1,1 @@
+Scoped compatibility assertions live in `../products/catalog.json` for v1 and follow the versioned catalog schema. Supported, unsupported, conditional and unknown remain distinct. Never inherit support across PIDs or management modes implicitly.

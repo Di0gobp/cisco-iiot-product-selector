@@ -1,0 +1,23 @@
+name: Monthly source audit
+on:
+  schedule:
+    - cron: '17 7 1 * *' # 07:17 UTC on day 1; GitHub schedules may be delayed.
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Recheck public sources without modifying catalog
+        run: python3 scripts/audit_sources.py --output audit-report.json
+      - name: Retain report even when a source is unreachable
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: source-audit
+          path: audit-report.json
+          if-no-files-found: error
+          retention-days: 60
