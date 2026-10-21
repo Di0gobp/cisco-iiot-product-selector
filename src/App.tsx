@@ -5,15 +5,37 @@ import {
   familyName,
   defaultRequirements,
   specRows,
+  auditReportUrls,
 } from './lib/catalog';
-import { rankProducts, resolveFact, searchProducts } from './lib/rules';
-import { comparisonCsv } from './lib/export';
+import { resolveFact, searchProducts, formatFact } from './lib/rules';
+import { comparisonCsv, configurationBomCsv, downloadText } from './lib/export';
+import { rankConfiguredProducts, selectionFor } from './lib/configurations';
+import {
+  configurationStorageKey,
+  readSavedRequirements,
+  savedConfigurationPayload,
+  selectedModulePid,
+} from './lib/saved-configurations';
+import {
+  ConfigurationSummary,
+  ExpansionModules,
+} from './components/ExpansionModules';
 import { en } from './lib/i18n';
 import reviewIssues from '../data/sources/review-issues.json';
 import type { Candidate, Product, Requirements } from './lib/types';
+import { compatibilityLabels } from './lib/compatibility';
+import auditHistoryData from '../data/audits/index.json';
+import type { AuditSummary } from './lib/types';
+import { PortfolioCoverage } from './components/PortfolioCoverage';
+import { TechnicalFilters } from './components/TechnicalFilters';
+import {
+  TechnicalReference,
+  FamilyReference,
+} from './components/TechnicalReference';
 import { Icon, DeviceArt } from './components/Icons';
 import { AssertionEvidence, Badge, SourceLink } from './components/Evidence';
 
+const auditHistory = auditHistoryData as AuditSummary[];
 type Page = keyof typeof en.nav;
 const navEntries = Object.entries(en.nav) as [Page, string][];
 function useRoute() {
@@ -58,8 +80,9 @@ function Notice() {
             Source-reviewed starter catalog · deployment checks remain open
           </strong>
           <span>
-            10 exact PIDs checked against official ordering tables. Lifecycle is
-            unverified; software and management capabilities remain conditional.{' '}
+            {catalog.pids.length} exact PIDs checked against official documents.
+            Lifecycle milestones, conditional software support and remaining
+            gaps are shown separately.{' '}
             <a href="#/audit">Review coverage & gaps ↗</a>
           </span>
         </div>
@@ -183,7 +206,12 @@ function RequirementsPanel({
         </h2>
         <button
           className="text-button"
-          onClick={() => onChange({ ...defaultRequirements })}
+          onClick={() =>
+            onChange({
+              ...defaultRequirements,
+              configurations: value.configurations,
+            })
+          }
         >
           Reset
         </button>
@@ -191,10 +219,10 @@ function RequirementsPanel({
       <p className="small muted">Only reviewed facts can confirm a fit.</p>
       <fieldset>
         <legend>Port inventory</legend>
-        {numberField('copperPorts', 'Min. built-in copper ports')}
+        {numberField('copperPorts', 'Min. dedicated copper ports')}
         {numberField('fiberPorts', 'Min. fixed fiber ports')}
         {numberField('sfpSlots', 'Min. SFP / SFP+ slots')}
-        {numberField('uplinks', 'Min. built-in uplinks')}
+        {numberField('uplinks', 'Min. dedicated uplinks')}
         {numberField('minSpeedMbps', 'Fastest port, min. Mbps')}
         {numberField('poeWatts', 'Min. PoE budget (W)')}
         <p className="hint">
@@ -280,6 +308,7 @@ function RequirementsPanel({
           </select>
         </label>
       </fieldset>
+      <TechnicalFilters value={value} onChange={onChange} />
       <div className="filter-note">
         <Icon name="shield" size={16} />
         <p>Unknown does not mean unsupported. We show the gaps.</p>
@@ -351,7 +380,7 @@ function ProductCard({
   compared: string[];
   onCompare: (id: string) => void;
 }) {
-  const result = rankProducts([product], catalog.assertions, requirements)[0];
+  const result = rankConfiguredProducts([product], catalog, requirements)[0];
   const basicRows = [
     ['builtInCopperPorts', 'Built-in copper'],
     ['uplinkPorts', 'Dedicated uplinks'],
@@ -385,6 +414,14 @@ function ProductCard({
             {product.pid}
           </a>
         </h3>
+        {selectionFor(product, requirements).moduleIds.length > 0 && (
+          <p className="small configured-pids">
+            Configured with{' '}
+            {selectionFor(product, requirements)
+              .moduleIds.map((id) => selectedModulePid(catalog, id))
+              .join(' + ')}
+          </p>
+        )}
         <dl className="card-specs">
           {basicRows.map(([key, label]) => {
             const fact = resolveFact(
@@ -449,7 +486,7 @@ function ProductCard({
           {result.findings.map((f) => (
             <div className="finding" key={f.requirement}>
               <strong>{f.requirement}</strong>
-              <Badge state={f.state} />
+              <Badge state={f.state}>{compatibilityLabels[f.state]}</Badge>
               <p className="small">{f.detail}</p>
               <AssertionEvidence
                 ids={f.assertionIds}
@@ -497,18 +534,31 @@ function Browse({
 }) {
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('all');
+  const [familyFilter, setFamilyFilter] = useState('');
+  const [showExcluded, setShowExcluded] = useState(!selector);
+  const [visibleCount, setVisibleCount] = useState(24);
   const [layout, setLayout] = useState<'grid' | 'table'>('grid');
   const approved = searchProducts(
     catalog.pids.filter((p) => p.reviewStatus === 'approved'),
     query,
   ).filter(
     (p) =>
-      category === 'all' ||
-      catalog.families.find((f) => f.id === p.familyId)?.category === category,
+      (!familyFilter || p.familyId === familyFilter) &&
+      (category === 'all' ||
+        catalog.families.find((f) => f.id === p.familyId)?.category ===
+          category),
   );
-  const ranked = rankProducts(approved, catalog.assertions, requirements);
+  const allRanked = rankConfiguredProducts(approved, catalog, requirements);
+  const ranked = allRanked.filter(
+    (r) => showExcluded || r.decision !== 'excluded',
+  );
+  const visibleResults = ranked.slice(0, visibleCount);
+  const excludedCount = allRanked.filter(
+    (r) => r.decision === 'excluded',
+  ).length;
   const candidates = catalog.candidates.filter(
     (c) =>
+      (!familyFilter || c.familyId === familyFilter) &&
       `${c.label} ${familyName(c.familyId)}`
         .toLowerCase()
         .includes(query.toLowerCase().trim()) &&
@@ -542,6 +592,31 @@ function Browse({
             />
           )}
           <div className="results">
+            <div
+              className="status-legend"
+              aria-label="Compatibility status guide"
+            >
+              <span>
+                <Badge state="supported">Verified</Badge> Evidence meets the
+                selected checks
+              </span>
+              <span>
+                <Badge state="conditional">Conditional</Badge> Prerequisites
+                remain
+              </span>
+              <span>
+                <Badge state="unknown">Unknown</Badge> Evidence is incomplete
+              </span>
+              <span>
+                <Badge state="unsupported">Unsupported</Badge> A documented
+                requirement fails
+              </span>
+            </div>
+            <p className="small muted">
+              Port requirements include selected expansion modules. Configure
+              modules from an exact-PID product page; every selected module
+              remains visible in the comparison and BOM.
+            </p>
             <div className="search-toolbar">
               <label className="search-box">
                 <Icon name="search" />
@@ -550,7 +625,10 @@ function Browse({
                   type="search"
                   placeholder="Search by PID, model or family…"
                   value={query}
-                  onChange={(e) => setQuery(e.target.value)}
+                  onChange={(e) => {
+                    setQuery(e.target.value);
+                    setVisibleCount(24);
+                  }}
                 />
                 <kbd>/</kbd>
               </label>
@@ -595,6 +673,33 @@ function Browse({
                 </button>
               ))}
             </div>
+            <div className="family-toolbar">
+              <label className="field">
+                Product family
+                <select
+                  value={familyFilter}
+                  onChange={(e) => {
+                    setFamilyFilter(e.target.value);
+                    setVisibleCount(24);
+                  }}
+                >
+                  <option value="">All families</option>
+                  {catalog.families.map((f) => (
+                    <option key={f.id} value={f.id}>
+                      {f.name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label className="check-field">
+                <input
+                  type="checkbox"
+                  checked={showExcluded}
+                  onChange={(e) => setShowExcluded(e.target.checked)}
+                />
+                Show excluded products ({excludedCount})
+              </label>
+            </div>
             <div className="results-summary" aria-live="polite">
               <span>
                 <strong>{ranked.length}</strong> reviewed PIDs{' '}
@@ -609,7 +714,7 @@ function Browse({
             {ranked.length > 0 &&
               (layout === 'grid' ? (
                 <div className="product-grid">
-                  {ranked.map((r) => (
+                  {visibleResults.map((r) => (
                     <ProductCard
                       key={r.product.id}
                       product={r.product}
@@ -632,7 +737,7 @@ function Browse({
                       </tr>
                     </thead>
                     <tbody>
-                      {ranked.map((r) => (
+                      {visibleResults.map((r) => (
                         <tr key={r.product.id}>
                           <td>
                             <a
@@ -678,6 +783,14 @@ function Browse({
                   </table>
                 </div>
               ))}
+            {ranked.length > visibleCount && (
+              <button
+                className="button secondary"
+                onClick={() => setVisibleCount(visibleCount + 24)}
+              >
+                Show more PIDs ({ranked.length - visibleCount} remaining)
+              </button>
+            )}
             {candidates.length > 0 ? (
               <>
                 <div className="research-heading">
@@ -734,16 +847,22 @@ function Browse({
               ranked.length === 0 && (
                 <div className="empty-state">
                   <Icon name="search" size={30} />
-                  <h3>No records found</h3>
+                  <h3>
+                    {excludedCount
+                      ? 'No eligible products found'
+                      : 'No records found'}
+                  </h3>
                   <p>
-                    Try a different search or category. Coverage is
-                    intentionally small.
+                    {excludedCount
+                      ? `${excludedCount} sourced products were excluded. Enable Show excluded products to inspect their evidence.`
+                      : 'Try a different search or family. Coverage remains explicitly incomplete.'}
                   </p>
                   <button
                     className="button secondary"
                     onClick={() => {
                       setQuery('');
                       setCategory('all');
+                      setFamilyFilter('');
                     }}
                   >
                     Clear search
@@ -852,11 +971,13 @@ function ResearchDetail({ id }: { id: string }) {
 function ProductDetail({
   pid,
   requirements,
+  setRequirements,
   compared,
   onCompare,
 }: {
   pid: string;
   requirements: Requirements;
+  setRequirements: (value: Requirements) => void;
   compared: string[];
   onCompare: (id: string) => void;
 }) {
@@ -883,6 +1004,11 @@ function ProductDetail({
           ? 'Remove from comparison'
           : 'Add to comparison'}
       </button>
+      <ExpansionModules
+        product={p}
+        requirements={requirements}
+        onChange={setRequirements}
+      />
       <section className="panel detail-panel">
         <h2>Specifications & compatibility</h2>
         <p>
@@ -896,9 +1022,11 @@ function ProductDetail({
               <div key={key}>
                 <dt>{label}</dt>
                 <dd>
-                  <Badge state={fact.state} />
+                  <Badge state={fact.state}>
+                    {compatibilityLabels[fact.state]}
+                  </Badge>
                   {fact.state !== 'unknown' && (
-                    <strong>{String(fact.value)}</strong>
+                    <strong>{formatFact(fact.value)}</strong>
                   )}
                   <p className="small">{fact.detail}</p>
                   <AssertionEvidence
@@ -918,7 +1046,12 @@ function ProductDetail({
           .map((a) => (
             <div key={a.id}>
               {Array.isArray(a.value) && (
-                <div className="table-scroll">
+                <div
+                  className="table-scroll"
+                  tabIndex={0}
+                  role="region"
+                  aria-label="Built-in port inventory"
+                >
                   <table>
                     <thead>
                       <tr>
@@ -973,6 +1106,7 @@ function ProductDetail({
           </>
         )}
       </section>
+      <TechnicalReference product={p} requirements={requirements} />
     </>
   );
 }
@@ -990,9 +1124,12 @@ function Compare({
     .filter(Boolean);
   function download() {
     const url = URL.createObjectURL(
-      new Blob([comparisonCsv(products, catalog.assertions, requirements)], {
-        type: 'text/csv;charset=utf-8',
-      }),
+      new Blob(
+        [comparisonCsv(products, catalog.assertions, requirements, catalog)],
+        {
+          type: 'text/csv;charset=utf-8',
+        },
+      ),
     );
     const a = document.createElement('a');
     a.href = url;
@@ -1029,7 +1166,28 @@ function Compare({
           <button className="button secondary" onClick={download}>
             Export CSV with sources
           </button>
-          <div className="table-scroll compare-table">
+          <button
+            className="button secondary"
+            onClick={() =>
+              downloadText(
+                configurationBomCsv(products, catalog, requirements),
+                'iiot-configurations-bom.csv',
+                'text/csv;charset=utf-8',
+              )
+            }
+          >
+            Export configuration BOMs
+          </button>
+          <p className="small muted">
+            Scroll horizontally to compare every selected PID. Expand deployment
+            conditions to inspect prerequisites and unknowns.
+          </p>
+          <div
+            className="table-scroll compare-table"
+            tabIndex={0}
+            role="region"
+            aria-label="Product comparison"
+          >
             <table>
               <thead>
                 <tr>
@@ -1039,6 +1197,15 @@ function Compare({
                       <a href={`#/product/${encodeURIComponent(p.pid)}`}>
                         {p.pid}
                       </a>
+                      {selectionFor(p, requirements).moduleIds.length > 0 && (
+                        <p className="small">
+                          {selectionFor(p, requirements)
+                            .moduleIds.map((id) =>
+                              selectedModulePid(catalog, id),
+                            )
+                            .join(' + ')}
+                        </p>
+                      )}
                       <button
                         className="icon-button"
                         aria-label={`Remove ${p.pid}`}
@@ -1051,6 +1218,17 @@ function Compare({
                 </tr>
               </thead>
               <tbody>
+                <tr>
+                  <th scope="row">Hardware configuration</th>
+                  {products.map((p) => (
+                    <td key={p.id}>
+                      <ConfigurationSummary
+                        product={p}
+                        requirements={requirements}
+                      />
+                    </td>
+                  ))}
+                </tr>
                 {specRows.map(([key, label]) => (
                   <tr key={key}>
                     <th scope="row">{label}</th>
@@ -1063,10 +1241,12 @@ function Compare({
                       );
                       return (
                         <td key={p.id}>
-                          <Badge state={f.state} />
+                          <Badge state={f.state}>
+                            {compatibilityLabels[f.state]}
+                          </Badge>
                           {f.state !== 'unknown' && (
                             <p>
-                              <strong>{String(f.value)}</strong>
+                              <strong>{formatFact(f.value)}</strong>
                             </p>
                           )}
                           <p className="small">{f.detail}</p>
@@ -1110,6 +1290,39 @@ function Software() {
         </div>
         <Badge state="conditional">Conditions apply</Badge>
       </div>
+      <section className="panel">
+        <h2>Cyber Vision 5.6.x technical evidence</h2>
+        <p>
+          Checked release notes list 5.6.0 and 5.6.1. Their compatibility matrix
+          scopes firmware trains, IE3300 memory/revision and IR8300 IOx memory
+          conditions. No later release is inferred from a knowledge-database
+          update.
+        </p>
+        <SourceLink id="cisco-cv56-rn" label="Open 5.6.x release notes" />
+        <div className="software-evidence">
+          {catalog.assertions
+            .filter(
+              (a) =>
+                a.predicate === 'licensingRule' &&
+                a.reviewStatus === 'approved',
+            )
+            .map((a) => (
+              <article className="finding" key={a.id}>
+                <h3>
+                  {a.subjectId === 'sea'
+                    ? 'Secure Equipment Access'
+                    : 'Cyber Vision'}{' '}
+                  · {(a.value as { rule: string }).rule}
+                </h3>
+                <p>{formatFact(a.value)}</p>
+                <AssertionEvidence
+                  ids={[a.id]}
+                  assertions={catalog.assertions}
+                />
+              </article>
+            ))}
+        </div>
+      </section>
       <div className="two-columns">
         {[
           ['Cyber Vision', 'cisco-cybervision-ds', 'cv-visibility'],
@@ -1133,7 +1346,7 @@ function Software() {
                   <dd>Advantage · 24 endpoints · 36 months</dd>
                 </div>
                 <div>
-                  <dt>Eligible PID records in this catalog</dt>
+                  <dt>PID records with a conditional offer rule</dt>
                   <dd>{bundled.length}</dd>
                 </div>
                 <div>
@@ -1163,10 +1376,10 @@ function Software() {
       <section className="panel">
         <h2>Included entitlement evidence</h2>
         <p>
-          Only the four listed Network Advantage PIDs have these commercial
-          assertions in this starter catalog. An Essentials suffix does not
-          inherit an Advantage entitlement. Network Advantage upgrades have a
-          separate qualifying date.
+          Original Network Advantage orders and later upgrades have distinct
+          eligibility. An Essentials (-E) PID does not inherit an entitlement:
+          its listed rule requires an actual qualifying Network Advantage
+          upgrade. No activation or remaining term is assumed.
         </p>
         <div className="table-scroll">
           <table>
@@ -1222,9 +1435,9 @@ function Software() {
         <Icon name="shield" />
         <p>
           No universal inclusion is asserted. Detailed feature tiers and
-          supported PID/version/architecture matrices remain Phase B work. Do
-          not infer that a commercial entitlement enables simultaneous Cyber
-          Vision and SEA use in every management mode.
+          exact-PID firmware, licensing and architecture review remains
+          incomplete. Do not infer that a commercial entitlement enables
+          simultaneous Cyber Vision and SEA use in every management mode.
         </p>
       </div>
     </>
@@ -1260,21 +1473,77 @@ function Audit() {
       </div>
       <section className="panel audit-explainer">
         <div>
-          <h2>Official sources reached · review in progress</h2>
+          <h2>Official sources · scoped technical review</h2>
           <p>
-            All five Cisco references were retrieved over HTTPS on 20 October
-            2026. Four documents have reviewed excerpts; the Heavy Duty data
-            sheet is fingerprinted only. Source review is scoped to the
-            published claims, not an exhaustive support audit.
+            {sources.length} public Cisco documents are tracked with dates and
+            scoped reviewed excerpts. Family mappings, release restrictions and
+            unresolved questions are preserved; this is not an exhaustive
+            support audit.
           </p>
           <p className="small muted">
             Automated rechecks produce proposed audit reports. Changes require
             editorial approval before publication. A monthly URL/fingerprint
-            audit is configured for 07:17 UTC on day 1; claim-level change
-            interpretation remains planned.
+            audit runs at 07:17 UTC on day 1. It flags overdue claims and
+            proposes cited audit-history PRs. Technical corrections still
+            require manual source review.
           </p>
         </div>
         <Badge state="conditional">Publisher review required</Badge>
+      </section>
+      <PortfolioCoverage />
+      <section className="panel">
+        <h2>Technical audit history</h2>
+        <p>
+          Monthly observations are proposed through review PRs. Neither
+          fingerprint changes nor a passing audit overwrite technical
+          assertions.
+        </p>
+        {auditHistory.length ? (
+          <div className="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Audit (UTC)</th>
+                  <th>Sources</th>
+                  <th>Changed</th>
+                  <th>Unavailable</th>
+                  <th>Overdue claims</th>
+                  <th>Review queue</th>
+                </tr>
+              </thead>
+              <tbody>
+                {auditHistory.map((run) => (
+                  <tr key={run.id}>
+                    <th scope="row">
+                      <a
+                        href={auditReportUrls['../../' + run.path]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {run.generatedAt} ↗
+                      </a>
+                    </th>
+                    <td>{run.sourcesChecked}</td>
+                    <td>{run.changedSources}</td>
+                    <td>{run.unreachableSources}</td>
+                    <td>{run.staleClaims}</td>
+                    <td>
+                      {run.potentiallyOutdatedClaims} assertions ·{' '}
+                      {run.requiresHumanReview
+                        ? 'Human review required'
+                        : 'No queued changes'}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <p>
+            No reviewed audit history has been committed yet. Workflow artifacts
+            remain available for each run.
+          </p>
+        )}
       </section>
       <div className="source-list">
         {sources.map((s) => (
@@ -1311,20 +1580,27 @@ function Audit() {
       </div>
       <section className="panel">
         <h2>Open review issues</h2>
-        {reviewIssues.map((issue) => (
-          <article className="review-issue" key={issue.id}>
-            <Badge
-              state={issue.kind === 'conflict' ? 'conditional' : 'unknown'}
-            >
-              {issue.kind}
-            </Badge>
-            <h3>{issue.title}</h3>
-            <p>{issue.detail}</p>
-            {issue.sourceIds.map((id) => (
-              <SourceLink key={id} id={id} />
-            ))}
-          </article>
-        ))}
+        {reviewIssues
+          .filter((issue) => issue.status !== 'resolved')
+          .map((issue) => (
+            <article className="review-issue" key={issue.id}>
+              <Badge
+                state={issue.kind === 'conflict' ? 'conditional' : 'unknown'}
+              >
+                {issue.kind}
+              </Badge>
+              <h3>{issue.title}</h3>
+              <p>{issue.detail}</p>
+              {issue.resolution && (
+                <p>
+                  <strong>Progress:</strong> {issue.resolution}
+                </p>
+              )}
+              {issue.sourceIds.map((id) => (
+                <SourceLink key={id} id={id} />
+              ))}
+            </article>
+          ))}
       </section>
       <section className="panel">
         <h2>How evidence becomes a published claim</h2>
@@ -1400,9 +1676,27 @@ export default function App() {
   const route = useRoute();
   const page = route.split('/')[1];
   const detail = route.split('/').slice(2).join('/');
-  const [requirements, setRequirements] = useState<Requirements>({
-    ...defaultRequirements,
+  const [requirements, setRequirements] = useState<Requirements>(() => {
+    try {
+      return readSavedRequirements(
+        localStorage.getItem(configurationStorageKey),
+        catalog,
+        defaultRequirements,
+      );
+    } catch {
+      return { ...defaultRequirements, configurations: {} };
+    }
   });
+  useEffect(() => {
+    try {
+      localStorage.setItem(
+        configurationStorageKey,
+        JSON.stringify(savedConfigurationPayload(catalog, requirements)),
+      );
+    } catch {
+      /* Configurations remain usable and downloadable without browser storage. */
+    }
+  }, [requirements]);
   const [compared, setCompared] = useState<string[]>(readCompared);
   const [menuOpen, setMenuOpen] = useState(false);
   const [announcement, setAnnouncement] = useState('');
@@ -1454,6 +1748,9 @@ export default function App() {
         />
       );
       break;
+    case 'family':
+      content = <FamilyReference familyId={detail} />;
+      break;
     case 'research':
       content = <ResearchDetail id={detail} />;
       break;
@@ -1468,6 +1765,7 @@ export default function App() {
         <ProductDetail
           pid={pid}
           requirements={requirements}
+          setRequirements={setRequirements}
           compared={compared}
           onCompare={onCompare}
         />
@@ -1508,7 +1806,7 @@ export default function App() {
         Skip to content
       </a>
       <header className="site-header">
-        <a className="brand" href="#/selector" aria-label="IIoT Selector home">
+        <a className="brand" href="#/selector">
           <span className="brand-symbol" aria-hidden="true">
             {[12, 20, 29, 36, 29, 20, 12].map((h, i) => (
               <i key={i} style={{ height: h }} />

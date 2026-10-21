@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { assertion, fixtureCatalog, product, source } from '../fixtures';
+import { readFile } from 'node:fs/promises';
 
 test('research preview search, category filters, and source disclosure', async ({
   page,
@@ -16,7 +17,7 @@ test('research preview search, category filters, and source disclosure', async (
     ),
   ).toBeVisible();
   await expect(page.locator('.product-card:not(.research-card)')).toHaveCount(
-    10,
+    24,
   );
   await page.getByRole('searchbox').fill('IR1001-G2');
   await expect(page.locator('.product-card:not(.research-card)')).toHaveCount(
@@ -38,24 +39,187 @@ test('research preview search, category filters, and source disclosure', async (
   ).toBeVisible();
   expect(errors).toEqual([]);
 });
+
+test('expansion selection recalculates, persists and exports exact component PIDs', async ({
+  page,
+}) => {
+  await page.goto('/#/product/IE-3300-8T2S-E');
+  const panel = page.locator('.expansion-panel');
+  await panel.getByLabel('Configuration management mode').selectOption('local');
+  await panel.getByLabel('Configuration firmware').fill('17.18.3');
+  await panel
+    .getByLabel('Confirmed base/runtime licenses')
+    .selectOption(['network-essentials']);
+  await panel.getByLabel('Required physical ports', { exact: true }).fill('18');
+  await panel.getByLabel('Ports required at this speed').fill('18');
+  await panel
+    .getByRole('button', { name: 'Add IEM-3300-8T=', exact: true })
+    .click();
+  const copper = panel
+    .locator('.configuration-totals')
+    .getByRole('row', { name: /^Dedicated copper/ });
+  await expect(copper.locator('td')).toHaveText(['8', '8', '16', '16']);
+  await expect(
+    panel
+      .locator('.configuration-totals')
+      .getByRole('row', { name: /^Physical Ethernet/ })
+      .locator('td'),
+  ).toHaveText(['10', '8', '18', '18']);
+  await page.reload();
+  await expect(page.locator('.selected-modules')).toContainText('IEM-3300-8T=');
+  await expect(copper.locator('td')).toHaveText(['8', '8', '16', '16']);
+  const bomPromise = page.waitForEvent('download');
+  await panel
+    .getByRole('button', { name: 'Export BOM CSV', exact: true })
+    .click();
+  const bom = await bomPromise;
+  const csv = await readFile((await bom.path())!, 'utf8');
+  expect(csv).toContain('"IE-3300-8T2S-E","1"');
+  expect(csv).toContain('"IEM-3300-8T=","1"');
+  const jsonPromise = page.waitForEvent('download');
+  await panel
+    .getByRole('button', { name: 'Download configuration JSON' })
+    .click();
+  const file = await jsonPromise;
+  const saved = JSON.parse(await readFile((await file.path())!, 'utf8'));
+  expect(saved.configurations[0].basePid).toBe('IE-3300-8T2S-E');
+  expect(saved.configurations[0].modulePids).toEqual(['IEM-3300-8T=']);
+  await page
+    .getByRole('button', { name: 'Add to comparison', exact: true })
+    .click();
+  await page.goto('/#/product/IE-3300-8T2S-A');
+  await page
+    .getByRole('button', { name: 'Add to comparison', exact: true })
+    .click();
+  await page.goto('/#/compare');
+  await expect(
+    page.getByRole('columnheader', { name: /IE-3300-8T2S-E/ }),
+  ).toContainText('IEM-3300-8T=');
+  await expect(
+    page.getByRole('row', { name: /^Hardware configuration/ }),
+  ).toContainText('18 proposed physical ports');
+  const comparisonPromise = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Export CSV with sources' }).click();
+  const comparison = await comparisonPromise;
+  expect(await readFile((await comparison.path())!, 'utf8')).toContain(
+    'IEM-3300-8T=',
+  );
+  await page.goto('/#/product/IE-3300-8T2S-E');
+  await panel
+    .getByRole('button', { name: 'Remove IEM-3300-8T=', exact: true })
+    .click();
+  await expect(copper.locator('td')).toHaveText(['8', '0', '8', '8']);
+  await expect(
+    panel
+      .locator('.configuration-totals')
+      .getByRole('row', { name: /^Physical Ethernet/ })
+      .locator('td'),
+  ).toHaveText(['10', '0', '10', '10']);
+  await expect(panel).toContainText('0/1 documented positions used');
+  await expect(panel).toContainText('Equipment consumption: 23 W');
+});
+
+test('incompatible PoE modules cannot be added and undocumented chassis expansion stays explicit', async ({
+  page,
+}) => {
+  await page.goto('/#/product/IE-3300-8T2S-E');
+  await expect(
+    page.getByRole('button', { name: 'Add IEM-3300-8P=', exact: true }),
+  ).toBeDisabled();
+  await page.goto('/#/product/IE-9320-24T4X-E');
+  await expect(page.locator('.expansion-panel')).toContainText(
+    'No official port-expansion module has been verified',
+  );
+  await expect(
+    page.locator('.expansion-panel').getByRole('button', { name: /Add IEM/ }),
+  ).toHaveCount(0);
+});
+
+test('Meraki expansion remains incompatible in the documented release and unknown in an unverified newer release', async ({
+  page,
+}) => {
+  await page.goto('/#/product/IE-3500-8T3S-E');
+  const panel = page.locator('.expansion-panel');
+  await panel
+    .getByLabel('Configuration management mode')
+    .selectOption('meraki');
+  await panel.getByLabel('Configuration firmware').fill('26.1.1');
+  await panel.getByLabel('Required physical ports', { exact: true }).fill('16');
+  await panel
+    .getByRole('button', { name: 'Add IEM-3500-8T=', exact: true })
+    .click();
+  await expect(panel.locator('.configuration-result .badge')).toHaveText(
+    'Verified incompatible',
+  );
+  await expect(
+    panel
+      .locator('.configuration-totals')
+      .getByRole('row', { name: /^Physical Ethernet/ })
+      .locator('td'),
+  ).toHaveText(['11', '8', '19', '11']);
+  await panel.getByLabel('Configuration firmware').fill('26.2.1');
+  await expect(panel.locator('.configuration-result .badge')).toHaveText(
+    'Not yet verified',
+  );
+  await expect(
+    panel
+      .locator('.configuration-totals')
+      .getByRole('row', { name: /^Physical Ethernet/ })
+      .locator('td'),
+  ).toHaveText(['11', '8', '19', '11']);
+});
+
+test('expanded hardware configuration is usable on mobile and passes automated accessibility checks', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/#/product/IE-3400-8P2S-E');
+  const panel = page.locator('.expansion-panel');
+  await panel
+    .getByRole('button', { name: 'Add IEM-3400-8P=', exact: true })
+    .click();
+  await panel.getByLabel('Required PoE load (W)').fill('481');
+  await expect(panel.locator('.configuration-result .badge')).toHaveText(
+    'Verified incompatible',
+  );
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= window.innerWidth,
+    ),
+  ).toBe(true);
+  const { default: AxeBuilder } = await import('@axe-core/playwright');
+  const analysis = await new AxeBuilder({ page })
+    .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
+    .analyze();
+  expect(
+    analysis.violations.map((v) => ({
+      id: v.id,
+      nodes: v.nodes.map((n) => n.target),
+    })),
+  ).toEqual([]);
+});
 test('catalog table and category filters work', async ({ page }) => {
   await page.goto('/#/catalog');
   await page.getByRole('button', { name: 'Routing', exact: true }).click();
   await expect(page.locator('.product-card:not(.research-card)')).toHaveCount(
-    2,
+    10,
   );
   await page.getByRole('button', { name: 'Table view' }).click();
   await expect(page.getByRole('table')).toBeVisible();
-  await expect(page.locator('tbody tr')).toHaveCount(2);
+  await expect(page.locator('tbody tr')).toHaveCount(10);
   await page.getByRole('button', { name: 'Wireless', exact: true }).click();
+  await expect(page.locator('.research-card')).toHaveCount(0);
+  await expect(page.locator('tbody tr')).toHaveCount(2);
   await expect(
-    page.getByRole('heading', { name: 'No records found' }),
+    page.getByText('IW9165 regulatory / operating-mode ordering', {
+      exact: true,
+    }),
   ).toBeVisible();
 });
 test('requirements reset and keyboard search work', async ({ page }) => {
   await page.goto('/');
   const ports = page.getByRole('spinbutton', {
-    name: 'Min. built-in copper ports',
+    name: 'Min. dedicated copper ports',
   });
   await ports.fill('16');
   await page.getByRole('checkbox', { name: 'Cyber Vision support' }).check();
@@ -91,12 +255,12 @@ test('audit distinguishes source retrieval from scoped source review', async ({
   await page.goto('/#/audit');
   await expect(
     page.getByRole('heading', {
-      name: 'Official sources reached · review in progress',
+      name: 'Official sources · scoped technical review',
     }),
   ).toBeVisible();
   await expect(
     page.locator('.source-row').getByText('Source reviewed', { exact: true }),
-  ).toHaveCount(4);
+  ).toHaveCount(42);
   await expect(
     page.getByRole('heading', {
       name: 'IE3505 PoE ordering table duplicates the -A PID',
@@ -189,8 +353,8 @@ test('synthetic reviewed products support exact-PID detail and 2-PID comparison 
   ).toBeVisible();
   await page.getByText('Evidence · published', { exact: true }).click();
   await expect(
-    page.getByRole('link', { name: 'View official source' }),
-  ).toHaveCount(1);
+    page.getByRole('link', { name: 'View official source' }).first(),
+  ).toHaveAttribute('href', source.url);
 });
 
 for (const route of ['selector', 'software', 'product/IR1005-G2']) {
@@ -208,3 +372,215 @@ for (const route of ['selector', 'software', 'product/IR1005-G2']) {
     ).toEqual([]);
   });
 }
+
+test('legacy lifecycle warnings and official replacement links remain discoverable', async ({
+  page,
+}) => {
+  await page.goto('/#/product/IE-3000-8TC');
+  await expect(
+    page.getByText('end-of-support', { exact: true }).first(),
+  ).toBeVisible();
+  await expect(
+    page.getByRole('link', { name: 'IE-3300-8T2S-E →', exact: true }),
+  ).toBeVisible();
+  await page.goto('/');
+  await page.getByRole('searchbox').fill('IE-3000-8TC');
+  await expect(
+    page.getByRole('heading', { name: 'No eligible products found' }),
+  ).toBeVisible();
+  await page.getByRole('checkbox', { name: /Show excluded products/ }).check();
+  await expect(
+    page.getByRole('link', { name: 'IE-3000-8TC', exact: true }),
+  ).toBeVisible();
+  await page.getByText('Why this result?', { exact: true }).click();
+  await expect(
+    page.getByText('Verified incompatible', { exact: true }).first(),
+  ).toBeVisible();
+});
+test('advanced technical filters and family selection preserve explicit uncertainty', async ({
+  page,
+}) => {
+  await page.goto('/');
+  await page
+    .getByRole('combobox', { name: 'Product family', exact: true })
+    .selectOption('ir1800');
+  await expect(page.locator('.product-card:not(.research-card)')).toHaveCount(
+    2,
+  );
+  await page
+    .getByText('Technical & licensing requirements', { exact: true })
+    .click();
+  await page
+    .getByRole('checkbox', { name: 'Cyber Vision support', exact: true })
+    .check();
+  await page
+    .getByRole('checkbox', {
+      name: 'SEA / Cyber Vision SRA support',
+      exact: true,
+    })
+    .check();
+  await page
+    .getByRole('combobox', { name: 'Security deployment architecture' })
+    .selectOption('separate-cv-sea-agents');
+  await expect(
+    page.getByRole('heading', { name: 'No eligible products found' }),
+  ).toBeVisible();
+  await page.getByRole('checkbox', { name: /Show excluded products/ }).check();
+  await page.getByText('Why this result?', { exact: true }).first().click();
+  await expect(
+    page
+      .getByText('Cyber Vision + SEA simultaneous deployment', { exact: true })
+      .first(),
+  ).toBeVisible();
+});
+test('family reference never promotes a wildcard wireless SKU and audit history is downloadable', async ({
+  page,
+}) => {
+  await page.goto('/#/family/iw9165');
+  await expect(
+    page.getByRole('heading', { name: 'IW9165', exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByText('Exact identity / ordering unresolved'),
+  ).toBeVisible();
+  await expect(
+    page.getByRole('button', { name: 'Add to comparison' }),
+  ).toHaveCount(0);
+  await page.goto('/#/audit');
+  await expect(
+    page.getByRole('heading', { name: 'Portfolio coverage by family' }),
+  ).toBeVisible();
+  const report = page.locator('a[href*="/data/audits/"]').first();
+  await expect(report).toHaveAttribute('target', '_blank');
+  const response = await page.request.get(
+    (await report.getAttribute('href')) ?? '',
+  );
+  expect(response.ok()).toBe(true);
+  expect((await response.json()).summary.sourcesChecked).toBe(42);
+  const historical = page.locator('a[href*="/data/audits/"]').last();
+  const previous = await page.request.get(
+    (await historical.getAttribute('href')) ?? '',
+  );
+  expect(previous.ok()).toBe(true);
+  expect((await previous.json()).summary.sourcesChecked).toBe(35);
+});
+
+test('beta scenario shows IE9300 prerequisites and independent unknown CV coexistence', async ({
+  page,
+}) => {
+  await page.goto('/');
+  await page.getByLabel('Cyber Vision support', { exact: true }).check();
+  await page.getByLabel('Desired management').selectOption('meraki');
+  await page
+    .getByText('Technical & licensing requirements', { exact: true })
+    .click();
+  await page
+    .getByLabel('Min. physical Ethernet ports', { exact: true })
+    .fill('16');
+  await page.getByLabel('Min. ports at required speed').fill('16');
+  await page.getByLabel('Cyber Vision release').selectOption('cv-5.6.1');
+  await page
+    .getByRole('combobox', { name: 'Product family', exact: true })
+    .selectOption('ie9300');
+  const cards = page.locator('.product-card:not(.research-card)');
+  await expect(cards).toHaveCount(4);
+  const candidate = cards.filter({
+    has: page.getByRole('heading', { name: 'IE-9320-24T4X-E', exact: true }),
+  });
+  await expect(candidate).toContainText('Fit unverified');
+  await candidate.getByText('Why this result?', { exact: true }).click();
+  await expect(candidate).toContainText('Minimum firmware 26.2.1');
+  await expect(candidate).toContainText(
+    'subscription/license offer and activation remain unverified',
+  );
+  await expect(candidate).toContainText('28 physical interfaces meet the rate');
+  await expect(candidate).toContainText(
+    'Cyber Vision + Meraki simultaneous operation is unknown',
+  );
+  await page
+    .getByRole('link', { name: 'IE-9320-24T4X-E', exact: true })
+    .click();
+  const row = page.getByRole('row', { name: /^Meraki Dashboard/ });
+  await expect(row).toContainText('Conditionally compatible');
+  await expect(row).toContainText('Not yet verified');
+  await expect(
+    page.getByText('Meraki licensing readiness', { exact: true }),
+  ).toBeVisible();
+  await page.reload();
+  await expect(
+    page.getByRole('heading', { name: 'IE-9320-24T4X-E', exact: true }),
+  ).toBeVisible();
+});
+
+test('blocked browser storage preserves discovery, configuration and exact-PID downloads', async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    Storage.prototype.getItem = () => {
+      throw new DOMException('Storage blocked', 'SecurityError');
+    };
+    Storage.prototype.setItem = () => {
+      throw new DOMException('Storage blocked', 'SecurityError');
+    };
+  });
+  const errors: string[] = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto('/');
+  await page.getByRole('searchbox').fill('IE-3300-8T2S-E');
+  await page.getByRole('link', { name: 'IE-3300-8T2S-E', exact: true }).click();
+  const panel = page.locator('.expansion-panel');
+  await panel
+    .getByRole('button', { name: 'Add IEM-3300-8T=', exact: true })
+    .click();
+  const next = page.waitForEvent('download');
+  await panel
+    .getByRole('button', { name: 'Download configuration JSON', exact: true })
+    .click();
+  const saved = JSON.parse(
+    await readFile((await (await next).path())!, 'utf8'),
+  );
+  expect(saved.configurations[0].modulePids).toEqual(['IEM-3300-8T=']);
+  await page
+    .getByRole('button', { name: 'Add to comparison', exact: true })
+    .click();
+  await page.reload();
+  await expect(
+    page.getByRole('heading', { name: 'IE-3300-8T2S-E', exact: true }),
+  ).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
+test('mobile IE9300 evidence and populated comparison are keyboard accessible', async ({
+  page,
+}) => {
+  const { default: AxeBuilder } = await import('@axe-core/playwright');
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/#/product/IE-9320-24T4X-E');
+  const evidence = page.getByRole('region', {
+    name: 'Management and security compatibility',
+    exact: true,
+  });
+  await evidence.focus();
+  await expect(evidence).toBeFocused();
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
+  await page
+    .getByRole('button', { name: 'Add to comparison', exact: true })
+    .click();
+  await page.goto('/#/product/IE-9320-24P4S-A');
+  await page
+    .getByRole('button', { name: 'Add to comparison', exact: true })
+    .click();
+  await page.goto('/#/compare');
+  const comparison = page.getByRole('region', {
+    name: 'Product comparison',
+    exact: true,
+  });
+  await comparison.focus();
+  await expect(comparison).toBeFocused();
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= window.innerWidth,
+    ),
+  ).toBe(true);
+});

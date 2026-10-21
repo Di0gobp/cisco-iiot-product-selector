@@ -59,6 +59,23 @@
       "note": {
         "type": "string",
         "minLength": 1
+      },
+      "kind": {
+        "enum": [
+          "datasheet",
+          "ordering-guide",
+          "configuration-guide",
+          "installation-guide",
+          "licensing",
+          "release-notes",
+          "compatibility",
+          "lifecycle",
+          "support-index"
+        ]
+      },
+      "manufacturerId": {
+        "type": "string",
+        "minLength": 1
       }
     },
     "required": [

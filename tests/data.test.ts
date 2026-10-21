@@ -7,7 +7,17 @@ import { assertion, fixtureCatalog, source } from './fixtures';
 describe('schema and provenance gate', () => {
   it('validates the committed catalog without promoting research candidates', () => {
     expect(validateData(raw, sources, [], issues)).toEqual([]);
-    expect(raw.pids).toHaveLength(10);
+    expect(raw.pids.map((p) => p.pid)).toEqual(
+      expect.arrayContaining([
+        'IR1001-G2',
+        'IR1005-G2',
+        'IR1101-K9',
+        'IR1835-K9',
+        'IE-3500-8T3S-A',
+        'IE-3000-8TC',
+      ]),
+    );
+    expect(raw.pids.some((p) => /[x*]/.test(p.pid))).toBe(false);
     expect(
       raw.candidates.every((c) => !raw.pids.some((p) => p.id === c.id)),
     ).toBe(true);
@@ -42,7 +52,7 @@ describe('schema and provenance gate', () => {
       validateData(fixtureCatalog(), [
         { ...source, url: 'https://example.com/datasheet' },
       ]).join(' '),
-    ).toContain('Non-Cisco official source');
+    ).toContain('Official source host outside declared manufacturer domains');
   });
   it('rejects approval without reviewed source content', () => {
     expect(
@@ -122,4 +132,46 @@ it('rejects orphaned open-review issue references', () => {
       ],
     ).join(' '),
   ).toContain('Orphaned review issue source');
+});
+
+it('accepts announced future lifecycle milestones without accepting future verification', () => {
+  const c = fixtureCatalog();
+  const data = {
+    ...c,
+    lifecycleEvents: [
+      {
+        id: 'future-eol',
+        pidId: c.pids[0].id,
+        kind: 'end-of-support',
+        date: '2031-07-31',
+        assertionId: 'orderability',
+      },
+    ],
+  };
+  expect(validateData(data, [source])).toEqual([]);
+  c.assertions[0].verifiedAt = '2031-07-31T00:00:00Z';
+  expect(validateData(c, [source]).join(' ')).toContain('future date');
+});
+
+it('allows future vendor evidence only with an explicit reviewed manufacturer-domain declaration', () => {
+  const c = fixtureCatalog();
+  c.manufacturers[0].officialDomains = ['vendor.example'];
+  expect(
+    validateData(c, [
+      {
+        ...source,
+        manufacturerId: 'test-manufacturer',
+        url: 'https://docs.vendor.example/public-sheet',
+      },
+    ]),
+  ).toEqual([]);
+  expect(
+    validateData(c, [
+      {
+        ...source,
+        manufacturerId: 'test-manufacturer',
+        url: 'https://unrelated.example/public-sheet',
+      },
+    ]).join(' '),
+  ).toContain('outside declared manufacturer domains');
 });

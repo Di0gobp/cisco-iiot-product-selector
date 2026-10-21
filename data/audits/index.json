@@ -1,0 +1,68 @@
+[
+  {
+    "id": "2026-10-21T08-52-48Z",
+    "generatedAt": "2026-10-21T08:52:48Z",
+    "path": "data/audits/2026-10-21T08-52-48Z.json",
+    "sourcesChecked": 42,
+    "changedSources": 0,
+    "unreachableSources": 0,
+    "staleClaims": 0,
+    "potentiallyOutdatedClaims": 1,
+    "requiresHumanReview": true
+  },
+  {
+    "id": "2026-10-21T08-21-23Z",
+    "generatedAt": "2026-10-21T08:21:23Z",
+    "path": "data/audits/2026-10-21T08-21-23Z.json",
+    "sourcesChecked": 39,
+    "changedSources": 0,
+    "unreachableSources": 0,
+    "staleClaims": 0,
+    "potentiallyOutdatedClaims": 1,
+    "requiresHumanReview": true
+  },
+  {
+    "id": "2026-10-21T08-14-22Z",
+    "generatedAt": "2026-10-21T08:14:22Z",
+    "path": "data/audits/2026-10-21T08-14-22Z.json",
+    "sourcesChecked": 39,
+    "changedSources": 0,
+    "unreachableSources": 0,
+    "staleClaims": 0,
+    "potentiallyOutdatedClaims": 1,
+    "requiresHumanReview": true
+  },
+  {
+    "id": "2026-10-21T06-50-53Z",
+    "generatedAt": "2026-10-21T06:50:53Z",
+    "path": "data/audits/2026-10-21T06-50-53Z.json",
+    "sourcesChecked": 36,
+    "changedSources": 0,
+    "unreachableSources": 0,
+    "staleClaims": 0,
+    "potentiallyOutdatedClaims": 1,
+    "requiresHumanReview": true
+  },
+  {
+    "id": "2026-10-20T20-49-31Z",
+    "generatedAt": "2026-10-20T20:49:31Z",
+    "path": "data/audits/2026-10-20T20-49-31Z.json",
+    "sourcesChecked": 35,
+    "changedSources": 0,
+    "unreachableSources": 0,
+    "staleClaims": 0,
+    "potentiallyOutdatedClaims": 1,
+    "requiresHumanReview": true
+  },
+  {
+    "id": "2026-10-20T17-50-45Z",
+    "generatedAt": "2026-10-20T17:50:45Z",
+    "path": "data/audits/2026-10-20T17-50-45Z.json",
+    "sourcesChecked": 35,
+    "changedSources": 0,
+    "unreachableSources": 0,
+    "staleClaims": 0,
+    "potentiallyOutdatedClaims": 1,
+    "requiresHumanReview": true
+  }
+]

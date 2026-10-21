@@ -3,21 +3,80 @@ on:
   schedule:
     - cron: '17 7 1 * *' # 07:17 UTC on day 1; GitHub schedules may be delayed.
   workflow_dispatch:
+    inputs:
+      propose_history:
+        description: Propose immutable audit history in a review PR
+        type: boolean
+        default: true
 permissions:
   contents: read
 jobs:
-  audit:
+  observations:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
+    outputs:
+      report_available: ${{ steps.report.outputs.available }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - name: Recheck public sources without modifying catalog
+        id: audit
+        continue-on-error: true
         run: python3 scripts/audit_sources.py --output audit-report.json
-      - name: Retain report even when a source is unreachable
+      - name: Check report exists
+        id: report
+        if: always()
+        run: |
+          if test -f audit-report.json; then echo 'available=true' >> "$GITHUB_OUTPUT"; fi
+      - name: Retain report including failed checks
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: source-audit
           path: audit-report.json
           if-no-files-found: error
-          retention-days: 60
+          retention-days: 90
+      - name: Preserve audit failure status
+        if: steps.audit.outcome != 'success'
+        run: exit 1
+  propose:
+    needs: observations
+    if: always() && github.ref_name == github.event.repository.default_branch && needs.observations.outputs.report_available == 'true' && (github.event_name == 'schedule' || inputs.propose_history)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: source-audit
+          path: /tmp/iiot-audit
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: npm ci
+      - name: Record history and prepare source-cited proposal
+        run: python3 scripts/record_audit.py /tmp/iiot-audit/audit-report.json --body-file /tmp/iiot-audit/pr-body.md
+      - name: Validate and build proposed history before opening PR
+        run: npm run build
+      - name: Open history review PR without editing technical claims
+        env:
+          GH_TOKEN: ${{ github.token }}
+          AUDIT_RUN_ID: ${{ github.run_id }}
+          AUDIT_RUN_ATTEMPT: ${{ github.run_attempt }}
+          AUDIT_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
+          branch="audit/sources-${AUDIT_RUN_ID}-${AUDIT_RUN_ATTEMPT}"
+          git switch -c "$branch"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/audits
+          git diff --cached --check
+          git commit -m 'Propose monthly source audit history for review'
+          git push origin "$branch"
+          gh pr create --base "$AUDIT_DEFAULT_BRANCH" --head "$branch" --title 'Review monthly Cisco source audit observations' --body-file /tmp/iiot-audit/pr-body.md
