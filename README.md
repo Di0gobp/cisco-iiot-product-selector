@@ -28,7 +28,7 @@ npm run test:e2e
 
 ## Phase B coverage
 
-**53 source-reviewed exact PIDs across 20 hardware families**, plus three explicit family research gaps. The registry contains **35 public official Cisco sources**. Exact identities, historical sales lifecycle, hardware capability, technical support and commercial entitlement are separate. Initial source review is by Codex; **human PR and deployment approval are required**. A data-sheet entry is not proof of current orderability.
+**53 source-reviewed exact PIDs across 20 hardware families**, plus three explicit family research gaps. The registry contains **36 public official Cisco sources**. Exact identities, historical sales lifecycle, hardware capability, technical support and commercial entitlement are separate. Initial source review is by Codex; **human PR and deployment approval are required**. A data-sheet entry is not proof of current orderability.
 
 | Families                                         | Reviewed exact PIDs                                     |
 | ------------------------------------------------ | ------------------------------------------------------- |

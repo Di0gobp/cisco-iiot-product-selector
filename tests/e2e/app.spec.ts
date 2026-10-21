@@ -100,7 +100,7 @@ test('audit distinguishes source retrieval from scoped source review', async ({
   ).toBeVisible();
   await expect(
     page.locator('.source-row').getByText('Source reviewed', { exact: true }),
-  ).toHaveCount(35);
+  ).toHaveCount(36);
   await expect(
     page.getByRole('heading', {
       name: 'IE3505 PoE ordering table duplicates the -A PID',

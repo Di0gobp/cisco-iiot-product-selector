@@ -370,7 +370,8 @@
       "documentationIds": [
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -383,7 +384,8 @@
       "documentationIds": [
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -396,7 +398,8 @@
       "documentationIds": [
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -409,7 +412,8 @@
       "documentationIds": [
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -422,7 +426,8 @@
       "documentationIds": [
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -435,7 +440,8 @@
       "documentationIds": [
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -448,7 +454,8 @@
       "documentationIds": [
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -461,7 +468,8 @@
       "documentationIds": [
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -496,7 +504,8 @@
         "cisco-ie3300-ds",
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -511,7 +520,8 @@
         "cisco-ie3300-ds",
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -526,7 +536,8 @@
         "cisco-ie3300-ds",
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -541,7 +552,8 @@
         "cisco-ie3300-ds",
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -556,7 +568,8 @@
         "cisco-ie3300-ds",
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -571,7 +584,8 @@
         "cisco-ie3300-ds",
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -586,7 +600,8 @@
         "cisco-ie3300-ds",
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -601,7 +616,8 @@
         "cisco-ie3300-ds",
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -616,7 +632,8 @@
         "cisco-ie3400-ds",
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -631,7 +648,8 @@
         "cisco-ie3400-ds",
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -646,7 +664,8 @@
         "cisco-ie3400-ds",
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -661,7 +680,8 @@
         "cisco-ie3400-ds",
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -751,7 +771,7 @@
       "modelId": "model-ie-3000-4tc",
       "orderabilityAssertionId": "pid-ie-3000-4tc-orderability",
       "reviewStatus": "approved",
-      "description": "\u25cf Industrial Ethernet switch \u25cf 4 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) \u25cf Each switch supports 2 Cisco modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module \u25cf Layer 2 LAN Base image installed",
+      "description": "● Industrial Ethernet switch ● 4 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) ● Each switch supports 2 Cisco modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module ● Layer 2 LAN Base image installed",
       "documentationIds": ["cisco-ie3000-ds", "cisco-ie3000-switch-eol"]
     },
     {
@@ -761,7 +781,7 @@
       "modelId": "model-ie-3000-8tc",
       "orderabilityAssertionId": "pid-ie-3000-8tc-orderability",
       "reviewStatus": "approved",
-      "description": "\u25cf Industrial Ethernet switch \u25cf 8 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) \u25cf Each switch supports 2 Cisco IEM-3000-8TM= modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module \u25cf Layer 2 LAN Base image installed",
+      "description": "● Industrial Ethernet switch ● 8 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) ● Each switch supports 2 Cisco IEM-3000-8TM= modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module ● Layer 2 LAN Base image installed",
       "documentationIds": ["cisco-ie3000-ds", "cisco-ie3000-switch-eol"]
     },
     {
@@ -836,7 +856,8 @@
         "cisco-ie9300-ds",
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -851,7 +872,8 @@
         "cisco-ie9300-ds",
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -866,7 +888,8 @@
         "cisco-ie9300-ds",
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -881,7 +904,8 @@
         "cisco-ie9300-ds",
         "cisco-cv56-rn",
         "cisco-cv-supported",
-        "cisco-cv-prepare"
+        "cisco-cv-prepare",
+        "cisco-cv-config-examples"
       ]
     },
     {
@@ -981,7 +1005,7 @@
       "modelId": "model-ir829-2lte-ea-ek9",
       "orderabilityAssertionId": "pid-ir829-2lte-ea-ek9-orderability",
       "reviewStatus": "approved",
-      "description": "Europe | \u2713 | X | X | \u2713 IR829M-2LTE-EA-EK9 IR829-2LTE-EA-EK9 IR829M-LTE-EA-EK9 IR829B-LTE-EA-EK9 | X",
+      "description": "Europe | ✓ | X | X | ✓ IR829M-2LTE-EA-EK9 IR829-2LTE-EA-EK9 IR829M-LTE-EA-EK9 IR829B-LTE-EA-EK9 | X",
       "documentationIds": ["cisco-ir829-ds", "cisco-ir829-eol"]
     },
     {
@@ -1485,7 +1509,7 @@
       "status": "unknown",
       "sourceId": "cisco-ir1000-ds",
       "evidence": {
-        "excerpt": "Cyber Vision and ThousandEyes Assurance | IR1001-G2: - | IR1005-G2: \u2713",
+        "excerpt": "Cyber Vision and ThousandEyes Assurance | IR1001-G2: - | IR1005-G2: ✓",
         "section": "Table 2. Cisco IR1000 platform comparison"
       },
       "applicability": {
@@ -1688,7 +1712,7 @@
       "status": "conditional",
       "sourceId": "cisco-ir1000-ds",
       "evidence": {
-        "excerpt": "Cyber Vision and ThousandEyes Assurance | IR1001-G2: - | IR1005-G2: \u2713",
+        "excerpt": "Cyber Vision and ThousandEyes Assurance | IR1001-G2: - | IR1005-G2: ✓",
         "section": "Table 2. Cisco IR1000 platform comparison"
       },
       "applicability": {
@@ -1997,7 +2021,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500-ds",
       "evidence": {
-        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision’s Secure Equipment Access for zero trust remote access to OT assets",
         "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
       },
       "applicability": {
@@ -2029,7 +2053,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500-ds",
       "evidence": {
-        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision’s Secure Equipment Access for zero trust remote access to OT assets",
         "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
       },
       "applicability": {
@@ -2371,7 +2395,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500-ds",
       "evidence": {
-        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision’s Secure Equipment Access for zero trust remote access to OT assets",
         "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
       },
       "applicability": {
@@ -2403,7 +2427,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500-ds",
       "evidence": {
-        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision’s Secure Equipment Access for zero trust remote access to OT assets",
         "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
       },
       "applicability": {
@@ -2823,7 +2847,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500-ds",
       "evidence": {
-        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision’s Secure Equipment Access for zero trust remote access to OT assets",
         "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
       },
       "applicability": {
@@ -2855,7 +2879,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500-ds",
       "evidence": {
-        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision’s Secure Equipment Access for zero trust remote access to OT assets",
         "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
       },
       "applicability": {
@@ -3197,7 +3221,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500-ds",
       "evidence": {
-        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision’s Secure Equipment Access for zero trust remote access to OT assets",
         "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
       },
       "applicability": {
@@ -3229,7 +3253,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500-ds",
       "evidence": {
-        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision’s Secure Equipment Access for zero trust remote access to OT assets",
         "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
       },
       "applicability": {
@@ -3649,7 +3673,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500-ds",
       "evidence": {
-        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision’s Secure Equipment Access for zero trust remote access to OT assets",
         "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
       },
       "applicability": {
@@ -3681,7 +3705,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500-ds",
       "evidence": {
-        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision’s Secure Equipment Access for zero trust remote access to OT assets",
         "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
       },
       "applicability": {
@@ -4023,7 +4047,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500-ds",
       "evidence": {
-        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision’s Secure Equipment Access for zero trust remote access to OT assets",
         "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
       },
       "applicability": {
@@ -4055,7 +4079,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500-ds",
       "evidence": {
-        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision’s Secure Equipment Access for zero trust remote access to OT assets",
         "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
       },
       "applicability": {
@@ -4475,7 +4499,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500-ds",
       "evidence": {
-        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision’s Secure Equipment Access for zero trust remote access to OT assets",
         "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
       },
       "applicability": {
@@ -4507,7 +4531,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500-ds",
       "evidence": {
-        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision’s Secure Equipment Access for zero trust remote access to OT assets",
         "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
       },
       "applicability": {
@@ -4849,7 +4873,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500-ds",
       "evidence": {
-        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision’s Secure Equipment Access for zero trust remote access to OT assets",
         "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
       },
       "applicability": {
@@ -4881,7 +4905,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500-ds",
       "evidence": {
-        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision\u2019s Secure Equipment Access for zero trust remote access to OT assets",
+        "excerpt": "IOx Application Hosting: Cisco Cyber Vision for cyber visibility in the industrial environment; Cyber Vision’s Secure Equipment Access for zero trust remote access to OT assets",
         "section": "Table 1. IOx Application Hosting; Table 3 exact hardware row"
       },
       "applicability": {
@@ -10646,7 +10670,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3000-ds",
       "evidence": {
-        "excerpt": "IE-3000-4TC | \u25cf Industrial Ethernet switch \u25cf 4 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) \u25cf Each switch supports 2 Cisco modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module \u25cf Layer 2 LAN Base image installed",
+        "excerpt": "IE-3000-4TC | ● Industrial Ethernet switch ● 4 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) ● Each switch supports 2 Cisco modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module ● Layer 2 LAN Base image installed",
         "section": "Ordering information / exact Product Number row. Documents historical identity only; current sales lifecycle is evaluated separately."
       },
       "applicability": {
@@ -10699,7 +10723,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3000-ds",
       "evidence": {
-        "excerpt": "IE-3000-4TC | \u25cf Industrial Ethernet switch \u25cf 4 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) \u25cf Each switch supports 2 Cisco modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module \u25cf Layer 2 LAN Base image installed",
+        "excerpt": "IE-3000-4TC | ● Industrial Ethernet switch ● 4 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) ● Each switch supports 2 Cisco modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module ● Layer 2 LAN Base image installed",
         "section": "Hardware/interface table and exact ordering row; combo media share one interface. Includes base interfaces only."
       },
       "applicability": {
@@ -10731,7 +10755,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3000-ds",
       "evidence": {
-        "excerpt": "IE-3000-4TC | \u25cf Industrial Ethernet switch \u25cf 4 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) \u25cf Each switch supports 2 Cisco modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module \u25cf Layer 2 LAN Base image installed",
+        "excerpt": "IE-3000-4TC | ● Industrial Ethernet switch ● 4 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) ● Each switch supports 2 Cisco modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module ● Layer 2 LAN Base image installed",
         "section": "Hardware/interface table; dedicated ports exclude combo alternatives. Counts derived from the reviewed port inventory."
       },
       "applicability": {
@@ -10763,7 +10787,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3000-ds",
       "evidence": {
-        "excerpt": "IE-3000-4TC | \u25cf Industrial Ethernet switch \u25cf 4 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) \u25cf Each switch supports 2 Cisco modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module \u25cf Layer 2 LAN Base image installed",
+        "excerpt": "IE-3000-4TC | ● Industrial Ethernet switch ● 4 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) ● Each switch supports 2 Cisco modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module ● Layer 2 LAN Base image installed",
         "section": "Hardware/interface table; dedicated ports exclude combo alternatives. Counts derived from the reviewed port inventory."
       },
       "applicability": {
@@ -10795,7 +10819,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3000-ds",
       "evidence": {
-        "excerpt": "IE-3000-4TC | \u25cf Industrial Ethernet switch \u25cf 4 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) \u25cf Each switch supports 2 Cisco modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module \u25cf Layer 2 LAN Base image installed",
+        "excerpt": "IE-3000-4TC | ● Industrial Ethernet switch ● 4 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) ● Each switch supports 2 Cisco modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module ● Layer 2 LAN Base image installed",
         "section": "Hardware/interface table; dedicated ports exclude combo alternatives. Counts derived from the reviewed port inventory."
       },
       "applicability": {
@@ -10827,7 +10851,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3000-ds",
       "evidence": {
-        "excerpt": "IE-3000-4TC | \u25cf Industrial Ethernet switch \u25cf 4 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) \u25cf Each switch supports 2 Cisco modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module \u25cf Layer 2 LAN Base image installed",
+        "excerpt": "IE-3000-4TC | ● Industrial Ethernet switch ● 4 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) ● Each switch supports 2 Cisco modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module ● Layer 2 LAN Base image installed",
         "section": "Hardware/interface table; dedicated ports exclude combo alternatives. Counts derived from the reviewed port inventory."
       },
       "applicability": {
@@ -10859,7 +10883,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3000-ds",
       "evidence": {
-        "excerpt": "IE-3000-8TC | \u25cf Industrial Ethernet switch \u25cf 8 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) \u25cf Each switch supports 2 Cisco IEM-3000-8TM= modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module \u25cf Layer 2 LAN Base image installed",
+        "excerpt": "IE-3000-8TC | ● Industrial Ethernet switch ● 8 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) ● Each switch supports 2 Cisco IEM-3000-8TM= modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module ● Layer 2 LAN Base image installed",
         "section": "Ordering information / exact Product Number row. Documents historical identity only; current sales lifecycle is evaluated separately."
       },
       "applicability": {
@@ -10912,7 +10936,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3000-ds",
       "evidence": {
-        "excerpt": "IE-3000-8TC | \u25cf Industrial Ethernet switch \u25cf 8 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) \u25cf Each switch supports 2 Cisco IEM-3000-8TM= modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module \u25cf Layer 2 LAN Base image installed",
+        "excerpt": "IE-3000-8TC | ● Industrial Ethernet switch ● 8 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) ● Each switch supports 2 Cisco IEM-3000-8TM= modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module ● Layer 2 LAN Base image installed",
         "section": "Hardware/interface table and exact ordering row; combo media share one interface. Includes base interfaces only."
       },
       "applicability": {
@@ -10944,7 +10968,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3000-ds",
       "evidence": {
-        "excerpt": "IE-3000-8TC | \u25cf Industrial Ethernet switch \u25cf 8 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) \u25cf Each switch supports 2 Cisco IEM-3000-8TM= modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module \u25cf Layer 2 LAN Base image installed",
+        "excerpt": "IE-3000-8TC | ● Industrial Ethernet switch ● 8 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) ● Each switch supports 2 Cisco IEM-3000-8TM= modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module ● Layer 2 LAN Base image installed",
         "section": "Hardware/interface table; dedicated ports exclude combo alternatives. Counts derived from the reviewed port inventory."
       },
       "applicability": {
@@ -10976,7 +11000,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3000-ds",
       "evidence": {
-        "excerpt": "IE-3000-8TC | \u25cf Industrial Ethernet switch \u25cf 8 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) \u25cf Each switch supports 2 Cisco IEM-3000-8TM= modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module \u25cf Layer 2 LAN Base image installed",
+        "excerpt": "IE-3000-8TC | ● Industrial Ethernet switch ● 8 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) ● Each switch supports 2 Cisco IEM-3000-8TM= modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module ● Layer 2 LAN Base image installed",
         "section": "Hardware/interface table; dedicated ports exclude combo alternatives. Counts derived from the reviewed port inventory."
       },
       "applicability": {
@@ -11008,7 +11032,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3000-ds",
       "evidence": {
-        "excerpt": "IE-3000-8TC | \u25cf Industrial Ethernet switch \u25cf 8 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) \u25cf Each switch supports 2 Cisco IEM-3000-8TM= modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module \u25cf Layer 2 LAN Base image installed",
+        "excerpt": "IE-3000-8TC | ● Industrial Ethernet switch ● 8 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) ● Each switch supports 2 Cisco IEM-3000-8TM= modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module ● Layer 2 LAN Base image installed",
         "section": "Hardware/interface table; dedicated ports exclude combo alternatives. Counts derived from the reviewed port inventory."
       },
       "applicability": {
@@ -11040,7 +11064,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3000-ds",
       "evidence": {
-        "excerpt": "IE-3000-8TC | \u25cf Industrial Ethernet switch \u25cf 8 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) \u25cf Each switch supports 2 Cisco IEM-3000-8TM= modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module \u25cf Layer 2 LAN Base image installed",
+        "excerpt": "IE-3000-8TC | ● Industrial Ethernet switch ● 8 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) ● Each switch supports 2 Cisco IEM-3000-8TM= modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module ● Layer 2 LAN Base image installed",
         "section": "Hardware/interface table; dedicated ports exclude combo alternatives. Counts derived from the reviewed port inventory."
       },
       "applicability": {
@@ -14381,7 +14405,7 @@
       "status": "supported",
       "sourceId": "cisco-ir829-ds",
       "evidence": {
-        "excerpt": "IR829-2LTE-EA-EK9 | Europe | \u2713 | X | X | \u2713 IR829M-2LTE-EA-EK9 IR829-2LTE-EA-EK9 IR829M-LTE-EA-EK9 IR829B-LTE-EA-EK9 | X",
+        "excerpt": "IR829-2LTE-EA-EK9 | Europe | ✓ | X | X | ✓ IR829M-2LTE-EA-EK9 IR829-2LTE-EA-EK9 IR829M-LTE-EA-EK9 IR829B-LTE-EA-EK9 | X",
         "section": "Ordering information / exact Product Number row. Documents historical identity only; current sales lifecycle is evaluated separately."
       },
       "applicability": {
@@ -15630,7 +15654,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3200-ds",
       "evidence": {
-        "excerpt": "Operating environment | Operating temperature: -40\u00b0C to +70\u00b0C (40 LFM vented enclosure) -40\u00b0C to +60\u00b0C (sealed enclosure) -40\u00b0C to +75\u00b0C (Min. 200 LFM fan or blower-equipped enclosure) +85\u00b0C (type tested for 16 hours) Altitude: Up to 15,000 feet",
+        "excerpt": "Operating environment | Operating temperature: -40°C to +70°C (40 LFM vented enclosure) -40°C to +60°C (sealed enclosure) -40°C to +75°C (Min. 200 LFM fan or blower-equipped enclosure) +85°C (type tested for 16 hours) Altitude: Up to 15,000 feet",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -15697,7 +15721,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3200-ds",
       "evidence": {
-        "excerpt": "User-friendly GUI, called WebUI | \u25cf Allows easy configuration and monitoring \u25cf Eliminates the need for more complex terminal emulation programs \u25cf Reduces the cost of deployment",
+        "excerpt": "User-friendly GUI, called WebUI | ● Allows easy configuration and monitoring ● Eliminates the need for more complex terminal emulation programs ● Reduces the cost of deployment",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -15780,7 +15804,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3200-ds",
       "evidence": {
-        "excerpt": "Operating environment | Operating temperature: -40\u00b0C to +70\u00b0C (40 LFM vented enclosure) -40\u00b0C to +60\u00b0C (sealed enclosure) -40\u00b0C to +75\u00b0C (Min. 200 LFM fan or blower-equipped enclosure) +85\u00b0C (type tested for 16 hours) Altitude: Up to 15,000 feet",
+        "excerpt": "Operating environment | Operating temperature: -40°C to +70°C (40 LFM vented enclosure) -40°C to +60°C (sealed enclosure) -40°C to +75°C (Min. 200 LFM fan or blower-equipped enclosure) +85°C (type tested for 16 hours) Altitude: Up to 15,000 feet",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -15847,7 +15871,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3200-ds",
       "evidence": {
-        "excerpt": "User-friendly GUI, called WebUI | \u25cf Allows easy configuration and monitoring \u25cf Eliminates the need for more complex terminal emulation programs \u25cf Reduces the cost of deployment",
+        "excerpt": "User-friendly GUI, called WebUI | ● Allows easy configuration and monitoring ● Eliminates the need for more complex terminal emulation programs ● Reduces the cost of deployment",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -15930,7 +15954,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3300-ds",
       "evidence": {
-        "excerpt": "Operating environment | Operating temperature: -40\u00b0C to +70\u00b0C (40 LFM vented enclosure) -40\u00b0C to +60\u00b0C (sealed enclosure) -40\u00b0C to +75\u00b0C (Min. 200 LFM fan or blower-equipped enclosure) +85\u00b0C (type tested for 16 hours) Altitude: up to 15,000 feet",
+        "excerpt": "Operating environment | Operating temperature: -40°C to +70°C (40 LFM vented enclosure) -40°C to +60°C (sealed enclosure) -40°C to +75°C (Min. 200 LFM fan or blower-equipped enclosure) +85°C (type tested for 16 hours) Altitude: up to 15,000 feet",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -15997,7 +16021,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3300-ds",
       "evidence": {
-        "excerpt": "User-friendly GUI, called WebUI | \u25cf Allows for easy configuration and monitoring \u25cf Eliminates the need for more complex, terminal emulation programs \u25cf Reduces the cost of deployment",
+        "excerpt": "User-friendly GUI, called WebUI | ● Allows for easy configuration and monitoring ● Eliminates the need for more complex, terminal emulation programs ● Reduces the cost of deployment",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -16080,7 +16104,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3300-ds",
       "evidence": {
-        "excerpt": "Operating environment | Operating temperature: -40\u00b0C to +70\u00b0C (40 LFM vented enclosure) -40\u00b0C to +60\u00b0C (sealed enclosure) -40\u00b0C to +75\u00b0C (Min. 200 LFM fan or blower-equipped enclosure) +85\u00b0C (type tested for 16 hours) Altitude: up to 15,000 feet",
+        "excerpt": "Operating environment | Operating temperature: -40°C to +70°C (40 LFM vented enclosure) -40°C to +60°C (sealed enclosure) -40°C to +75°C (Min. 200 LFM fan or blower-equipped enclosure) +85°C (type tested for 16 hours) Altitude: up to 15,000 feet",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -16147,7 +16171,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3300-ds",
       "evidence": {
-        "excerpt": "User-friendly GUI, called WebUI | \u25cf Allows for easy configuration and monitoring \u25cf Eliminates the need for more complex, terminal emulation programs \u25cf Reduces the cost of deployment",
+        "excerpt": "User-friendly GUI, called WebUI | ● Allows for easy configuration and monitoring ● Eliminates the need for more complex, terminal emulation programs ● Reduces the cost of deployment",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -16230,7 +16254,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3300-ds",
       "evidence": {
-        "excerpt": "Operating environment | Operating temperature: -40\u00b0C to +70\u00b0C (40 LFM vented enclosure) -40\u00b0C to +60\u00b0C (sealed enclosure) -40\u00b0C to +75\u00b0C (Min. 200 LFM fan or blower-equipped enclosure) +85\u00b0C (type tested for 16 hours) Altitude: up to 15,000 feet",
+        "excerpt": "Operating environment | Operating temperature: -40°C to +70°C (40 LFM vented enclosure) -40°C to +60°C (sealed enclosure) -40°C to +75°C (Min. 200 LFM fan or blower-equipped enclosure) +85°C (type tested for 16 hours) Altitude: up to 15,000 feet",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -16297,7 +16321,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3300-ds",
       "evidence": {
-        "excerpt": "User-friendly GUI, called WebUI | \u25cf Allows for easy configuration and monitoring \u25cf Eliminates the need for more complex, terminal emulation programs \u25cf Reduces the cost of deployment",
+        "excerpt": "User-friendly GUI, called WebUI | ● Allows for easy configuration and monitoring ● Eliminates the need for more complex, terminal emulation programs ● Reduces the cost of deployment",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -16380,7 +16404,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3300-ds",
       "evidence": {
-        "excerpt": "Operating environment | Operating temperature: -40\u00b0C to +70\u00b0C (40 LFM vented enclosure) -40\u00b0C to +60\u00b0C (sealed enclosure) -40\u00b0C to +75\u00b0C (Min. 200 LFM fan or blower-equipped enclosure) +85\u00b0C (type tested for 16 hours) Altitude: up to 15,000 feet",
+        "excerpt": "Operating environment | Operating temperature: -40°C to +70°C (40 LFM vented enclosure) -40°C to +60°C (sealed enclosure) -40°C to +75°C (Min. 200 LFM fan or blower-equipped enclosure) +85°C (type tested for 16 hours) Altitude: up to 15,000 feet",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -16447,7 +16471,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3300-ds",
       "evidence": {
-        "excerpt": "User-friendly GUI, called WebUI | \u25cf Allows for easy configuration and monitoring \u25cf Eliminates the need for more complex, terminal emulation programs \u25cf Reduces the cost of deployment",
+        "excerpt": "User-friendly GUI, called WebUI | ● Allows for easy configuration and monitoring ● Eliminates the need for more complex, terminal emulation programs ● Reduces the cost of deployment",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -16530,7 +16554,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3300-ds",
       "evidence": {
-        "excerpt": "Operating environment | Operating temperature: -40\u00b0C to +70\u00b0C (40 LFM vented enclosure) -40\u00b0C to +60\u00b0C (sealed enclosure) -40\u00b0C to +75\u00b0C (Min. 200 LFM fan or blower-equipped enclosure) +85\u00b0C (type tested for 16 hours) Altitude: up to 15,000 feet",
+        "excerpt": "Operating environment | Operating temperature: -40°C to +70°C (40 LFM vented enclosure) -40°C to +60°C (sealed enclosure) -40°C to +75°C (Min. 200 LFM fan or blower-equipped enclosure) +85°C (type tested for 16 hours) Altitude: up to 15,000 feet",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -16597,7 +16621,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3300-ds",
       "evidence": {
-        "excerpt": "User-friendly GUI, called WebUI | \u25cf Allows for easy configuration and monitoring \u25cf Eliminates the need for more complex, terminal emulation programs \u25cf Reduces the cost of deployment",
+        "excerpt": "User-friendly GUI, called WebUI | ● Allows for easy configuration and monitoring ● Eliminates the need for more complex, terminal emulation programs ● Reduces the cost of deployment",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -16680,7 +16704,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3300-ds",
       "evidence": {
-        "excerpt": "Operating environment | Operating temperature: -40\u00b0C to +70\u00b0C (40 LFM vented enclosure) -40\u00b0C to +60\u00b0C (sealed enclosure) -40\u00b0C to +75\u00b0C (Min. 200 LFM fan or blower-equipped enclosure) +85\u00b0C (type tested for 16 hours) Altitude: up to 15,000 feet",
+        "excerpt": "Operating environment | Operating temperature: -40°C to +70°C (40 LFM vented enclosure) -40°C to +60°C (sealed enclosure) -40°C to +75°C (Min. 200 LFM fan or blower-equipped enclosure) +85°C (type tested for 16 hours) Altitude: up to 15,000 feet",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -16747,7 +16771,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3300-ds",
       "evidence": {
-        "excerpt": "User-friendly GUI, called WebUI | \u25cf Allows for easy configuration and monitoring \u25cf Eliminates the need for more complex, terminal emulation programs \u25cf Reduces the cost of deployment",
+        "excerpt": "User-friendly GUI, called WebUI | ● Allows for easy configuration and monitoring ● Eliminates the need for more complex, terminal emulation programs ● Reduces the cost of deployment",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -16830,7 +16854,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3300-ds",
       "evidence": {
-        "excerpt": "Operating environment | Operating temperature: -40\u00b0C to +70\u00b0C (40 LFM vented enclosure) -40\u00b0C to +60\u00b0C (sealed enclosure) -40\u00b0C to +75\u00b0C (Min. 200 LFM fan or blower-equipped enclosure) +85\u00b0C (type tested for 16 hours) Altitude: up to 15,000 feet",
+        "excerpt": "Operating environment | Operating temperature: -40°C to +70°C (40 LFM vented enclosure) -40°C to +60°C (sealed enclosure) -40°C to +75°C (Min. 200 LFM fan or blower-equipped enclosure) +85°C (type tested for 16 hours) Altitude: up to 15,000 feet",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -16897,7 +16921,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3300-ds",
       "evidence": {
-        "excerpt": "User-friendly GUI, called WebUI | \u25cf Allows for easy configuration and monitoring \u25cf Eliminates the need for more complex, terminal emulation programs \u25cf Reduces the cost of deployment",
+        "excerpt": "User-friendly GUI, called WebUI | ● Allows for easy configuration and monitoring ● Eliminates the need for more complex, terminal emulation programs ● Reduces the cost of deployment",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -16980,7 +17004,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3300-ds",
       "evidence": {
-        "excerpt": "Operating environment | Operating temperature: -40\u00b0C to +70\u00b0C (40 LFM vented enclosure) -40\u00b0C to +60\u00b0C (sealed enclosure) -40\u00b0C to +75\u00b0C (Min. 200 LFM fan or blower-equipped enclosure) +85\u00b0C (type tested for 16 hours) Altitude: up to 15,000 feet",
+        "excerpt": "Operating environment | Operating temperature: -40°C to +70°C (40 LFM vented enclosure) -40°C to +60°C (sealed enclosure) -40°C to +75°C (Min. 200 LFM fan or blower-equipped enclosure) +85°C (type tested for 16 hours) Altitude: up to 15,000 feet",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -17047,7 +17071,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3300-ds",
       "evidence": {
-        "excerpt": "User-friendly GUI, called WebUI | \u25cf Allows for easy configuration and monitoring \u25cf Eliminates the need for more complex, terminal emulation programs \u25cf Reduces the cost of deployment",
+        "excerpt": "User-friendly GUI, called WebUI | ● Allows for easy configuration and monitoring ● Eliminates the need for more complex, terminal emulation programs ● Reduces the cost of deployment",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -17130,7 +17154,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3400-ds",
       "evidence": {
-        "excerpt": "Operating environment | Operating temperature: -40\u00b0C to +70\u00b0C (40 LFM vented enclosure) -40\u00b0C to +60\u00b0C (sealed enclosure) -40\u00b0C to +75\u00b0C (Min. 200 LFM fan or blower-equipped enclosure) +85\u00b0C (type tested for 16 hours) Altitude: up to 15,000 feet",
+        "excerpt": "Operating environment | Operating temperature: -40°C to +70°C (40 LFM vented enclosure) -40°C to +60°C (sealed enclosure) -40°C to +75°C (Min. 200 LFM fan or blower-equipped enclosure) +85°C (type tested for 16 hours) Altitude: up to 15,000 feet",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -17197,7 +17221,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3400-ds",
       "evidence": {
-        "excerpt": "User-friendly WEB-based UI (WebUI) | \u25cf Allows for easy configuration and monitoring \u25cf Eliminates the need for more complex terminal emulation programs \u25cf Reduces the cost of deployment",
+        "excerpt": "User-friendly WEB-based UI (WebUI) | ● Allows for easy configuration and monitoring ● Eliminates the need for more complex terminal emulation programs ● Reduces the cost of deployment",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -17280,7 +17304,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3400-ds",
       "evidence": {
-        "excerpt": "Operating environment | Operating temperature: -40\u00b0C to +70\u00b0C (40 LFM vented enclosure) -40\u00b0C to +60\u00b0C (sealed enclosure) -40\u00b0C to +75\u00b0C (Min. 200 LFM fan or blower-equipped enclosure) +85\u00b0C (type tested for 16 hours) Altitude: up to 15,000 feet",
+        "excerpt": "Operating environment | Operating temperature: -40°C to +70°C (40 LFM vented enclosure) -40°C to +60°C (sealed enclosure) -40°C to +75°C (Min. 200 LFM fan or blower-equipped enclosure) +85°C (type tested for 16 hours) Altitude: up to 15,000 feet",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -17347,7 +17371,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3400-ds",
       "evidence": {
-        "excerpt": "User-friendly WEB-based UI (WebUI) | \u25cf Allows for easy configuration and monitoring \u25cf Eliminates the need for more complex terminal emulation programs \u25cf Reduces the cost of deployment",
+        "excerpt": "User-friendly WEB-based UI (WebUI) | ● Allows for easy configuration and monitoring ● Eliminates the need for more complex terminal emulation programs ● Reduces the cost of deployment",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -17430,7 +17454,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3400-ds",
       "evidence": {
-        "excerpt": "Operating environment | Operating temperature: -40\u00b0C to +70\u00b0C (40 LFM vented enclosure) -40\u00b0C to +60\u00b0C (sealed enclosure) -40\u00b0C to +75\u00b0C (Min. 200 LFM fan or blower-equipped enclosure) +85\u00b0C (type tested for 16 hours) Altitude: up to 15,000 feet",
+        "excerpt": "Operating environment | Operating temperature: -40°C to +70°C (40 LFM vented enclosure) -40°C to +60°C (sealed enclosure) -40°C to +75°C (Min. 200 LFM fan or blower-equipped enclosure) +85°C (type tested for 16 hours) Altitude: up to 15,000 feet",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -17497,7 +17521,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3400-ds",
       "evidence": {
-        "excerpt": "User-friendly WEB-based UI (WebUI) | \u25cf Allows for easy configuration and monitoring \u25cf Eliminates the need for more complex terminal emulation programs \u25cf Reduces the cost of deployment",
+        "excerpt": "User-friendly WEB-based UI (WebUI) | ● Allows for easy configuration and monitoring ● Eliminates the need for more complex terminal emulation programs ● Reduces the cost of deployment",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -17580,7 +17604,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3400-ds",
       "evidence": {
-        "excerpt": "Operating environment | Operating temperature: -40\u00b0C to +70\u00b0C (40 LFM vented enclosure) -40\u00b0C to +60\u00b0C (sealed enclosure) -40\u00b0C to +75\u00b0C (Min. 200 LFM fan or blower-equipped enclosure) +85\u00b0C (type tested for 16 hours) Altitude: up to 15,000 feet",
+        "excerpt": "Operating environment | Operating temperature: -40°C to +70°C (40 LFM vented enclosure) -40°C to +60°C (sealed enclosure) -40°C to +75°C (Min. 200 LFM fan or blower-equipped enclosure) +85°C (type tested for 16 hours) Altitude: up to 15,000 feet",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -17647,7 +17671,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3400-ds",
       "evidence": {
-        "excerpt": "User-friendly WEB-based UI (WebUI) | \u25cf Allows for easy configuration and monitoring \u25cf Eliminates the need for more complex terminal emulation programs \u25cf Reduces the cost of deployment",
+        "excerpt": "User-friendly WEB-based UI (WebUI) | ● Allows for easy configuration and monitoring ● Eliminates the need for more complex terminal emulation programs ● Reduces the cost of deployment",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -17746,7 +17770,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500hd-ds",
       "evidence": {
-        "excerpt": "Management | \u25cf Easy configuration through WebUI on device \u25cf On-prem management through Catalyst Center",
+        "excerpt": "Management | ● Easy configuration through WebUI on device ● On-prem management through Catalyst Center",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -17778,7 +17802,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500hd-ds",
       "evidence": {
-        "excerpt": "Management | \u25cf Easy configuration through WebUI on device \u25cf On-prem management through Catalyst Center",
+        "excerpt": "Management | ● Easy configuration through WebUI on device ● On-prem management through Catalyst Center",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -17845,7 +17869,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500hd-ds",
       "evidence": {
-        "excerpt": "Management | \u25cf Easy configuration through WebUI on device \u25cf On-prem management through Catalyst Center",
+        "excerpt": "Management | ● Easy configuration through WebUI on device ● On-prem management through Catalyst Center",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -17877,7 +17901,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3500hd-ds",
       "evidence": {
-        "excerpt": "Management | \u25cf Easy configuration through WebUI on device \u25cf On-prem management through Catalyst Center",
+        "excerpt": "Management | ● Easy configuration through WebUI on device ● On-prem management through Catalyst Center",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -17928,7 +17952,7 @@
       "status": "supported",
       "sourceId": "cisco-ie9300-ds",
       "evidence": {
-        "excerpt": "Operating environment | Operating temperature: -40\u00b0 to 75\u00b0C (-40\u00b0 to 167\u00b0F) (blower-equipped cabinet) -40\u00b0 to 60\u00b0C (-40\u00b0 to 140\u00b0F) (sealed cabinet) 2 -40\u00b0 to 70\u00b0C (-40\u00b0 to 158\u00b0F) (vented cabinet) EN 60068-2-1 EN 60068-2-2 EN 61163 Altitude: Up to 15,000 feet (4572 m) with no temperature derating Up to 40,000 feet (12,192 m) with temperature derating down to 25\u00b0C (77\u00b0F)",
+        "excerpt": "Operating environment | Operating temperature: -40° to 75°C (-40° to 167°F) (blower-equipped cabinet) -40° to 60°C (-40° to 140°F) (sealed cabinet) 2 -40° to 70°C (-40° to 158°F) (vented cabinet) EN 60068-2-1 EN 60068-2-2 EN 61163 Altitude: Up to 15,000 feet (4572 m) with no temperature derating Up to 40,000 feet (12,192 m) with temperature derating down to 25°C (77°F)",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -17995,7 +18019,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie9300-ds",
       "evidence": {
-        "excerpt": "User-friendly WebUI | \u25cf Allows for easy configuration and monitoring, even by nonspecialist personnel \u25cf Eliminates the need for more complex terminal emulation programs \u25cf Reduces the cost of deployment",
+        "excerpt": "User-friendly WebUI | ● Allows for easy configuration and monitoring, even by nonspecialist personnel ● Eliminates the need for more complex terminal emulation programs ● Reduces the cost of deployment",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -18078,7 +18102,7 @@
       "status": "supported",
       "sourceId": "cisco-ie9300-ds",
       "evidence": {
-        "excerpt": "Operating environment | Operating temperature: -40\u00b0 to 75\u00b0C (-40\u00b0 to 167\u00b0F) (blower-equipped cabinet) -40\u00b0 to 60\u00b0C (-40\u00b0 to 140\u00b0F) (sealed cabinet) 2 -40\u00b0 to 70\u00b0C (-40\u00b0 to 158\u00b0F) (vented cabinet) EN 60068-2-1 EN 60068-2-2 EN 61163 Altitude: Up to 15,000 feet (4572 m) with no temperature derating Up to 40,000 feet (12,192 m) with temperature derating down to 25\u00b0C (77\u00b0F)",
+        "excerpt": "Operating environment | Operating temperature: -40° to 75°C (-40° to 167°F) (blower-equipped cabinet) -40° to 60°C (-40° to 140°F) (sealed cabinet) 2 -40° to 70°C (-40° to 158°F) (vented cabinet) EN 60068-2-1 EN 60068-2-2 EN 61163 Altitude: Up to 15,000 feet (4572 m) with no temperature derating Up to 40,000 feet (12,192 m) with temperature derating down to 25°C (77°F)",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -18145,7 +18169,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie9300-ds",
       "evidence": {
-        "excerpt": "User-friendly WebUI | \u25cf Allows for easy configuration and monitoring, even by nonspecialist personnel \u25cf Eliminates the need for more complex terminal emulation programs \u25cf Reduces the cost of deployment",
+        "excerpt": "User-friendly WebUI | ● Allows for easy configuration and monitoring, even by nonspecialist personnel ● Eliminates the need for more complex terminal emulation programs ● Reduces the cost of deployment",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -18228,7 +18252,7 @@
       "status": "supported",
       "sourceId": "cisco-ie9300-ds",
       "evidence": {
-        "excerpt": "Operating environment | Operating temperature: -40\u00b0 to 75\u00b0C (-40\u00b0 to 167\u00b0F) (blower-equipped cabinet) -40\u00b0 to 60\u00b0C (-40\u00b0 to 140\u00b0F) (sealed cabinet) 2 -40\u00b0 to 70\u00b0C (-40\u00b0 to 158\u00b0F) (vented cabinet) EN 60068-2-1 EN 60068-2-2 EN 61163 Altitude: Up to 15,000 feet (4572 m) with no temperature derating Up to 40,000 feet (12,192 m) with temperature derating down to 25\u00b0C (77\u00b0F)",
+        "excerpt": "Operating environment | Operating temperature: -40° to 75°C (-40° to 167°F) (blower-equipped cabinet) -40° to 60°C (-40° to 140°F) (sealed cabinet) 2 -40° to 70°C (-40° to 158°F) (vented cabinet) EN 60068-2-1 EN 60068-2-2 EN 61163 Altitude: Up to 15,000 feet (4572 m) with no temperature derating Up to 40,000 feet (12,192 m) with temperature derating down to 25°C (77°F)",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -18295,7 +18319,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie9300-ds",
       "evidence": {
-        "excerpt": "User-friendly WebUI | \u25cf Allows for easy configuration and monitoring, even by nonspecialist personnel \u25cf Eliminates the need for more complex terminal emulation programs \u25cf Reduces the cost of deployment",
+        "excerpt": "User-friendly WebUI | ● Allows for easy configuration and monitoring, even by nonspecialist personnel ● Eliminates the need for more complex terminal emulation programs ● Reduces the cost of deployment",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -18378,7 +18402,7 @@
       "status": "supported",
       "sourceId": "cisco-ie9300-ds",
       "evidence": {
-        "excerpt": "Operating environment | Operating temperature: -40\u00b0 to 75\u00b0C (-40\u00b0 to 167\u00b0F) (blower-equipped cabinet) -40\u00b0 to 60\u00b0C (-40\u00b0 to 140\u00b0F) (sealed cabinet) 2 -40\u00b0 to 70\u00b0C (-40\u00b0 to 158\u00b0F) (vented cabinet) EN 60068-2-1 EN 60068-2-2 EN 61163 Altitude: Up to 15,000 feet (4572 m) with no temperature derating Up to 40,000 feet (12,192 m) with temperature derating down to 25\u00b0C (77\u00b0F)",
+        "excerpt": "Operating environment | Operating temperature: -40° to 75°C (-40° to 167°F) (blower-equipped cabinet) -40° to 60°C (-40° to 140°F) (sealed cabinet) 2 -40° to 70°C (-40° to 158°F) (vented cabinet) EN 60068-2-1 EN 60068-2-2 EN 61163 Altitude: Up to 15,000 feet (4572 m) with no temperature derating Up to 40,000 feet (12,192 m) with temperature derating down to 25°C (77°F)",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -18445,7 +18469,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie9300-ds",
       "evidence": {
-        "excerpt": "User-friendly WebUI | \u25cf Allows for easy configuration and monitoring, even by nonspecialist personnel \u25cf Eliminates the need for more complex terminal emulation programs \u25cf Reduces the cost of deployment",
+        "excerpt": "User-friendly WebUI | ● Allows for easy configuration and monitoring, even by nonspecialist personnel ● Eliminates the need for more complex terminal emulation programs ● Reduces the cost of deployment",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -18528,7 +18552,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3100-ds",
       "evidence": {
-        "excerpt": "Operating environment | Operating temperature: -40\u00b0 to 75\u00b0C (-40\u00b0 to 167\u00b0F) (blower-equipped cabinet) -40\u00b0 to 60\u00b0C (-40\u00b0 to 140\u00b0F) (sealed cabinet) 3 -40\u00b0 to 70\u00b0C (-40\u00b0 to 158\u00b0F) (vented cabinet) +85\u00b0C (type tested for 96 hours) EN 60068-2-1 EN 60068-2-2 EN 61132 Altitude: Up to 15,000 feet (4,572 m) with no temperature derating Up to 40,000 feet (12,192 m) with temperature derating down to 25\u00b0C (77\u00b0F)",
+        "excerpt": "Operating environment | Operating temperature: -40° to 75°C (-40° to 167°F) (blower-equipped cabinet) -40° to 60°C (-40° to 140°F) (sealed cabinet) 3 -40° to 70°C (-40° to 158°F) (vented cabinet) +85°C (type tested for 96 hours) EN 60068-2-1 EN 60068-2-2 EN 61132 Altitude: Up to 15,000 feet (4,572 m) with no temperature derating Up to 40,000 feet (12,192 m) with temperature derating down to 25°C (77°F)",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -18595,7 +18619,7 @@
       "status": "conditional",
       "sourceId": "cisco-ie3100-ds",
       "evidence": {
-        "excerpt": "User-friendly WebUI | \u25cf Allows for easy configuration and monitoring, even by nonspecialist personnel \u25cf Eliminates the need for more complex terminal emulation programs \u25cf Reduces the cost of deployment",
+        "excerpt": "User-friendly WebUI | ● Allows for easy configuration and monitoring, even by nonspecialist personnel ● Eliminates the need for more complex terminal emulation programs ● Reduces the cost of deployment",
         "section": "Management features; mapped from family to the exact listed hardware PID"
       },
       "applicability": {
@@ -18726,7 +18750,7 @@
       "status": "conditional",
       "sourceId": "cisco-ir1800-ds",
       "evidence": {
-        "excerpt": "WAN interfaces | \u25cf Pluggable Interface Module slots \u25e6 2x for Cisco Cellular Pluggable Interface Modules \u25cf Wide interface pluggable module slots- \u25e6 1x on all IR1800 models for Cisco Wi-Fi 6 Wide Interface Pluggable Module \u25cf Combo 10/100/1000 Mbps Ethernet port (RJ-45 and SFP) (1x on all IR1800 models)",
+        "excerpt": "WAN interfaces | ● Pluggable Interface Module slots ◦ 2x for Cisco Cellular Pluggable Interface Modules ● Wide interface pluggable module slots- ◦ 1x on all IR1800 models for Cisco Wi-Fi 6 Wide Interface Pluggable Module ● Combo 10/100/1000 Mbps Ethernet port (RJ-45 and SFP) (1x on all IR1800 models)",
         "section": "WAN interface / cellular module specification"
       },
       "applicability": {
@@ -18793,7 +18817,7 @@
       "status": "conditional",
       "sourceId": "cisco-ir1800-ds",
       "evidence": {
-        "excerpt": "WAN interfaces | \u25cf Pluggable Interface Module slots \u25e6 2x for Cisco Cellular Pluggable Interface Modules \u25cf Wide interface pluggable module slots- \u25e6 1x on all IR1800 models for Cisco Wi-Fi 6 Wide Interface Pluggable Module \u25cf Combo 10/100/1000 Mbps Ethernet port (RJ-45 and SFP) (1x on all IR1800 models)",
+        "excerpt": "WAN interfaces | ● Pluggable Interface Module slots ◦ 2x for Cisco Cellular Pluggable Interface Modules ● Wide interface pluggable module slots- ◦ 1x on all IR1800 models for Cisco Wi-Fi 6 Wide Interface Pluggable Module ● Combo 10/100/1000 Mbps Ethernet port (RJ-45 and SFP) (1x on all IR1800 models)",
         "section": "WAN interface / cellular module specification"
       },
       "applicability": {
@@ -18939,7 +18963,7 @@
       "status": "supported",
       "sourceId": "cisco-ir8340-ds",
       "evidence": {
-        "excerpt": "Operating temperature | -40\u00b0F to 140\u00b0F (-40 to +60\u00b0C) continuous operating temperature range",
+        "excerpt": "Operating temperature | -40°F to 140°F (-40 to +60°C) continuous operating temperature range",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -19006,7 +19030,7 @@
       "status": "supported",
       "sourceId": "cisco-ir829-ds",
       "evidence": {
-        "excerpt": "Europe | \u2713 | X | X | \u2713 IR829M-2LTE-EA-EK9 IR829-2LTE-EA-EK9 IR829M-LTE-EA-EK9 IR829B-LTE-EA-EK9 | X",
+        "excerpt": "Europe | ✓ | X | X | ✓ IR829M-2LTE-EA-EK9 IR829-2LTE-EA-EK9 IR829M-LTE-EA-EK9 IR829B-LTE-EA-EK9 | X",
         "section": "Ordering table, exact variant; historical cellular/carrier bands only"
       },
       "applicability": {
@@ -19038,7 +19062,7 @@
       "status": "conditional",
       "sourceId": "cisco-ir829-ds",
       "evidence": {
-        "excerpt": "Europe | \u2713 | X | X | \u2713 IR829M-2LTE-EA-EK9 IR829-2LTE-EA-EK9 IR829M-LTE-EA-EK9 IR829B-LTE-EA-EK9 | X",
+        "excerpt": "Europe | ✓ | X | X | ✓ IR829M-2LTE-EA-EK9 IR829-2LTE-EA-EK9 IR829M-LTE-EA-EK9 IR829B-LTE-EA-EK9 | X",
         "section": "Ordering table, exact dual-Wi-Fi variant; regional/carrier restrictions apply"
       },
       "applicability": {
@@ -21328,7 +21352,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3000-ds",
       "evidence": {
-        "excerpt": "IE-3000-4TC | \u25cf Industrial Ethernet switch \u25cf 4 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) \u25cf Each switch supports 2 Cisco modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module \u25cf Layer 2 LAN Base image installed",
+        "excerpt": "IE-3000-4TC | ● Industrial Ethernet switch ● 4 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) ● Each switch supports 2 Cisco modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module ● Layer 2 LAN Base image installed",
         "section": "Derived from the cited base-interface inventory; a combo connector pair counts once and optional expansion is excluded."
       },
       "applicability": {
@@ -21360,7 +21384,7 @@
       "status": "supported",
       "sourceId": "cisco-ie3000-ds",
       "evidence": {
-        "excerpt": "IE-3000-8TC | \u25cf Industrial Ethernet switch \u25cf 8 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) \u25cf Each switch supports 2 Cisco IEM-3000-8TM= modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module \u25cf Layer 2 LAN Base image installed",
+        "excerpt": "IE-3000-8TC | ● Industrial Ethernet switch ● 8 Ethernet 10/100 ports and 2 dual-purpose uplinks (each dual-purpose uplink port has 1 10/100/1000 Ethernet port and 1 SFP-based Gigabit Ethernet port, 1 port active) ● Each switch supports 2 Cisco IEM-3000-8TM= modules, 1 Cisco IEM-3000-8FM= module, or 1 Cisco IEM-3000-8TM= module and 1 Cisco IEM-3000-8FM= module ● Layer 2 LAN Base image installed",
         "section": "Derived from the cited base-interface inventory; a combo connector pair counts once and optional expansion is excluded."
       },
       "applicability": {
@@ -21974,7 +21998,7 @@
       "status": "conditional",
       "sourceId": "cisco-iw9165-ds",
       "evidence": {
-        "excerpt": "Software | IW9165E-WGB \u25cf Cisco Unified Industrial Wireless Software Release 17.13.1 or later IW9165E-URWB \u25cf Cisco Unified Industrial Wireless Software Release 17.12.1 or later IW9165E-AP \u25cf Cisco IOS \u00ae XE Software Release 17.14.1 or later IW9165DH-URWB \u25cf Cisco Unified Industrial Wireless Software Release 17.12.1 or later IW9165DH-AP \u25cf Cisco IOS \u00ae XE Software Release 17.14.1 or later",
+        "excerpt": "Software | IW9165E-WGB ● Cisco Unified Industrial Wireless Software Release 17.13.1 or later IW9165E-URWB ● Cisco Unified Industrial Wireless Software Release 17.12.1 or later IW9165E-AP ● Cisco IOS ® XE Software Release 17.14.1 or later IW9165DH-URWB ● Cisco Unified Industrial Wireless Software Release 17.12.1 or later IW9165DH-AP ● Cisco IOS ® XE Software Release 17.14.1 or later",
         "section": "Software table; minimums differ by model and operating mode"
       },
       "applicability": {
@@ -22044,7 +22068,7 @@
       "status": "conditional",
       "sourceId": "cisco-iw9167-ds",
       "evidence": {
-        "excerpt": "Software | IW9167E-AP \u25cf Cisco IOS \u00ae XE Software Release 17.9.4 or later IW9167E-URWB \u25cf Cisco Unified Industrial Wireless Software 17.11.1 or later IW9167E-WGB \u25cf Cisco Unified Industrial Wireless Software 17.11.1 or later IW9167I-AP \u25cf Cisco IOS XE Software Release 17.12.1 or later",
+        "excerpt": "Software | IW9167E-AP ● Cisco IOS ® XE Software Release 17.9.4 or later IW9167E-URWB ● Cisco Unified Industrial Wireless Software 17.11.1 or later IW9167E-WGB ● Cisco Unified Industrial Wireless Software 17.11.1 or later IW9167I-AP ● Cisco IOS XE Software Release 17.12.1 or later",
         "section": "Software table; minimums differ by model and operating mode"
       },
       "applicability": {
@@ -23551,7 +23575,7 @@
       "status": "supported",
       "sourceId": "cisco-ir1101-ds",
       "evidence": {
-        "excerpt": "Environmental operating temperature range | \u25cf \u201340 to 140\u00b0F (\u201340 to 60\u00b0C) in a sealed NEMA cabinet with no airflow \u25cf \u201340 to 158\u00b0F (\u201340 to 70\u00b0C) in a vented cabinet with 40 Linear Feet per Minute (LFM) of air \u25cf \u201340 to 167\u00b0F (\u201340 to 75\u00b0C) in a forced air enclosure with 200 LFM of air \u25cf Type tested at 85\u00b0C for 16 hours",
+        "excerpt": "Environmental operating temperature range | ● –40 to 140°F (–40 to 60°C) in a sealed NEMA cabinet with no airflow ● –40 to 158°F (–40 to 70°C) in a vented cabinet with 40 Linear Feet per Minute (LFM) of air ● –40 to 167°F (–40 to 75°C) in a forced air enclosure with 200 LFM of air ● Type tested at 85°C for 16 hours",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -23668,7 +23692,7 @@
       "status": "supported",
       "sourceId": "cisco-ir1800-ds",
       "evidence": {
-        "excerpt": "Environmental operating temperature range | \u25cf \u201340\u00b0 to 140\u00b0F (\u201340\u00b0 to 60\u00b0C) in a sealed NEMA cabinet with no airflow \u25cf \u201340\u00b0 to 158\u00b0F (\u201340\u00b0 to 70\u00b0C) in a vented cabinet with 40 linear feet per minute (LFM) of air \u25cf \u201340\u00b0 to 167\u00b0F (\u201340\u00b0 to 75\u00b0C) in a forced air enclosure with 200 LFM of air \u25cf Type tested at 85\u00b0C for 16 hours \u25cf Refer to the IR1800 Hardware Installation Guide (HIG) for the operating temperature range for pluggable cellular modules and wide pluggable Wi-Fi modules",
+        "excerpt": "Environmental operating temperature range | ● –40° to 140°F (–40° to 60°C) in a sealed NEMA cabinet with no airflow ● –40° to 158°F (–40° to 70°C) in a vented cabinet with 40 linear feet per minute (LFM) of air ● –40° to 167°F (–40° to 75°C) in a forced air enclosure with 200 LFM of air ● Type tested at 85°C for 16 hours ● Refer to the IR1800 Hardware Installation Guide (HIG) for the operating temperature range for pluggable cellular modules and wide pluggable Wi-Fi modules",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -23700,7 +23724,7 @@
       "status": "supported",
       "sourceId": "cisco-ir1800-ds",
       "evidence": {
-        "excerpt": "Mounting options | \u25cf DIN rail \u25cf Panel mount",
+        "excerpt": "Mounting options | ● DIN rail ● Panel mount",
         "section": "Mounting options; exact accessories and orientation must follow the installation guide."
       },
       "applicability": {
@@ -23732,7 +23756,7 @@
       "status": "conditional",
       "sourceId": "cisco-ir1800-ds",
       "evidence": {
-        "excerpt": "WAN interfaces | \u25cf Pluggable Interface Module slots \u25e6 2x for Cisco Cellular Pluggable Interface Modules \u25cf Wide interface pluggable module slots- \u25e6 1x on all IR1800 models for Cisco Wi-Fi 6 Wide Interface Pluggable Module \u25cf Combo 10/100/1000 Mbps Ethernet port (RJ-45 and SFP) (1x on all IR1800 models)",
+        "excerpt": "WAN interfaces | ● Pluggable Interface Module slots ◦ 2x for Cisco Cellular Pluggable Interface Modules ● Wide interface pluggable module slots- ◦ 1x on all IR1800 models for Cisco Wi-Fi 6 Wide Interface Pluggable Module ● Combo 10/100/1000 Mbps Ethernet port (RJ-45 and SFP) (1x on all IR1800 models)",
         "section": "Wide Interface Pluggable Module slots"
       },
       "applicability": {
@@ -23783,7 +23807,7 @@
       "status": "supported",
       "sourceId": "cisco-ir1800-ds",
       "evidence": {
-        "excerpt": "Environmental operating temperature range | \u25cf \u201340\u00b0 to 140\u00b0F (\u201340\u00b0 to 60\u00b0C) in a sealed NEMA cabinet with no airflow \u25cf \u201340\u00b0 to 158\u00b0F (\u201340\u00b0 to 70\u00b0C) in a vented cabinet with 40 linear feet per minute (LFM) of air \u25cf \u201340\u00b0 to 167\u00b0F (\u201340\u00b0 to 75\u00b0C) in a forced air enclosure with 200 LFM of air \u25cf Type tested at 85\u00b0C for 16 hours \u25cf Refer to the IR1800 Hardware Installation Guide (HIG) for the operating temperature range for pluggable cellular modules and wide pluggable Wi-Fi modules",
+        "excerpt": "Environmental operating temperature range | ● –40° to 140°F (–40° to 60°C) in a sealed NEMA cabinet with no airflow ● –40° to 158°F (–40° to 70°C) in a vented cabinet with 40 linear feet per minute (LFM) of air ● –40° to 167°F (–40° to 75°C) in a forced air enclosure with 200 LFM of air ● Type tested at 85°C for 16 hours ● Refer to the IR1800 Hardware Installation Guide (HIG) for the operating temperature range for pluggable cellular modules and wide pluggable Wi-Fi modules",
         "section": "Operating environment / temperature specification. Continuous operation only; storage and short type-test ratings are excluded."
       },
       "applicability": {
@@ -23815,7 +23839,7 @@
       "status": "supported",
       "sourceId": "cisco-ir1800-ds",
       "evidence": {
-        "excerpt": "Mounting options | \u25cf DIN rail \u25cf Panel mount",
+        "excerpt": "Mounting options | ● DIN rail ● Panel mount",
         "section": "Mounting options; exact accessories and orientation must follow the installation guide."
       },
       "applicability": {
@@ -23847,7 +23871,7 @@
       "status": "conditional",
       "sourceId": "cisco-ir1800-ds",
       "evidence": {
-        "excerpt": "WAN interfaces | \u25cf Pluggable Interface Module slots \u25e6 2x for Cisco Cellular Pluggable Interface Modules \u25cf Wide interface pluggable module slots- \u25e6 1x on all IR1800 models for Cisco Wi-Fi 6 Wide Interface Pluggable Module \u25cf Combo 10/100/1000 Mbps Ethernet port (RJ-45 and SFP) (1x on all IR1800 models)",
+        "excerpt": "WAN interfaces | ● Pluggable Interface Module slots ◦ 2x for Cisco Cellular Pluggable Interface Modules ● Wide interface pluggable module slots- ◦ 1x on all IR1800 models for Cisco Wi-Fi 6 Wide Interface Pluggable Module ● Combo 10/100/1000 Mbps Ethernet port (RJ-45 and SFP) (1x on all IR1800 models)",
         "section": "Wide Interface Pluggable Module slots"
       },
       "applicability": {
@@ -24839,7 +24863,7 @@
       "status": "conditional",
       "sourceId": "cisco-ir1800-ds",
       "evidence": {
-        "excerpt": "Secure and manage your distributed OT WAN assets with agility at massive scale using Catalyst SD-WAN Manager | Cisco Catalyst SD-WAN Manager | Gain comprehensive security \u25cf Zero-trust approach and end-to-end security stack helps customers achieve segmentation, threat protection, content filtering, and more. Scale with confidence \u25cf IT network management solutions that scale to tens of thousands of devices with centralized security, policy and configuration. Simplify IT and OT collaboration and save costs \u25cf Give OT the best of IT with easy to deploy templates, centralized policies, remote updates, and application aware routing to reduce backhaul costs.",
+        "excerpt": "Secure and manage your distributed OT WAN assets with agility at massive scale using Catalyst SD-WAN Manager | Cisco Catalyst SD-WAN Manager | Gain comprehensive security ● Zero-trust approach and end-to-end security stack helps customers achieve segmentation, threat protection, content filtering, and more. Scale with confidence ● IT network management solutions that scale to tens of thousands of devices with centralized security, policy and configuration. Simplify IT and OT collaboration and save costs ● Give OT the best of IT with easy to deploy templates, centralized policies, remote updates, and application aware routing to reduce backhaul costs.",
         "section": "SD-WAN management section; exact controller and router software/licensing require release-specific review."
       },
       "applicability": {
@@ -24871,7 +24895,7 @@
       "status": "conditional",
       "sourceId": "cisco-ir1800-ds",
       "evidence": {
-        "excerpt": "Secure and manage your distributed OT WAN assets with agility at massive scale using Catalyst SD-WAN Manager | Cisco Catalyst SD-WAN Manager | Gain comprehensive security \u25cf Zero-trust approach and end-to-end security stack helps customers achieve segmentation, threat protection, content filtering, and more. Scale with confidence \u25cf IT network management solutions that scale to tens of thousands of devices with centralized security, policy and configuration. Simplify IT and OT collaboration and save costs \u25cf Give OT the best of IT with easy to deploy templates, centralized policies, remote updates, and application aware routing to reduce backhaul costs.",
+        "excerpt": "Secure and manage your distributed OT WAN assets with agility at massive scale using Catalyst SD-WAN Manager | Cisco Catalyst SD-WAN Manager | Gain comprehensive security ● Zero-trust approach and end-to-end security stack helps customers achieve segmentation, threat protection, content filtering, and more. Scale with confidence ● IT network management solutions that scale to tens of thousands of devices with centralized security, policy and configuration. Simplify IT and OT collaboration and save costs ● Give OT the best of IT with easy to deploy templates, centralized policies, remote updates, and application aware routing to reduce backhaul costs.",
         "section": "SD-WAN management section; exact controller and router software/licensing require release-specific review."
       },
       "applicability": {
@@ -24967,7 +24991,7 @@
       "status": "conditional",
       "sourceId": "cisco-ir8340-ds",
       "evidence": {
-        "excerpt": "Secure and manage your distributed OT WAN assets with agility at massive scale using Catalyst SD-WAN Manager | Cisco Catalyst SD-WAN Manager | Gain comprehensive security \u25cf Zero-trust approach and end-to-end security stack helps customers achieve segmentation, threat protection, content filtering, and more. Scale with confidence \u25cf IT network management solutions that scale to tens of thousands of devices with centralized security, policy, and configuration. \u25cf Simplify IT and OT collaboration and save costs \u25cf Give OT the best of IT with easy-to-deploy templates, centralized policies, remote updates, and application-aware routing to reduce backhaul costs.",
+        "excerpt": "Secure and manage your distributed OT WAN assets with agility at massive scale using Catalyst SD-WAN Manager | Cisco Catalyst SD-WAN Manager | Gain comprehensive security ● Zero-trust approach and end-to-end security stack helps customers achieve segmentation, threat protection, content filtering, and more. Scale with confidence ● IT network management solutions that scale to tens of thousands of devices with centralized security, policy, and configuration. ● Simplify IT and OT collaboration and save costs ● Give OT the best of IT with easy-to-deploy templates, centralized policies, remote updates, and application-aware routing to reduce backhaul costs.",
         "section": "SD-WAN management section; exact controller and router software/licensing require release-specific review."
       },
       "applicability": {

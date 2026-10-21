@@ -1,5 +1,20 @@
 [
   {
+    "id": "cisco-cv-config-examples",
+    "title": "Sensor deployment configuration examples | Sensor deployment examples | Deploy Cisco Cyber Vision Sensor on Switches and Routers",
+    "url": "https://www.cisco.com/c/en/us/td/docs/security/cyber_vision/deploy-cisco-cyber-vision-sensor-on-switches-and-routers/configure-sensor-deployment/c-sensor-deployment-configuration-examples.html",
+    "type": "official-support",
+    "kind": "configuration-guide",
+    "status": "reviewed",
+    "documentDate": "2026-09-08",
+    "lastCheckedAt": "2026-10-21T06:26:01Z",
+    "verifiedAt": "2026-10-21T06:26:01Z",
+    "lastMaterialChangeAt": null,
+    "contentHash": "sha256:a0c91e087b3694d16972f441956df2948522cc1ca7bb27322bdc3c83251a1d8d",
+    "supersedes": [],
+    "note": "Cisco guide reviewed for the named IE3x00 and IE9x00 deployment examples and network topologies. These examples are configuration guidance; they do not establish exact PID, license, firmware or Meraki coexistence. Initial reviewer: Codex; publisher review remains required."
+  },
+  {
     "id": "cisco-ir1000-ds",
     "title": "Cisco IR1000 Rugged Series Secure Routers Data Sheet",
     "url": "https://www.cisco.com/site/us/en/products/collateral/networking/industrial-routers-gateways/ir1000-rugged-series-secure-routers-ds.html",

@@ -1,6 +1,6 @@
 # Next phases
 
-Phase B expands the existing application to 53 exact-PID identities across 20 hardware families, 35 official source references, advanced technical requirements, contextual compatibility, lifecycle/replacement evidence and immutable audit-history proposals. Three family identity gaps remain visible rather than guessed. The deployment workflow and human reviewer are preserved.
+Phase B expands the existing application to 53 exact-PID identities across 20 hardware families, 36 official source references, advanced technical requirements, contextual compatibility, lifecycle/replacement evidence and immutable audit-history proposals. Three family identity gaps remain visible rather than guessed. The deployment workflow and human reviewer are preserved.
 
 ## Phase C priority
 
