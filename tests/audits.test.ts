@@ -18,7 +18,7 @@ describe('audit history observations', () => {
     ).toEqual([]);
     const historical = history.find((entry) => entry.sourcesChecked === 35)!;
     expect(readReport(historical.path).sources).toHaveLength(35);
-    expect(sources).toHaveLength(39);
+    expect(sources).toHaveLength(42);
   });
   it('rejects repeated source observations that can hide missing coverage', () => {
     const report = readReport(history[0].path);

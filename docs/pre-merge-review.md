@@ -1,6 +1,6 @@
 # Phase B pre-merge review — 21 October 2026
 
-Historical review of pre-expansion commit `d36cf89`. The counts and validation below describe that checkpoint. The subsequent module extension adds 19 component PIDs and brings the registry to 39 sources / 964 assertions; see the current [module coverage and limitations](expansion-modules.md). Earlier audit reports are preserved.
+Historical review of pre-expansion commit `d36cf89`. The counts and validation below describe that checkpoint. The subsequent module extension adds 19 component PIDs and brings the registry to 39 sources / 964 assertions; see the current [module coverage and limitations](expansion-modules.md). Earlier audit reports are preserved. The subsequent [final beta-readiness review](beta-release-readiness.md) records current totals, IE9300 corrections and release limitations.
 
 This is a Codex quality review, not independent human approval. PR #1 remains open on `codex/phase-b-technical-intelligence` against `main`. No merge, deployment, repository-permission change or environment-approval action was performed.
 

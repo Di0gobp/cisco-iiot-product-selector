@@ -460,16 +460,21 @@ export function rankProducts(
   assertions: Assertion[],
   requirements: Requirements,
 ): MatchResult[] {
-  const order = { match: 0, conditional: 1, unverified: 2, excluded: 3 };
   return products
     .map((p) => evaluateProduct(p, assertions, requirements))
-    .sort(
-      (a, b) =>
-        order[a.decision] - order[b.decision] ||
-        b.preferenceMatches.length - a.preferenceMatches.length ||
-        (b.score ?? -1) - (a.score ?? -1) ||
-        a.product.pid.localeCompare(b.product.pid),
-    );
+    .sort(compareMatchResults);
+}
+export function compareMatchResults(a: MatchResult, b: MatchResult) {
+  const order = { match: 0, conditional: 1, unverified: 2, excluded: 3 };
+  return (
+    order[a.decision] - order[b.decision] ||
+    b.preferenceMatches.length - a.preferenceMatches.length ||
+    (b.score ?? -1) - (a.score ?? -1) ||
+    // For equally verified results, documented prerequisites rank ahead of missing evidence.
+    a.findings.filter((f) => f.state === 'unknown').length -
+      b.findings.filter((f) => f.state === 'unknown').length ||
+    a.product.pid.localeCompare(b.product.pid)
+  );
 }
 export function searchProducts<
   T extends {

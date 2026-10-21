@@ -579,5 +579,50 @@
     "contentHash": "sha256:8e19b3aafbaee6ed10c8371c423042a291f97ca3e0ee10beaa5c414197f1c3c2",
     "supersedes": [],
     "note": "Scoped Codex review of hardware expansion attachment, base models and power-design conditions. Independent publisher review is still required."
+  },
+  {
+    "id": "cisco-ie9300-meraki-migration",
+    "title": "System Management Configuration Guide, Cisco Catalyst IE9300 Rugged Series Switches - Migration to Meraki Cloud Management Dashboard [Cisco Catalyst IE9300 Rugged Series]",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/cisco_ie9300/software/17_7/system-mgt-config-ie93xx/m-migration-to-meraki-managed-dashboard.html",
+    "type": "official-support",
+    "kind": "configuration-guide",
+    "status": "reviewed",
+    "documentDate": "2026-09-28",
+    "lastCheckedAt": "2026-10-21T08:44:52Z",
+    "verifiedAt": "2026-10-21T08:49:27Z",
+    "lastMaterialChangeAt": null,
+    "contentHash": "sha256:ec0794d2338579a946bc0e4dd63dfb18a093acf6eb9f02efb2d43b0779484f9c",
+    "supersedes": [],
+    "note": "Scoped Codex beta-readiness review of exact IE9300 hardware, Meraki migration or IOS XE licensing. Independent publisher review required. The IOS XE licensing page does not establish an exact Meraki subscription offer."
+  },
+  {
+    "id": "cisco-ie9300-262-rn",
+    "title": "Release Notes for Cisco Catalyst IE9300 Rugged Series Switches, Release 26.2.x",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/cisco_ie9300/software/26-x/release-notes/26-2-1-rn-ie93xx.html",
+    "type": "official-support",
+    "kind": "release-notes",
+    "status": "reviewed",
+    "documentDate": "2026-09-27",
+    "lastCheckedAt": "2026-10-21T08:45:32Z",
+    "verifiedAt": "2026-10-21T08:49:27Z",
+    "lastMaterialChangeAt": null,
+    "contentHash": "sha256:6a7a76a6cfe44e795b7e63ef06103056bca4f4e6c667f5b8edc2f86cebbca85d",
+    "supersedes": [],
+    "note": "Scoped Codex beta-readiness review of exact IE9300 hardware, Meraki migration or IOS XE licensing. Independent publisher review required. The IOS XE licensing page does not establish an exact Meraki subscription offer."
+  },
+  {
+    "id": "cisco-ie9300-licensing",
+    "title": "Licensing on the Cisco Catalyst IE9300 Series Switches",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/iiot/licensing/ie9300/ie9300-licensing.html",
+    "type": "official-support",
+    "kind": "configuration-guide",
+    "status": "reviewed",
+    "documentDate": "2025-06-02",
+    "lastCheckedAt": "2026-10-21T08:46:00Z",
+    "verifiedAt": "2026-10-21T08:49:27Z",
+    "lastMaterialChangeAt": null,
+    "contentHash": "sha256:d8f926e57117c81952e0a7a5dc61642dc535561c8aca52f14a190b898b14cd07",
+    "supersedes": [],
+    "note": "Scoped Codex beta-readiness review of exact IE9300 hardware, Meraki migration or IOS XE licensing. Independent publisher review required. The IOS XE licensing page does not establish an exact Meraki subscription offer."
   }
 ]

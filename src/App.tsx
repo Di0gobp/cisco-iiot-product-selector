@@ -592,6 +592,26 @@ function Browse({
             />
           )}
           <div className="results">
+            <div
+              className="status-legend"
+              aria-label="Compatibility status guide"
+            >
+              <span>
+                <Badge state="supported">Verified</Badge> Evidence meets the
+                selected checks
+              </span>
+              <span>
+                <Badge state="conditional">Conditional</Badge> Prerequisites
+                remain
+              </span>
+              <span>
+                <Badge state="unknown">Unknown</Badge> Evidence is incomplete
+              </span>
+              <span>
+                <Badge state="unsupported">Unsupported</Badge> A documented
+                requirement fails
+              </span>
+            </div>
             <p className="small muted">
               Port requirements include selected expansion modules. Configure
               modules from an exact-PID product page; every selected module
@@ -1158,7 +1178,16 @@ function Compare({
           >
             Export configuration BOMs
           </button>
-          <div className="table-scroll compare-table">
+          <p className="small muted">
+            Scroll horizontally to compare every selected PID. Expand deployment
+            conditions to inspect prerequisites and unknowns.
+          </p>
+          <div
+            className="table-scroll compare-table"
+            tabIndex={0}
+            role="region"
+            aria-label="Product comparison"
+          >
             <table>
               <thead>
                 <tr>
@@ -1777,7 +1806,7 @@ export default function App() {
         Skip to content
       </a>
       <header className="site-header">
-        <a className="brand" href="#/selector" aria-label="IIoT Selector home">
+        <a className="brand" href="#/selector">
           <span className="brand-symbol" aria-hidden="true">
             {[12, 20, 29, 36, 29, 20, 12].map((h, i) => (
               <i key={i} style={{ height: h }} />

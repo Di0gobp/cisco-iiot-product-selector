@@ -11,7 +11,12 @@ import type {
   Product,
   Requirements,
 } from './types';
-import { compareVersions, evaluateProduct, resolveFact } from './rules';
+import {
+  compareVersions,
+  compareMatchResults,
+  evaluateProduct,
+  resolveFact,
+} from './rules';
 import { countBuiltInPorts } from './ports';
 
 export const emptySelection = (): HardwareSelection => ({
@@ -739,14 +744,7 @@ export function rankConfiguredProducts(
   catalog: Catalog,
   requirements: Requirements,
 ) {
-  const order = { match: 0, conditional: 1, unverified: 2, excluded: 3 };
   return products
     .map((p) => evaluateConfiguredProduct(p, catalog, requirements))
-    .sort(
-      (a, b) =>
-        order[a.decision] - order[b.decision] ||
-        b.preferenceMatches.length - a.preferenceMatches.length ||
-        (b.score ?? -1) - (a.score ?? -1) ||
-        a.product.pid.localeCompare(b.product.pid),
-    );
+    .sort(compareMatchResults);
 }

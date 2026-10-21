@@ -2070,3 +2070,17 @@ tr:last-child th {
     grid-row: auto;
   }
 }
+.status-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+.status-legend > span {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}

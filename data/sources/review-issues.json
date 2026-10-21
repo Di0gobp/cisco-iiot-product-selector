@@ -30,12 +30,20 @@
       "cisco-cv56-rn",
       "cisco-cv-supported",
       "cisco-cv-prepare",
-      "cisco-cv-config-examples"
+      "cisco-cv-config-examples",
+      "cisco-ie9300-meraki-migration",
+      "cisco-ie9300-262-rn",
+      "cisco-ie9300-licensing"
     ],
-    "subjectIds": [],
+    "subjectIds": [
+      "pid-ie-9320-24t4x-e",
+      "pid-ie-9320-24t4x-a",
+      "pid-ie-9320-24p4s-e",
+      "pid-ie-9320-24p4s-a"
+    ],
     "kind": "gap",
     "title": "Meraki plus on-device security coexistence is unverified",
-    "detail": "Reviewed IE3500 data sheet, CV 5.6.x release notes, current sensor support, preparation and configuration-example guides. These establish IOx/platform and network prerequisites but do not explicitly support Cyber Vision or SEA/SRA simultaneously with Meraki management for an exact PID/release/license. The combination remains not yet verified.",
+    "detail": "Reviewed IE3500 data sheet, CV 5.6.x release notes, current sensor support, preparation and configuration-example guides. These establish IOx/platform and network prerequisites but do not explicitly support Cyber Vision or SEA/SRA simultaneously with Meraki management for an exact PID/release/license. The combination remains not yet verified. Beta-readiness review confirms IE9300 Meraki cloud management from IOS XE 26.2.1 for the four retained IE-9320-24T4X/24P4S E/A PIDs. Migration formats storage and disables USB/SD; this is not proof of CV incompatibility. CV + Meraki coexistence and exact IE9300 Meraki licensing remain unknown; no IE3500 subscription is inherited. Direct documentation.meraki.com licensing fetch was blocked by environment egress (CONNECT 403).",
     "requiresHumanReview": true,
     "status": "open",
     "resolution": null,

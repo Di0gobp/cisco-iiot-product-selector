@@ -45,35 +45,39 @@ export function ConfigurationSummary({
         : evaluation.decision === 'conditional'
           ? 'conditional'
           : 'unknown';
-  if (!config.selection.moduleIds.length)
-    return (
-      <p className="small muted">Base switch only · no expansion installed</p>
-    );
+  const pending = evaluation.findings.filter((f) => f.state !== 'supported');
   return (
     <div className="configuration-summary">
       <Badge state={state}>{compatibilityLabels[state]}</Badge>
       <p>
-        {config.selection.moduleIds
-          .map((id) => selectedModulePid(catalog, id))
-          .join(' + ')}
+        {config.selection.moduleIds.length
+          ? config.selection.moduleIds
+              .map((id) => selectedModulePid(catalog, id))
+              .join(' + ')
+          : 'Base switch only · no expansion installed'}
       </p>
       <p>
         {config.proposedTotals?.physicalPorts ?? 'Unknown'} proposed physical
         ports · {config.usableTotals?.physicalPorts ?? 'Unknown'} countable in
         requested mode
       </p>
-      <p className="small">
-        {config.selection.moduleIds.length}/
-        {config.capacity?.slotIds.length ?? '?'} documented positions · PoE
-        ceiling {config.poeBudgetWatts ?? 'unknown'} W
-      </p>
-      {evaluation.findings
-        .filter((f) => f.state !== 'supported')
-        .map((f, i) => (
-          <p className="small" key={i}>
-            {f.detail}
-          </p>
-        ))}
+      {config.selection.moduleIds.length > 0 && (
+        <p className="small">
+          {config.selection.moduleIds.length}/
+          {config.capacity?.slotIds.length ?? '?'} documented positions · PoE
+          ceiling {config.poeBudgetWatts ?? 'unknown'} W
+        </p>
+      )}
+      {pending.length > 0 && (
+        <details>
+          <summary>Deployment conditions to review ({pending.length})</summary>
+          {pending.map((f, i) => (
+            <p className="small" key={i}>
+              {f.detail}
+            </p>
+          ))}
+        </details>
+      )}
     </div>
   );
 }
@@ -330,6 +334,10 @@ export function ExpansionModules({
               used. Vendor maximum:{' '}
               {config.capacity?.maximumModules ?? 'not yet verified'}.
               Additional chaining is not assumed.
+            </p>
+            <p className="small muted">
+              Scroll horizontally to view proposed totals and capacity counted
+              in the requested mode.
             </p>
             <div
               className="table-scroll"

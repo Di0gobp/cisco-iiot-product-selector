@@ -260,7 +260,7 @@ test('audit distinguishes source retrieval from scoped source review', async ({
   ).toBeVisible();
   await expect(
     page.locator('.source-row').getByText('Source reviewed', { exact: true }),
-  ).toHaveCount(39);
+  ).toHaveCount(42);
   await expect(
     page.getByRole('heading', {
       name: 'IE3505 PoE ordering table duplicates the -A PID',
@@ -456,11 +456,131 @@ test('family reference never promotes a wildcard wireless SKU and audit history 
     (await report.getAttribute('href')) ?? '',
   );
   expect(response.ok()).toBe(true);
-  expect((await response.json()).summary.sourcesChecked).toBe(39);
+  expect((await response.json()).summary.sourcesChecked).toBe(42);
   const historical = page.locator('a[href*="/data/audits/"]').last();
   const previous = await page.request.get(
     (await historical.getAttribute('href')) ?? '',
   );
   expect(previous.ok()).toBe(true);
   expect((await previous.json()).summary.sourcesChecked).toBe(35);
+});
+
+test('beta scenario shows IE9300 prerequisites and independent unknown CV coexistence', async ({
+  page,
+}) => {
+  await page.goto('/');
+  await page.getByLabel('Cyber Vision support', { exact: true }).check();
+  await page.getByLabel('Desired management').selectOption('meraki');
+  await page
+    .getByText('Technical & licensing requirements', { exact: true })
+    .click();
+  await page
+    .getByLabel('Min. physical Ethernet ports', { exact: true })
+    .fill('16');
+  await page.getByLabel('Min. ports at required speed').fill('16');
+  await page.getByLabel('Cyber Vision release').selectOption('cv-5.6.1');
+  await page
+    .getByRole('combobox', { name: 'Product family', exact: true })
+    .selectOption('ie9300');
+  const cards = page.locator('.product-card:not(.research-card)');
+  await expect(cards).toHaveCount(4);
+  const candidate = cards.filter({
+    has: page.getByRole('heading', { name: 'IE-9320-24T4X-E', exact: true }),
+  });
+  await expect(candidate).toContainText('Fit unverified');
+  await candidate.getByText('Why this result?', { exact: true }).click();
+  await expect(candidate).toContainText('Minimum firmware 26.2.1');
+  await expect(candidate).toContainText(
+    'subscription/license offer and activation remain unverified',
+  );
+  await expect(candidate).toContainText('28 physical interfaces meet the rate');
+  await expect(candidate).toContainText(
+    'Cyber Vision + Meraki simultaneous operation is unknown',
+  );
+  await page
+    .getByRole('link', { name: 'IE-9320-24T4X-E', exact: true })
+    .click();
+  const row = page.getByRole('row', { name: /^Meraki Dashboard/ });
+  await expect(row).toContainText('Conditionally compatible');
+  await expect(row).toContainText('Not yet verified');
+  await expect(
+    page.getByText('Meraki licensing readiness', { exact: true }),
+  ).toBeVisible();
+  await page.reload();
+  await expect(
+    page.getByRole('heading', { name: 'IE-9320-24T4X-E', exact: true }),
+  ).toBeVisible();
+});
+
+test('blocked browser storage preserves discovery, configuration and exact-PID downloads', async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    Storage.prototype.getItem = () => {
+      throw new DOMException('Storage blocked', 'SecurityError');
+    };
+    Storage.prototype.setItem = () => {
+      throw new DOMException('Storage blocked', 'SecurityError');
+    };
+  });
+  const errors: string[] = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto('/');
+  await page.getByRole('searchbox').fill('IE-3300-8T2S-E');
+  await page.getByRole('link', { name: 'IE-3300-8T2S-E', exact: true }).click();
+  const panel = page.locator('.expansion-panel');
+  await panel
+    .getByRole('button', { name: 'Add IEM-3300-8T=', exact: true })
+    .click();
+  const next = page.waitForEvent('download');
+  await panel
+    .getByRole('button', { name: 'Download configuration JSON', exact: true })
+    .click();
+  const saved = JSON.parse(
+    await readFile((await (await next).path())!, 'utf8'),
+  );
+  expect(saved.configurations[0].modulePids).toEqual(['IEM-3300-8T=']);
+  await page
+    .getByRole('button', { name: 'Add to comparison', exact: true })
+    .click();
+  await page.reload();
+  await expect(
+    page.getByRole('heading', { name: 'IE-3300-8T2S-E', exact: true }),
+  ).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
+test('mobile IE9300 evidence and populated comparison are keyboard accessible', async ({
+  page,
+}) => {
+  const { default: AxeBuilder } = await import('@axe-core/playwright');
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/#/product/IE-9320-24T4X-E');
+  const evidence = page.getByRole('region', {
+    name: 'Management and security compatibility',
+    exact: true,
+  });
+  await evidence.focus();
+  await expect(evidence).toBeFocused();
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
+  await page
+    .getByRole('button', { name: 'Add to comparison', exact: true })
+    .click();
+  await page.goto('/#/product/IE-9320-24P4S-A');
+  await page
+    .getByRole('button', { name: 'Add to comparison', exact: true })
+    .click();
+  await page.goto('/#/compare');
+  const comparison = page.getByRole('region', {
+    name: 'Product comparison',
+    exact: true,
+  });
+  await comparison.focus();
+  await expect(comparison).toBeFocused();
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= window.innerWidth,
+    ),
+  ).toBe(true);
 });

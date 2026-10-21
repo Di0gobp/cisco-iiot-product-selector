@@ -1,6 +1,6 @@
 # Cisco industrial expansion modules — Phase B
 
-The catalog contains **53 base PIDs and 19 separately reviewed expansion-module PIDs**, with 964 scoped assertions and 39 official references. Module ordering identities retain the published trailing `=`. No module is installed by default. The existing nine review issues and prior audit snapshots are retained.
+The catalog contains **53 base PIDs and 19 separately reviewed expansion-module PIDs**, with 976 scoped assertions and 42 official references after the [beta-readiness correction](beta-release-readiness.md). Module ordering identities retain the published trailing `=`. No module is installed by default. The existing nine review issues and prior audit snapshots are retained.
 
 ## Coverage and exact base compatibility
 
@@ -71,7 +71,7 @@ Comparisons show the base PID and selected module PIDs alongside the base specif
 - [IE3500/IE3505 hardware overview](https://www.cisco.com/c/en/us/td/docs/IIOT/switches/ie35xx/hw-install-guide/b-ie35xx-hig/m_overview.html): base models and shared power-rating/budget explanation.
 - [IE9300 data sheet](https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-ie9300-rugged-series/catalyst-ie9300-rugged-series-ds.html): retained base hardware and accessories; no verified port-expansion module was added.
 
-All were fetched through the public HTTPS/robots-respecting audit path. Existing data-sheet fingerprints matched the reviewed baselines. The three new hardware-guide references bring the registry to 39. Historical 35- and 36-source reports retain their original coverage and bytes; new reports include the module count in `datasetSummary`.
+All were fetched through the public HTTPS/robots-respecting audit path. Existing data-sheet fingerprints matched the reviewed baselines. At the module-extension checkpoint, the three new hardware-guide references brought the registry to 39; the beta review adds three IE9300 references, for 42. Historical 35- and 36-source reports retain their original coverage and bytes; new reports include the module count in `datasetSummary`.
 
 ## Router follow-up — researched, not selectable in this increment
 
@@ -87,6 +87,6 @@ These candidates do not enter switch configuration matches, BOM component choice
 
 Automated tests cover all seven requested acceptance behaviors: 8+8 counting, chassis rejection, Meraki exclusion/unknown future release, verified power/slot limits, unknown compatibility, exact-PID BOM/JSON/comparison export and recalculation after removal. Additional cases cover firmware/license conditions, combined security uncertainty, mixed-module feature restrictions, combo counting, stale saved PIDs and schema/provenance failures. Browser tests exercise add/remove, reload persistence, exports, comparison, mobile layout and accessibility.
 
-Validation on 21 October 2026: catalog/history validation, ESLint, formatting, 69 TypeScript tests, eight Python tests, production type-check/build and all 18 Playwright tests passed. A production preview under `/cisco-iiot-product-selector/` also verified selection/reload persistence, exact-PID BOM download, Meraki capacity exclusion, mobile overflow and the downloadable current audit asset. Desktop/mobile screenshots were inspected. The production JS bundle is 1,386.09 kB raw / 151.12 kB gzip; Vite retains its size advisory.
+Historical module-implementation validation on 21 October 2026: catalog/history validation, ESLint, formatting, 69 TypeScript tests, eight Python tests, production type-check/build and all 18 Playwright tests passed. A production preview under `/cisco-iiot-product-selector/` also verified selection/reload persistence, exact-PID BOM download, Meraki capacity exclusion, mobile overflow and the downloadable current audit asset. Desktop/mobile screenshots were inspected. The production JS bundle is 1,386.09 kB raw / 151.12 kB gzip; Vite retains its size advisory.
 
-The latest immutable audit, `2026-10-21T08-21-23Z.json`, checked all 39 sources: zero changed, unreachable or stale observations, one pre-existing flagged IR8300 assertion and nine open/partially resolved review issues. The original 720 assertions, 36 source records, review-issue file, three prior report files and Pages workflow were checked against the pre-extension commit and preserved. Two new module-review snapshots record the evidence checkpoints. PR #1 remains the review boundary; this task does not merge or deploy.
+The module-implementation audit, `2026-10-21T08-21-23Z.json`, checked all 39 sources: zero changed, unreachable or stale observations, one pre-existing flagged IR8300 assertion and nine open/partially resolved review issues. The original 720 assertions, 36 source records, review-issue file, three prior report files and Pages workflow were checked against the pre-extension commit and preserved. Two new module-review snapshots record the evidence checkpoints. PR #1 remains the review boundary; this task does not merge or deploy.

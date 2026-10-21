@@ -4,7 +4,7 @@ This branch expands the existing static application; it does not replace the arc
 
 ## Scope and identity
 
-The subsequent [industrial expansion module extension](expansion-modules.md) adds 19 separately reviewed component PIDs, 150 exact positive hardware-fit mappings and three official hardware-guide references. Current totals are 53 base PIDs, 39 sources and 964 assertions. Local module deployment remains conditional; Meraki 26.1.1 expansion is explicitly unsupported and newer releases remain unverified. Existing citations and all nine review issues are preserved.
+The subsequent [industrial expansion module extension](expansion-modules.md) adds 19 separately reviewed component PIDs, 150 exact positive hardware-fit mappings and three official hardware-guide references. The module-extension checkpoint had 53 base PIDs, 39 sources and 964 assertions. Local module deployment remains conditional; Meraki 26.1.1 expansion is explicitly unsupported and newer releases remain unverified. Existing citations and all nine review issues are preserved.
 
 53 exact PIDs are documented across 20 hardware families. 23 family entries include three explicit identity/research gaps: IW9165, IW9167, and a distinct IE9300 Heavy Duty family. Coverage is representative, not exhaustive. `data/products/catalog.json` contains all exact identifiers and scoped assertions; the Audit & Sources page groups the same counts by family. An ordering-table identity assertion is not a real-time orderability check.
 
@@ -57,3 +57,11 @@ The first Phase B audit reached all 35 references, with no changed fingerprints 
 5. Extend lifecycle coverage and authenticated EoX only where useful; maintain reviewed snapshots and regression tests.
 
 The app remains static and uses a build-time data index. The expanded evidence increases the raw JS bundle to about 1 MB (about 130 kB gzip estimate); Vite reports its normal chunk-size advisory. Pagination limits initial cards to 24. Evidence/index separation is a useful future optimization if measurements justify it; no backend or runtime API key is introduced.
+
+## Beta-readiness correction: IE9300 Meraki
+
+The [IOS XE 26.2.x release notes](https://www.cisco.com/c/en/us/td/docs/switches/lan/cisco_ie9300/software/26-x/release-notes/26-2-1-rn-ie93xx.html) introduce Meraki cloud management in 26.2.1 and explicitly list IE-9320-24T4X-E/-A and IE-9320-24P4S-E/-A. The [migration guide](https://www.cisco.com/c/en/us/td/docs/switches/lan/cisco_ie9300/software/17_7/system-mgt-config-ie93xx/m-migration-to-meraki-managed-dashboard.html) confirms those models and INSTALL mode, Dashboard access/claim, trunk uplinks, DHCP/DNS/routable connectivity and clock prerequisites. Its legacy URL path does not imply a 17.7 Meraki minimum. Migration factory-resets the switch, formats flash/USB/SD, restricts the console and disables removable storage. Reversion requires Meraki support.
+
+The [IE9300 licensing guide](https://www.cisco.com/c/en/us/td/docs/switches/lan/iiot/licensing/ie9300/ie9300-licensing.html) describes IOS XE Network/DNA offers, not an exact IE9300 Meraki entitlement. Direct documentation.meraki.com access was blocked by the environment egress proxy (CONNECT 403). The applicable Dashboard offer, term and activation remain unverified; IE3500 licenses are not inherited. The CV 5.6.x platform row does not establish simultaneous cloud-managed operation or validate 26.2.1 for the sensor. Storage changes alone do not prove incompatibility: coexistence remains **unknown**, not unsupported.
+
+Twelve scoped assertions and three official sources bring the current totals to **976 assertions and 42 references**; 53 base PIDs and 19 module PIDs are unchanged. Existing assertions and all five earlier audit snapshots are preserved. The nine review issues remain pending. See [beta readiness](beta-release-readiness.md) for representative record checks, scenario results and publication steps.

@@ -893,7 +893,10 @@
         "cisco-cv56-rn",
         "cisco-cv-supported",
         "cisco-cv-prepare",
-        "cisco-cv-config-examples"
+        "cisco-cv-config-examples",
+        "cisco-ie9300-meraki-migration",
+        "cisco-ie9300-262-rn",
+        "cisco-ie9300-licensing"
       ]
     },
     {
@@ -909,7 +912,10 @@
         "cisco-cv56-rn",
         "cisco-cv-supported",
         "cisco-cv-prepare",
-        "cisco-cv-config-examples"
+        "cisco-cv-config-examples",
+        "cisco-ie9300-meraki-migration",
+        "cisco-ie9300-262-rn",
+        "cisco-ie9300-licensing"
       ]
     },
     {
@@ -925,7 +931,10 @@
         "cisco-cv56-rn",
         "cisco-cv-supported",
         "cisco-cv-prepare",
-        "cisco-cv-config-examples"
+        "cisco-cv-config-examples",
+        "cisco-ie9300-meraki-migration",
+        "cisco-ie9300-262-rn",
+        "cisco-ie9300-licensing"
       ]
     },
     {
@@ -941,7 +950,10 @@
         "cisco-cv56-rn",
         "cisco-cv-supported",
         "cisco-cv-prepare",
-        "cisco-cv-config-examples"
+        "cisco-cv-config-examples",
+        "cisco-ie9300-meraki-migration",
+        "cisco-ie9300-262-rn",
+        "cisco-ie9300-licensing"
       ]
     },
     {
@@ -36442,6 +36454,406 @@
       "reviewStatus": "approved",
       "reviewer": "Codex expansion-module source review (independent human review required)",
       "verifiedAt": "2026-10-21T07:59:40Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-9320-24t4x-e-beta-management",
+      "subjectId": "pid-ie-9320-24t4x-e",
+      "predicate": "management",
+      "value": "meraki",
+      "status": "conditional",
+      "sourceId": "cisco-ie9300-262-rn",
+      "evidence": {
+        "excerpt": "IOS XE 26.2.1: Support for Meraki cloud management. The Cisco Catalyst IE9300 Rugged Series Switches support cloud management mode ... migration from Cisco IOS XE to cloud management mode. Supported hardware: IE-9320-24T4X-E.",
+        "section": "New software features — IOS XE 26.2.1: Support for Meraki cloud management; Supported hardware — exact model row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-9320-24t4x-e"],
+        "firmwareMin": "26.2.1",
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "Meraki cloud-managed mode (not cloud monitoring). Supported exact PID is listed in the 26.2.1 release notes and its model in the migration guide. Requires IOS XE 26.2.1 or later in INSTALL mode, Dashboard access/claim, trunk uplink and peer, DHCP/DNS/routable connectivity and correct clock. Back up configuration and all files: migration factory-resets the switch, reformats flash/USB/SD, restricts console access, then disables removable USB/SD storage. Return to IOS XE requires Meraki support. Exact Meraki subscription/license offer and activation remain unverified: Network Essentials/Advantage and IE3500 LIC-IE3500 offers do not establish IE9300 Dashboard entitlement. CV 5.6.x hardware support is independent; simultaneous Meraki + CV operation remains unknown.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex beta-readiness source review (independent human review required)",
+      "verifiedAt": "2026-10-21T08:49:27Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-9320-24t4x-e-beta-coexistence",
+      "subjectId": "pid-ie-9320-24t4x-e",
+      "predicate": "coexistence",
+      "value": true,
+      "status": "unknown",
+      "sourceId": "cisco-cv56-rn",
+      "evidence": {
+        "excerpt": "Cisco Catalyst IE9300 — Minimum version: 17.12.x; Recommended versions: 17.12.7a, 17.15.4, 17.18.3 and above.",
+        "section": "Table 8: Compatible Cisco products with Cisco Cyber Vision sensors; combined review with IE9300 Meraki migration guide"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-9320-24t4x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": ["cv-5.6.0", "cv-5.6.1"],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "Cyber Vision + Meraki simultaneous operation is unknown. The CV 5.6.x platform row establishes sensor hardware prerequisites, not cloud-managed coexistence. The Meraki migration guide reformats storage and disables removable USB/SD; this service change requires an explicit supported sensor deployment/storage matrix. Neither document explicitly confirms coexistence or proves incompatibility. Independent feature support must not be combined into a verified solution.",
+        "effectiveFrom": null,
+        "assetLimit": null,
+        "featureIds": ["cv-visibility"]
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex beta-readiness source review (independent human review required)",
+      "verifiedAt": "2026-10-21T08:49:27Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-9320-24t4x-e-beta-licensingRule",
+      "subjectId": "pid-ie-9320-24t4x-e",
+      "predicate": "licensingRule",
+      "value": {
+        "summary": "IE9300 Meraki entitlement is not verified",
+        "rule": "Confirm an applicable IE9300 Meraki Dashboard subscription/license and activation before deployment; no exact offer is established by the reviewed sources."
+      },
+      "status": "unknown",
+      "sourceId": "cisco-ie9300-licensing",
+      "evidence": {
+        "excerpt": "Base Licenses: Network Essentials; Network Advantage. Add-On Licenses require a Network Essentials or Network Advantage as a pre-requisite. Catalyst Center DNA Essentials; Catalyst Center DNA Advantage.",
+        "section": "License Levels — IOS XE base/add-on licensing; Meraki entitlement is not established here"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-9320-24t4x-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "The checked IOS XE licensing guide covers Network/DNA offers, not an exact IE9300 Meraki entitlement. Confirm the applicable Dashboard offer, term and activation before deployment. No IE3500 license offer is inherited.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex beta-readiness source review (independent human review required)",
+      "verifiedAt": "2026-10-21T08:49:27Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-9320-24t4x-a-beta-management",
+      "subjectId": "pid-ie-9320-24t4x-a",
+      "predicate": "management",
+      "value": "meraki",
+      "status": "conditional",
+      "sourceId": "cisco-ie9300-262-rn",
+      "evidence": {
+        "excerpt": "IOS XE 26.2.1: Support for Meraki cloud management. The Cisco Catalyst IE9300 Rugged Series Switches support cloud management mode ... migration from Cisco IOS XE to cloud management mode. Supported hardware: IE-9320-24T4X-A.",
+        "section": "New software features — IOS XE 26.2.1: Support for Meraki cloud management; Supported hardware — exact model row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-9320-24t4x-a"],
+        "firmwareMin": "26.2.1",
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "Meraki cloud-managed mode (not cloud monitoring). Supported exact PID is listed in the 26.2.1 release notes and its model in the migration guide. Requires IOS XE 26.2.1 or later in INSTALL mode, Dashboard access/claim, trunk uplink and peer, DHCP/DNS/routable connectivity and correct clock. Back up configuration and all files: migration factory-resets the switch, reformats flash/USB/SD, restricts console access, then disables removable USB/SD storage. Return to IOS XE requires Meraki support. Exact Meraki subscription/license offer and activation remain unverified: Network Essentials/Advantage and IE3500 LIC-IE3500 offers do not establish IE9300 Dashboard entitlement. CV 5.6.x hardware support is independent; simultaneous Meraki + CV operation remains unknown.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex beta-readiness source review (independent human review required)",
+      "verifiedAt": "2026-10-21T08:49:27Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-9320-24t4x-a-beta-coexistence",
+      "subjectId": "pid-ie-9320-24t4x-a",
+      "predicate": "coexistence",
+      "value": true,
+      "status": "unknown",
+      "sourceId": "cisco-cv56-rn",
+      "evidence": {
+        "excerpt": "Cisco Catalyst IE9300 — Minimum version: 17.12.x; Recommended versions: 17.12.7a, 17.15.4, 17.18.3 and above.",
+        "section": "Table 8: Compatible Cisco products with Cisco Cyber Vision sensors; combined review with IE9300 Meraki migration guide"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-9320-24t4x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": ["cv-5.6.0", "cv-5.6.1"],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "Cyber Vision + Meraki simultaneous operation is unknown. The CV 5.6.x platform row establishes sensor hardware prerequisites, not cloud-managed coexistence. The Meraki migration guide reformats storage and disables removable USB/SD; this service change requires an explicit supported sensor deployment/storage matrix. Neither document explicitly confirms coexistence or proves incompatibility. Independent feature support must not be combined into a verified solution.",
+        "effectiveFrom": null,
+        "assetLimit": null,
+        "featureIds": ["cv-visibility"]
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex beta-readiness source review (independent human review required)",
+      "verifiedAt": "2026-10-21T08:49:27Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-9320-24t4x-a-beta-licensingRule",
+      "subjectId": "pid-ie-9320-24t4x-a",
+      "predicate": "licensingRule",
+      "value": {
+        "summary": "IE9300 Meraki entitlement is not verified",
+        "rule": "Confirm an applicable IE9300 Meraki Dashboard subscription/license and activation before deployment; no exact offer is established by the reviewed sources."
+      },
+      "status": "unknown",
+      "sourceId": "cisco-ie9300-licensing",
+      "evidence": {
+        "excerpt": "Base Licenses: Network Essentials; Network Advantage. Add-On Licenses require a Network Essentials or Network Advantage as a pre-requisite. Catalyst Center DNA Essentials; Catalyst Center DNA Advantage.",
+        "section": "License Levels — IOS XE base/add-on licensing; Meraki entitlement is not established here"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-9320-24t4x-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "The checked IOS XE licensing guide covers Network/DNA offers, not an exact IE9300 Meraki entitlement. Confirm the applicable Dashboard offer, term and activation before deployment. No IE3500 license offer is inherited.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex beta-readiness source review (independent human review required)",
+      "verifiedAt": "2026-10-21T08:49:27Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-9320-24p4s-e-beta-management",
+      "subjectId": "pid-ie-9320-24p4s-e",
+      "predicate": "management",
+      "value": "meraki",
+      "status": "conditional",
+      "sourceId": "cisco-ie9300-262-rn",
+      "evidence": {
+        "excerpt": "IOS XE 26.2.1: Support for Meraki cloud management. The Cisco Catalyst IE9300 Rugged Series Switches support cloud management mode ... migration from Cisco IOS XE to cloud management mode. Supported hardware: IE-9320-24P4S-E.",
+        "section": "New software features — IOS XE 26.2.1: Support for Meraki cloud management; Supported hardware — exact model row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-9320-24p4s-e"],
+        "firmwareMin": "26.2.1",
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "Meraki cloud-managed mode (not cloud monitoring). Supported exact PID is listed in the 26.2.1 release notes and its model in the migration guide. Requires IOS XE 26.2.1 or later in INSTALL mode, Dashboard access/claim, trunk uplink and peer, DHCP/DNS/routable connectivity and correct clock. Back up configuration and all files: migration factory-resets the switch, reformats flash/USB/SD, restricts console access, then disables removable USB/SD storage. Return to IOS XE requires Meraki support. Exact Meraki subscription/license offer and activation remain unverified: Network Essentials/Advantage and IE3500 LIC-IE3500 offers do not establish IE9300 Dashboard entitlement. CV 5.6.x hardware support is independent; simultaneous Meraki + CV operation remains unknown.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex beta-readiness source review (independent human review required)",
+      "verifiedAt": "2026-10-21T08:49:27Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-9320-24p4s-e-beta-coexistence",
+      "subjectId": "pid-ie-9320-24p4s-e",
+      "predicate": "coexistence",
+      "value": true,
+      "status": "unknown",
+      "sourceId": "cisco-cv56-rn",
+      "evidence": {
+        "excerpt": "Cisco Catalyst IE9300 — Minimum version: 17.12.x; Recommended versions: 17.12.7a, 17.15.4, 17.18.3 and above.",
+        "section": "Table 8: Compatible Cisco products with Cisco Cyber Vision sensors; combined review with IE9300 Meraki migration guide"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-9320-24p4s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": ["cv-5.6.0", "cv-5.6.1"],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "Cyber Vision + Meraki simultaneous operation is unknown. The CV 5.6.x platform row establishes sensor hardware prerequisites, not cloud-managed coexistence. The Meraki migration guide reformats storage and disables removable USB/SD; this service change requires an explicit supported sensor deployment/storage matrix. Neither document explicitly confirms coexistence or proves incompatibility. Independent feature support must not be combined into a verified solution.",
+        "effectiveFrom": null,
+        "assetLimit": null,
+        "featureIds": ["cv-visibility"]
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex beta-readiness source review (independent human review required)",
+      "verifiedAt": "2026-10-21T08:49:27Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-9320-24p4s-e-beta-licensingRule",
+      "subjectId": "pid-ie-9320-24p4s-e",
+      "predicate": "licensingRule",
+      "value": {
+        "summary": "IE9300 Meraki entitlement is not verified",
+        "rule": "Confirm an applicable IE9300 Meraki Dashboard subscription/license and activation before deployment; no exact offer is established by the reviewed sources."
+      },
+      "status": "unknown",
+      "sourceId": "cisco-ie9300-licensing",
+      "evidence": {
+        "excerpt": "Base Licenses: Network Essentials; Network Advantage. Add-On Licenses require a Network Essentials or Network Advantage as a pre-requisite. Catalyst Center DNA Essentials; Catalyst Center DNA Advantage.",
+        "section": "License Levels — IOS XE base/add-on licensing; Meraki entitlement is not established here"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-9320-24p4s-e"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "The checked IOS XE licensing guide covers Network/DNA offers, not an exact IE9300 Meraki entitlement. Confirm the applicable Dashboard offer, term and activation before deployment. No IE3500 license offer is inherited.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex beta-readiness source review (independent human review required)",
+      "verifiedAt": "2026-10-21T08:49:27Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-9320-24p4s-a-beta-management",
+      "subjectId": "pid-ie-9320-24p4s-a",
+      "predicate": "management",
+      "value": "meraki",
+      "status": "conditional",
+      "sourceId": "cisco-ie9300-262-rn",
+      "evidence": {
+        "excerpt": "IOS XE 26.2.1: Support for Meraki cloud management. The Cisco Catalyst IE9300 Rugged Series Switches support cloud management mode ... migration from Cisco IOS XE to cloud management mode. Supported hardware: IE-9320-24P4S-A.",
+        "section": "New software features — IOS XE 26.2.1: Support for Meraki cloud management; Supported hardware — exact model row"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-9320-24p4s-a"],
+        "firmwareMin": "26.2.1",
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "Meraki cloud-managed mode (not cloud monitoring). Supported exact PID is listed in the 26.2.1 release notes and its model in the migration guide. Requires IOS XE 26.2.1 or later in INSTALL mode, Dashboard access/claim, trunk uplink and peer, DHCP/DNS/routable connectivity and correct clock. Back up configuration and all files: migration factory-resets the switch, reformats flash/USB/SD, restricts console access, then disables removable USB/SD storage. Return to IOS XE requires Meraki support. Exact Meraki subscription/license offer and activation remain unverified: Network Essentials/Advantage and IE3500 LIC-IE3500 offers do not establish IE9300 Dashboard entitlement. CV 5.6.x hardware support is independent; simultaneous Meraki + CV operation remains unknown.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "high",
+      "reviewStatus": "approved",
+      "reviewer": "Codex beta-readiness source review (independent human review required)",
+      "verifiedAt": "2026-10-21T08:49:27Z",
+      "interpretation": "published",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-9320-24p4s-a-beta-coexistence",
+      "subjectId": "pid-ie-9320-24p4s-a",
+      "predicate": "coexistence",
+      "value": true,
+      "status": "unknown",
+      "sourceId": "cisco-cv56-rn",
+      "evidence": {
+        "excerpt": "Cisco Catalyst IE9300 — Minimum version: 17.12.x; Recommended versions: 17.12.7a, 17.15.4, 17.18.3 and above.",
+        "section": "Table 8: Compatible Cisco products with Cisco Cyber Vision sensors; combined review with IE9300 Meraki migration guide"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-9320-24p4s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": ["cv-5.6.0", "cv-5.6.1"],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "Cyber Vision + Meraki simultaneous operation is unknown. The CV 5.6.x platform row establishes sensor hardware prerequisites, not cloud-managed coexistence. The Meraki migration guide reformats storage and disables removable USB/SD; this service change requires an explicit supported sensor deployment/storage matrix. Neither document explicitly confirms coexistence or proves incompatibility. Independent feature support must not be combined into a verified solution.",
+        "effectiveFrom": null,
+        "assetLimit": null,
+        "featureIds": ["cv-visibility"]
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex beta-readiness source review (independent human review required)",
+      "verifiedAt": "2026-10-21T08:49:27Z",
+      "interpretation": "derived",
+      "supersedes": [],
+      "conflictsWith": [],
+      "requiresHumanReview": false
+    },
+    {
+      "id": "pid-ie-9320-24p4s-a-beta-licensingRule",
+      "subjectId": "pid-ie-9320-24p4s-a",
+      "predicate": "licensingRule",
+      "value": {
+        "summary": "IE9300 Meraki entitlement is not verified",
+        "rule": "Confirm an applicable IE9300 Meraki Dashboard subscription/license and activation before deployment; no exact offer is established by the reviewed sources."
+      },
+      "status": "unknown",
+      "sourceId": "cisco-ie9300-licensing",
+      "evidence": {
+        "excerpt": "Base Licenses: Network Essentials; Network Advantage. Add-On Licenses require a Network Essentials or Network Advantage as a pre-requisite. Catalyst Center DNA Essentials; Catalyst Center DNA Advantage.",
+        "section": "License Levels — IOS XE base/add-on licensing; Meraki entitlement is not established here"
+      },
+      "applicability": {
+        "pidIds": ["pid-ie-9320-24p4s-a"],
+        "firmwareMin": null,
+        "firmwareMax": null,
+        "licenseIds": [],
+        "softwareVersionIds": [],
+        "managementModeIds": ["meraki"],
+        "architecture": null,
+        "configuration": "The checked IOS XE licensing guide covers Network/DNA offers, not an exact IE9300 Meraki entitlement. Confirm the applicable Dashboard offer, term and activation before deployment. No IE3500 license offer is inherited.",
+        "effectiveFrom": null,
+        "assetLimit": null
+      },
+      "confidence": "medium",
+      "reviewStatus": "approved",
+      "reviewer": "Codex beta-readiness source review (independent human review required)",
+      "verifiedAt": "2026-10-21T08:49:27Z",
       "interpretation": "derived",
       "supersedes": [],
       "conflictsWith": [],

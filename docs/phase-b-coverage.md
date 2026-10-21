@@ -2,7 +2,7 @@
 
 Counts cover source-reviewed exact identities, not a claim of current orderability or complete family coverage.
 
-The table counts **53 base PIDs**. A separate [expansion coverage matrix](expansion-modules.md) lists **19 selectable module PIDs**, their exact retained base mappings and deployment restrictions. The current registry contains 39 official sources and 964 assertions; all nine prior review issues remain open/partially resolved.
+The table counts **53 base PIDs**. A separate [expansion coverage matrix](expansion-modules.md) lists **19 selectable module PIDs**, their exact retained base mappings and deployment restrictions. The current registry contains 42 official sources and 976 assertions; all nine prior review issues remain open/partially resolved.
 
 | Family                              | Exact PIDs |
 | ----------------------------------- | ---------: |
@@ -76,3 +76,11 @@ Every source below was fetched and scoped for review. Vendor dates can be unknow
 - [Cisco IE3500, IE3505 Rugged Series Switches Hardware Installation Guide - Switch Installation [Cisco IE3500 Rugged Series]](https://www.cisco.com/c/en/us/td/docs/IIOT/switches/ie35xx/hw-install-guide/b-ie35xx-hig/m_switch-install.html) — installation-guide; vendor date 2025-08-06; checked 2026-10-21.
 
 - [Cisco IE3500, IE3505 Rugged Series Switches Hardware Installation Guide - Cisco IE3500, IE3505 Rugged Series Switches [Cisco IE3500 Rugged Series]](https://www.cisco.com/c/en/us/td/docs/IIOT/switches/ie35xx/hw-install-guide/b-ie35xx-hig/m_overview.html) — installation-guide; vendor date 2025-08-06; checked 2026-10-21.
+
+## Beta-readiness IE9300 correction
+
+The four retained IE-9320-24T4X/24P4S E/A PIDs now have source-backed Meraki management prerequisites from IOS XE 26.2.1. This does not establish Cyber Vision coexistence or an applicable Meraki subscription. See the [before/after scenario and beta review](beta-release-readiness.md). No base or module PID was added in this pass.
+
+- [System Management Configuration Guide, Cisco Catalyst IE9300 Rugged Series Switches - Migration to Meraki Cloud Management Dashboard [Cisco Catalyst IE9300 Rugged Series]](https://www.cisco.com/c/en/us/td/docs/switches/lan/cisco_ie9300/software/17_7/system-mgt-config-ie93xx/m-migration-to-meraki-managed-dashboard.html) — configuration-guide; vendor date 2026-09-28; checked 2026-10-21.
+- [Release Notes for Cisco Catalyst IE9300 Rugged Series Switches, Release 26.2.x](https://www.cisco.com/c/en/us/td/docs/switches/lan/cisco_ie9300/software/26-x/release-notes/26-2-1-rn-ie93xx.html) — release-notes; vendor date 2026-09-27; checked 2026-10-21.
+- [Licensing on the Cisco Catalyst IE9300 Series Switches](https://www.cisco.com/c/en/us/td/docs/switches/lan/iiot/licensing/ie9300/ie9300-licensing.html) — configuration-guide; vendor date 2025-06-02; checked 2026-10-21.

@@ -29,7 +29,7 @@ npm run test:e2e
 
 ## Phase B coverage
 
-**53 source-reviewed exact base PIDs across 20 hardware families**, plus three explicit family research gaps and **19 separately selectable expansion-module PIDs**. The registry contains **39 public official Cisco sources and 964 scoped assertions**. Exact identities, historical sales lifecycle, hardware capability, technical support and commercial entitlement are separate. Initial source review is by Codex; **human PR and deployment approval are required**. A data-sheet entry is not proof of current orderability.
+**53 source-reviewed exact base PIDs across 20 hardware families**, plus three explicit family research gaps and **19 separately selectable expansion-module PIDs**. The registry contains **42 public official Cisco sources and 976 scoped assertions**. Exact identities, historical sales lifecycle, hardware capability, technical support and commercial entitlement are separate. Initial source review is by Codex; **human PR and deployment approval are required**. A data-sheet entry is not proof of current orderability.
 
 | Families                                         | Reviewed exact PIDs                                     |
 | ------------------------------------------------ | ------------------------------------------------------- |
@@ -41,7 +41,7 @@ npm run test:e2e
 | IE4000 / IE4010 / IE5000 / IE9300                | 2 / 2 / 2 / 4                                           |
 | IR1101 / IR1800 / IR8140 / IR8340 / legacy IR800 | 1 / 2 / 2 / 1 / 2                                       |
 
-See [full grouped coverage and all official references](docs/phase-b-coverage.md), [technical evidence and limitations](docs/phase-b-evidence.md), and the actual exact-PID records in `data/products/catalog.json`. The portfolio dashboard derives its counts from the data.
+See [full grouped coverage and all official references](docs/phase-b-coverage.md), [technical evidence and limitations](docs/phase-b-evidence.md), and the actual exact-PID records in `data/products/catalog.json`. The portfolio dashboard derives its counts from the data. See the [beta-readiness review](docs/beta-release-readiness.md) for the IE9300 Meraki correction, mandatory scenario and release limits.
 
 IW9165/IW9167 ordering tables use domain and operating-mode templates. Family references preserve technical evidence, but no concatenated or placeholder SKU is treated as a verified orderable PID. A separate IE9300 Heavy Duty ordering identity was not located; it remains unresolved. Unambiguous IE3505 non-PoE records are included; the duplicated PoE ordering row remains withheld.
 

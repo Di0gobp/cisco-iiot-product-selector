@@ -82,12 +82,18 @@ export function TechnicalReference({
           General hosting support does not establish coexistence in a management
           mode.
         </p>
-        <div className="table-scroll">
+        <div
+          className="table-scroll"
+          tabIndex={0}
+          role="region"
+          aria-label="Management and security compatibility"
+        >
           <table>
             <thead>
               <tr>
                 <th>Management mode</th>
                 <th>Management support</th>
+                <th>Cyber Vision in this mode</th>
                 <th>Cyber Vision + SEA together</th>
                 <th>Explanation & official evidence</th>
               </tr>
@@ -107,12 +113,27 @@ export function TechnicalReference({
                   'coexistence',
                   { ...context, cyberVision: true, sea: true },
                 );
+                const sensor = resolveFact(
+                  product,
+                  catalog.assertions,
+                  'coexistence',
+                  {
+                    ...context,
+                    cyberVision: true,
+                    sea: false,
+                  },
+                );
                 return (
                   <tr key={mode.id}>
                     <th scope="row">{mode.name}</th>
                     <td>
                       <Badge state={management.state}>
                         {compatibilityLabels[management.state]}
+                      </Badge>
+                    </td>
+                    <td>
+                      <Badge state={sensor.state}>
+                        {compatibilityLabels[sensor.state]}
                       </Badge>
                     </td>
                     <td>
@@ -131,6 +152,11 @@ export function TechnicalReference({
                         ids={coexist.assertionIds}
                         assertions={catalog.assertions}
                       />
+                      <p>{sensor.detail}</p>
+                      <AssertionEvidence
+                        ids={sensor.assertionIds}
+                        assertions={catalog.assertions}
+                      />
                     </td>
                   </tr>
                 );
@@ -138,6 +164,33 @@ export function TechnicalReference({
             </tbody>
           </table>
         </div>
+        {related.some(
+          (a) =>
+            a.predicate === 'licensingRule' &&
+            a.applicability.managementModeIds.includes('meraki'),
+        ) && (
+          <div className="finding">
+            <strong>Meraki licensing readiness</strong>
+            <Badge state="unknown">
+              Exact Dashboard entitlement not verified
+            </Badge>
+            <p>
+              IOS XE Network/DNA licenses do not establish a Meraki
+              subscription. Confirm the applicable IE9300 Dashboard offer, term
+              and activation before deployment.
+            </p>
+            <AssertionEvidence
+              ids={related
+                .filter(
+                  (a) =>
+                    a.predicate === 'licensingRule' &&
+                    a.applicability.managementModeIds.includes('meraki'),
+                )
+                .map((a) => a.id)}
+              assertions={catalog.assertions}
+            />
+          </div>
+        )}
       </section>
       {related.some((a) => a.predicate === 'entitlement') && (
         <section className="panel">

@@ -50,7 +50,8 @@ export function TechnicalFilters({
         {number('requiredPortSpeedMbps', 'Required port speed (Mbps)')}
         <p className="hint">
           Combo media count once. SFP slots require suitable transceivers.
-          Console and optional module ports are excluded.
+          Console ports are excluded. Expansion ports count only when explicitly
+          selected and supported in the requested deployment context.
         </p>
         <label className="field">
           Required PoE output standard
