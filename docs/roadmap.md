@@ -13,3 +13,11 @@ Phase B expands the existing application to 53 exact-PID identities across 20 ha
 ## Competitive intelligence
 
 The future schema retains exact competitor SKU/category, vendor sources, condition-specific parity, balanced strengths and weaknesses on both sides, operating model, licenses, independent user-evidence credibility, discovery questions and objections. Manufacturer/domain declarations now allow future public official vendor evidence without weakening Cisco provenance checks. No competitor claims are populated in Phase B.
+
+## Phase E — Interactive 3D cabinet layout (planned)
+
+Track implementation in [GitHub issue #2](https://github.com/Di0gobp/cisco-iiot-product-selector/issues/2). Let users compare the real physical size of selected exact PIDs in a simulated 19-inch network rack or DIN-rail industrial enclosure. The initial 3D viewer should support scale-accurate simplified models, cabinet dimensions, positioning, rotation, occupied rack units, available space, collision checks, and an exportable equipment list. React Three Fiber / Three.js can run entirely in the existing browser-based architecture.
+
+Before claiming physical fit, enrich the evidence model with Cisco-sourced chassis dimensions (W/H/D), mounting options, mounting accessories, module/PSU protrusions, orientation, and any documented cable/ventilation/service clearances. Missing measurements remain unknown, and a simulated geometric fit must not imply thermal, electrical, or installation compliance. Add detailed clearances and higher-fidelity licensed 3D models later; preserve a 2D/table fallback for accessibility and low-power devices.
+
+This is a future user-facing visualization feature, not a blocker for Phase B release. It follows Phase C technical data readiness and does not replace the existing competitive-intelligence workstream.
