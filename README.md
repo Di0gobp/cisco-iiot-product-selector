@@ -17,6 +17,7 @@ Outside the cloud, use any writable npm cache path or omit `--cache`. No backend
 npm run validate:data
 npm run lint
 npm test
+npm run format:check
 npm run build
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:e2e
 # Else install the matching Playwright browser first:
@@ -86,4 +87,4 @@ No EoX/API credential is needed by the current app or public-document audit. Aut
 
 ## Deployment and next work
 
-The existing GitHub Pages architecture, manual deployment workflow and `github-pages` human-review gate are preserved. Phase B is delivered on a development branch for PR review. **No production deployment is triggered by this phase.** See [deployment](docs/deployment.md) and the [prioritized roadmap](docs/roadmap.md).
+Publication is pending: at the 21 October 2026 review, the only recorded Pages deployment (Phase A run `39465932631`) still awaited approval despite a successful build. Phase B remains in PR #1, separate from `main`. The existing manual deployment workflow and `github-pages` human-review gate are preserved. See the [pre-merge quality review](docs/pre-merge-review.md), [deployment evidence and release steps](docs/deployment.md) and [prioritized roadmap](docs/roadmap.md).

@@ -296,5 +296,11 @@ test('family reference never promotes a wildcard wireless SKU and audit history 
     (await report.getAttribute('href')) ?? '',
   );
   expect(response.ok()).toBe(true);
-  expect((await response.json()).summary.sourcesChecked).toBe(35);
+  expect((await response.json()).summary.sourcesChecked).toBe(36);
+  const historical = page.locator('a[href*="/data/audits/"]').nth(1);
+  const previous = await page.request.get(
+    (await historical.getAttribute('href')) ?? '',
+  );
+  expect(previous.ok()).toBe(true);
+  expect((await previous.json()).summary.sourcesChecked).toBe(35);
 });

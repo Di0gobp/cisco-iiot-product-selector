@@ -1,8 +1,12 @@
 # GitHub Pages deployment and review
 
-Phase A is published through GitHub Pages. At Phase B inspection, the repository used `build_type: workflow`, and `github-pages` required review by `Di0gobp`. This branch preserves the existing deployment workflow and does not change environment protections or dispatch a deployment.
+Publication is pending. On 21 October 2026, the only recorded Pages deployment was [run 39465932631](https://github.com/Di0gobp/cisco-iiot-product-selector/actions/runs/39465932631), for Phase A commit `e14db1ce6148d6e218722dc091f6e4b6d3fb95b1` on `main`. Its build succeeded, but its deployment job and deployment-status records were still `waiting`; no completed successful Pages deployment was recorded. The configured Pages URL alone does not establish publication.
 
-Public Pages hosting is not a restricted Cisco-only service. The public MVP has no login, private data, analytics or embedded secrets.
+Phase B remains in PR #1 on `codex/phase-b-technical-intelligence`, separate from `main`. The repository uses `build_type: workflow`, and `github-pages` requires review by `Di0gobp`. Confirm a completed deployment and smoke-test the published site before describing either phase as published.
+
+Approving the existing Phase A run would deploy its older commit. Releasing Phase B requires a new workflow run on `main` after its PR is reviewed and merged.
+
+Public Pages hosting is not a restricted Cisco-only service. The application has no login, private data, analytics or embedded secrets.
 
 ## Review and release
 

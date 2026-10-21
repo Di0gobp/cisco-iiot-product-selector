@@ -1,5 +1,16 @@
 [
   {
+    "id": "2026-10-21T06-50-53Z",
+    "generatedAt": "2026-10-21T06:50:53Z",
+    "path": "data/audits/2026-10-21T06-50-53Z.json",
+    "sourcesChecked": 36,
+    "changedSources": 0,
+    "unreachableSources": 0,
+    "staleClaims": 0,
+    "potentiallyOutdatedClaims": 1,
+    "requiresHumanReview": true
+  },
+  {
     "id": "2026-10-20T20-49-31Z",
     "generatedAt": "2026-10-20T20:49:31Z",
     "path": "data/audits/2026-10-20T20-49-31Z.json",

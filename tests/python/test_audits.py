@@ -1,6 +1,7 @@
 import copy
 import datetime as dt
 import hashlib
+import http.client
 import importlib.util
 import json
 from pathlib import Path
@@ -60,6 +61,25 @@ class AuditTests(unittest.TestCase):
         s=source();s['url']='https://example.com/private'
         report=self.run_audit([s],fn=lambda _:self.fail('must not fetch'))
         self.assertEqual(report['summary']['unreachableSources'],1)
+    def test_transport_failure_keeps_report_and_continues_with_remaining_sources(self):
+        failed = source()
+        remaining = {**source(), 'id':'remaining', 'url':'https://www.cisco.com/remaining'}
+        catalog = {'pids':[], 'assertions':[{'id':'affected', 'sourceId':failed['id'],
+                   'reviewStatus':'approved', 'verifiedAt':'2026-10-01T00:00:00Z'}]}
+        for error in [TimeoutError('response read timed out'), http.client.IncompleteRead(b'partial')]:
+            with self.subTest(error=type(error).__name__):
+                def interrupted(url):
+                    if url == failed['url']:
+                        raise error
+                    return fetch(url)
+                report = self.run_audit([failed, remaining], catalog, interrupted)
+                self.assertEqual(report['summary']['sourcesChecked'],2)
+                self.assertEqual(report['summary']['unreachableSources'],1)
+                self.assertEqual(report['sources'][0]['status'],'unreachable')
+                self.assertTrue(report['sources'][0]['requiresHumanReview'])
+                self.assertEqual(report['sources'][1]['status'],'unchanged')
+                self.assertEqual(report['potentiallyOutdatedAssertions'][0]['assertionId'],'affected')
+                self.assertEqual(report['claimsChanged'],[])
     def test_only_explicit_valid_vendor_date_is_parsed(self):
         self.assertIsNone(A.document_date('Published elsewhere on October 9, 2026'))
         self.assertIsNone(A.document_date('Updated: February 30, 2026'))

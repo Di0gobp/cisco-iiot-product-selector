@@ -2,6 +2,7 @@
 import argparse
 import datetime as dt
 import hashlib
+import http.client
 import json
 import os
 from pathlib import Path
@@ -112,7 +113,7 @@ def audit(sources, catalog=None, issues=None, *, now=None, fetch_fn=fetch, sleep
                 item.update(status=status, contentHash=digest, finalUrl=final, documentDate=vendor_date,
                             documentDateChanged=date_changed, requiresHumanReview=status != 'unchanged' or date_changed,
                             note='Fingerprint/date observation only; no technical claim or lifecycle change inferred.')
-        except (urllib.error.URLError, ValueError) as error:
+        except (OSError, http.client.HTTPException, ValueError) as error:
             item['error'] = str(error) if isinstance(error, ValueError) else 'Source network request failed; check proxy/network permissions'
         results.append(item)
     stale, outdated = [], []
