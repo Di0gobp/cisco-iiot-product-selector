@@ -16,6 +16,10 @@ export type Predicate =
   | 'lifecycle'
   | 'portInventory'
   | 'moduleSupport'
+  | 'expansionCapacity'
+  | 'configurationPower'
+  | 'physicalDimensions'
+  | 'moduleRestrictions'
   | 'entitlement'
   | 'coexistence'
   | 'physicalEthernetPorts'
@@ -134,6 +138,7 @@ export interface Catalog {
   families: Family[];
   models: { id: string; familyId: string; name: string }[];
   pids: Product[];
+  modules: HardwareModule[];
   versions: { id: string; softwareId: string; name: string }[];
   software: { id: string; manufacturerId: string; name: string }[];
   managementModes: { id: string; name: string }[];
@@ -148,7 +153,40 @@ export interface Catalog {
   assertions: Assertion[];
   candidates: Candidate[];
 }
+export interface HardwareModule {
+  id: string;
+  pid: string;
+  name: string;
+  moduleType: 'ethernet-expansion';
+  familyIds: string[];
+  reviewStatus: ReviewStatus;
+  identityAssertionId: string;
+  portInventoryAssertionId: string;
+  assertionIds: string[];
+}
+export interface HardwareSelection {
+  moduleIds: string[];
+  supplyWatts: number | null;
+  installationConfirmed: boolean;
+}
+export interface ComponentDimensions {
+  heightMm: number;
+  widthMm: number;
+  depthMm: number;
+  weightKg: number | null;
+  mounting: string;
+  scope: 'component';
+  assembledWidthIncrementMm: number | null;
+}
+export interface ConfigurationPower {
+  consumptionWatts: number | null;
+  systemPoeBudgetWatts: number | null;
+  basePoePorts: number | null;
+  maxPoePerPortWatts: number | null;
+  summary: string;
+}
 export interface Requirements {
+  configurations: Record<string, HardwareSelection>;
   physicalPorts: number;
   portsAtSpeed: number;
   requiredPortSpeedMbps: number;

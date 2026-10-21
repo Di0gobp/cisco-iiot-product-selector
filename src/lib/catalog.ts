@@ -7,6 +7,7 @@ export const sourceById = Object.fromEntries(sources.map((s) => [s.id, s]));
 export const familyName = (id: string) =>
   catalog.families.find((f) => f.id === id)?.name ?? id;
 export const defaultRequirements: Requirements = {
+  configurations: {},
   physicalPorts: 0,
   portsAtSpeed: 0,
   requiredPortSpeedMbps: 1000,

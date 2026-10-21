@@ -10,12 +10,19 @@ export function PortfolioCoverage() {
         Software counts indicate scoped assertions; they are not counts of fully
         compatible deployments.
       </p>
+      <p>
+        {catalog.modules.filter((m) => m.reviewStatus === 'approved').length}{' '}
+        exact expansion-module PIDs are tracked separately from base switches.
+        Configure a module on the product page to evaluate its exact base,
+        firmware, management and power restrictions.
+      </p>
       <div className="table-scroll">
         <table>
           <thead>
             <tr>
               <th>Family</th>
               <th>Exact PIDs</th>
+              <th>Expansion module identities</th>
               <th>Lifecycle evidenced</th>
               <th>CV 5.6.x assertions</th>
               <th>SEA assertions</th>
@@ -42,6 +49,13 @@ export function PortfolioCoverage() {
                     <a href={`#/family/${f.id}`}>{f.name} →</a>
                   </th>
                   <td>{pids.length}</td>
+                  <td>
+                    {catalog.modules.filter(
+                      (m) =>
+                        m.familyIds.includes(f.id) &&
+                        m.reviewStatus === 'approved',
+                    ).length || 'Not verified'}
+                  </td>
                   <td>
                     {count('lifecycle')} / {pids.length}
                   </td>

@@ -4,6 +4,8 @@ This branch expands the existing static application; it does not replace the arc
 
 ## Scope and identity
 
+The subsequent [industrial expansion module extension](expansion-modules.md) adds 19 separately reviewed component PIDs, 150 exact positive hardware-fit mappings and three official hardware-guide references. Current totals are 53 base PIDs, 39 sources and 964 assertions. Local module deployment remains conditional; Meraki 26.1.1 expansion is explicitly unsupported and newer releases remain unverified. Existing citations and all nine review issues are preserved.
+
 53 exact PIDs are documented across 20 hardware families. 23 family entries include three explicit identity/research gaps: IW9165, IW9167, and a distinct IE9300 Heavy Duty family. Coverage is representative, not exhaustive. `data/products/catalog.json` contains all exact identifiers and scoped assertions; the Audit & Sources page groups the same counts by family. An ordering-table identity assertion is not a real-time orderability check.
 
 Wireless data sheets list regulatory-domain placeholders and AP/WGB/URWB mode templates, with some ROW hardware names elsewhere. Neither x-domain templates nor concatenated mode/domain strings have been promoted to exact orderable PIDs. Family reference pages preserve wireless modes and mode-specific software evidence. The checked industrial-switch portfolio does not establish a distinct IE9300 Heavy Duty ordering family; it remains a research target, not a declaration of nonexistence.

@@ -1,14 +1,14 @@
 # Next phases
 
-Phase B expands the existing application to 53 exact-PID identities across 20 hardware families, 36 official source references, advanced technical requirements, contextual compatibility, lifecycle/replacement evidence and immutable audit-history proposals. Three family identity gaps remain visible rather than guessed. The deployment workflow and human reviewer are preserved.
+Phase B expands the existing application to 53 exact base-PID identities across 20 hardware families, 19 selectable switch-module PIDs, 39 official source references, advanced technical requirements, contextual compatibility, lifecycle/replacement evidence and immutable audit-history proposals. Three family identity gaps remain visible rather than guessed. The deployment workflow and human reviewer are preserved. See the [expansion matrix](expansion-modules.md).
 
 ## Phase C priority
 
 1. **Close support gaps first.** Obtain explicit exact-PID Meraki/CV/SEA/SRA coexistence evidence, resolve the IR8300 5.6 firmware ambiguity, check current SRA agent/deployment architecture, and resolve concrete wireless mode/domain ordering identities and the IE9300 Heavy Duty research target.
-2. **Improve release/configuration coverage.** Validate exact controller/firmware/license/revision combinations, protocol profiles, redundancy coexistence, power/PoE design and certificate/evaluated-configuration scope. Extend partial assertions only with primary evidence.
+2. **Improve release/configuration coverage.** Validate exact controller/firmware/license/revision combinations, protocol profiles, redundancy coexistence, power/PoE design and certificate/evaluated-configuration scope. Close switch-module runtime/coexistence and absolute slot/chaining limits, establish actual Meraki expansion releases, then implement the researched IR1101/IR1800/IR8300/IR8340 module follow-up. Extend partial assertions only with primary evidence. Source-backed component dimensions prepare for a later cabinet simulator; assembled geometry and the simulator remain future work.
 3. **Expand lifecycle.** Keep exact-PID public milestone/migration checks; add authenticated Cisco EoX only with validated server-side CI credentials and useful coverage. No absence-of-bulletin active-sales inference.
 4. **Maintain trustworthy audits.** The current monthly job observes source/date changes, overdue claims and review queues, and proposes history PRs. Add narrowly tested parsers that propose cited technical edits only when exact meaning and applicability can be established; never automatically overwrite approved claims based on page hashes.
-5. **Measure performance and usability.** The expanded static evidence index is about 1 MB raw JS, about 130 kB gzip estimate. Initial cards are paginated. Separate detailed provenance from the fast index if browser measurements justify it. Finish string extraction/PT-PT translation and improve multi-license entry, module selection and evidence navigation.
+5. **Measure performance and usability.** The expanded static evidence index is about 1.4 MB raw JS, about 151 kB gzip. Initial cards are paginated. Separate detailed provenance from the fast index if browser measurements justify it. Finish string extraction/PT-PT translation and improve multi-license entry and evidence navigation. Module selection and PID-based saved configurations are implemented.
 
 ## Competitive intelligence
 

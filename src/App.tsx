@@ -7,13 +7,19 @@ import {
   specRows,
   auditReportUrls,
 } from './lib/catalog';
+import { resolveFact, searchProducts, formatFact } from './lib/rules';
+import { comparisonCsv, configurationBomCsv, downloadText } from './lib/export';
+import { rankConfiguredProducts, selectionFor } from './lib/configurations';
 import {
-  rankProducts,
-  resolveFact,
-  searchProducts,
-  formatFact,
-} from './lib/rules';
-import { comparisonCsv } from './lib/export';
+  configurationStorageKey,
+  readSavedRequirements,
+  savedConfigurationPayload,
+  selectedModulePid,
+} from './lib/saved-configurations';
+import {
+  ConfigurationSummary,
+  ExpansionModules,
+} from './components/ExpansionModules';
 import { en } from './lib/i18n';
 import reviewIssues from '../data/sources/review-issues.json';
 import type { Candidate, Product, Requirements } from './lib/types';
@@ -200,7 +206,12 @@ function RequirementsPanel({
         </h2>
         <button
           className="text-button"
-          onClick={() => onChange({ ...defaultRequirements })}
+          onClick={() =>
+            onChange({
+              ...defaultRequirements,
+              configurations: value.configurations,
+            })
+          }
         >
           Reset
         </button>
@@ -208,10 +219,10 @@ function RequirementsPanel({
       <p className="small muted">Only reviewed facts can confirm a fit.</p>
       <fieldset>
         <legend>Port inventory</legend>
-        {numberField('copperPorts', 'Min. built-in copper ports')}
+        {numberField('copperPorts', 'Min. dedicated copper ports')}
         {numberField('fiberPorts', 'Min. fixed fiber ports')}
         {numberField('sfpSlots', 'Min. SFP / SFP+ slots')}
-        {numberField('uplinks', 'Min. built-in uplinks')}
+        {numberField('uplinks', 'Min. dedicated uplinks')}
         {numberField('minSpeedMbps', 'Fastest port, min. Mbps')}
         {numberField('poeWatts', 'Min. PoE budget (W)')}
         <p className="hint">
@@ -369,7 +380,7 @@ function ProductCard({
   compared: string[];
   onCompare: (id: string) => void;
 }) {
-  const result = rankProducts([product], catalog.assertions, requirements)[0];
+  const result = rankConfiguredProducts([product], catalog, requirements)[0];
   const basicRows = [
     ['builtInCopperPorts', 'Built-in copper'],
     ['uplinkPorts', 'Dedicated uplinks'],
@@ -403,6 +414,14 @@ function ProductCard({
             {product.pid}
           </a>
         </h3>
+        {selectionFor(product, requirements).moduleIds.length > 0 && (
+          <p className="small configured-pids">
+            Configured with{' '}
+            {selectionFor(product, requirements)
+              .moduleIds.map((id) => selectedModulePid(catalog, id))
+              .join(' + ')}
+          </p>
+        )}
         <dl className="card-specs">
           {basicRows.map(([key, label]) => {
             const fact = resolveFact(
@@ -529,7 +548,7 @@ function Browse({
         catalog.families.find((f) => f.id === p.familyId)?.category ===
           category),
   );
-  const allRanked = rankProducts(approved, catalog.assertions, requirements);
+  const allRanked = rankConfiguredProducts(approved, catalog, requirements);
   const ranked = allRanked.filter(
     (r) => showExcluded || r.decision !== 'excluded',
   );
@@ -573,6 +592,11 @@ function Browse({
             />
           )}
           <div className="results">
+            <p className="small muted">
+              Port requirements include selected expansion modules. Configure
+              modules from an exact-PID product page; every selected module
+              remains visible in the comparison and BOM.
+            </p>
             <div className="search-toolbar">
               <label className="search-box">
                 <Icon name="search" />
@@ -927,11 +951,13 @@ function ResearchDetail({ id }: { id: string }) {
 function ProductDetail({
   pid,
   requirements,
+  setRequirements,
   compared,
   onCompare,
 }: {
   pid: string;
   requirements: Requirements;
+  setRequirements: (value: Requirements) => void;
   compared: string[];
   onCompare: (id: string) => void;
 }) {
@@ -958,6 +984,11 @@ function ProductDetail({
           ? 'Remove from comparison'
           : 'Add to comparison'}
       </button>
+      <ExpansionModules
+        product={p}
+        requirements={requirements}
+        onChange={setRequirements}
+      />
       <section className="panel detail-panel">
         <h2>Specifications & compatibility</h2>
         <p>
@@ -995,7 +1026,12 @@ function ProductDetail({
           .map((a) => (
             <div key={a.id}>
               {Array.isArray(a.value) && (
-                <div className="table-scroll">
+                <div
+                  className="table-scroll"
+                  tabIndex={0}
+                  role="region"
+                  aria-label="Built-in port inventory"
+                >
                   <table>
                     <thead>
                       <tr>
@@ -1068,9 +1104,12 @@ function Compare({
     .filter(Boolean);
   function download() {
     const url = URL.createObjectURL(
-      new Blob([comparisonCsv(products, catalog.assertions, requirements)], {
-        type: 'text/csv;charset=utf-8',
-      }),
+      new Blob(
+        [comparisonCsv(products, catalog.assertions, requirements, catalog)],
+        {
+          type: 'text/csv;charset=utf-8',
+        },
+      ),
     );
     const a = document.createElement('a');
     a.href = url;
@@ -1107,6 +1146,18 @@ function Compare({
           <button className="button secondary" onClick={download}>
             Export CSV with sources
           </button>
+          <button
+            className="button secondary"
+            onClick={() =>
+              downloadText(
+                configurationBomCsv(products, catalog, requirements),
+                'iiot-configurations-bom.csv',
+                'text/csv;charset=utf-8',
+              )
+            }
+          >
+            Export configuration BOMs
+          </button>
           <div className="table-scroll compare-table">
             <table>
               <thead>
@@ -1117,6 +1168,15 @@ function Compare({
                       <a href={`#/product/${encodeURIComponent(p.pid)}`}>
                         {p.pid}
                       </a>
+                      {selectionFor(p, requirements).moduleIds.length > 0 && (
+                        <p className="small">
+                          {selectionFor(p, requirements)
+                            .moduleIds.map((id) =>
+                              selectedModulePid(catalog, id),
+                            )
+                            .join(' + ')}
+                        </p>
+                      )}
                       <button
                         className="icon-button"
                         aria-label={`Remove ${p.pid}`}
@@ -1129,6 +1189,17 @@ function Compare({
                 </tr>
               </thead>
               <tbody>
+                <tr>
+                  <th scope="row">Hardware configuration</th>
+                  {products.map((p) => (
+                    <td key={p.id}>
+                      <ConfigurationSummary
+                        product={p}
+                        requirements={requirements}
+                      />
+                    </td>
+                  ))}
+                </tr>
                 {specRows.map(([key, label]) => (
                   <tr key={key}>
                     <th scope="row">{label}</th>
@@ -1576,9 +1647,27 @@ export default function App() {
   const route = useRoute();
   const page = route.split('/')[1];
   const detail = route.split('/').slice(2).join('/');
-  const [requirements, setRequirements] = useState<Requirements>({
-    ...defaultRequirements,
+  const [requirements, setRequirements] = useState<Requirements>(() => {
+    try {
+      return readSavedRequirements(
+        localStorage.getItem(configurationStorageKey),
+        catalog,
+        defaultRequirements,
+      );
+    } catch {
+      return { ...defaultRequirements, configurations: {} };
+    }
   });
+  useEffect(() => {
+    try {
+      localStorage.setItem(
+        configurationStorageKey,
+        JSON.stringify(savedConfigurationPayload(catalog, requirements)),
+      );
+    } catch {
+      /* Configurations remain usable and downloadable without browser storage. */
+    }
+  }, [requirements]);
   const [compared, setCompared] = useState<string[]>(readCompared);
   const [menuOpen, setMenuOpen] = useState(false);
   const [announcement, setAnnouncement] = useState('');
@@ -1647,6 +1736,7 @@ export default function App() {
         <ProductDetail
           pid={pid}
           requirements={requirements}
+          setRequirements={setRequirements}
           compared={compared}
           onCompare={onCompare}
         />

@@ -534,5 +534,50 @@
     "contentHash": "sha256:00379af012167c72980d537cf79b4b121d1e21376471cd8b9d5e485e3bde6376",
     "supersedes": [],
     "note": "Scoped source review by Codex for Phase B. Publisher review is required; an ordering-table entry is not proof of current sale status."
+  },
+  {
+    "id": "cisco-ie3x00-install",
+    "title": "Cisco Catalyst IE3x00 Rugged Series Switches Hardware Installation Guide - Switch Installation [Cisco Catalyst IE3300 Rugged Series]",
+    "url": "https://www.cisco.com/c/en/us/td/docs/switches/lan/cisco_ie3X00/Hardware/installation/guide/b_ie3x00_hig/b_ie2k-ip67-hig_chapter_010.html",
+    "type": "official-support",
+    "kind": "installation-guide",
+    "status": "reviewed",
+    "documentDate": "2023-12-14",
+    "lastCheckedAt": "2026-10-21T07:48:52Z",
+    "verifiedAt": "2026-10-21T07:59:40Z",
+    "lastMaterialChangeAt": null,
+    "contentHash": "sha256:bf88233144a5e3ff17f72f3b66608315fc1f82e0cc02e948941db2b74cb29297",
+    "supersedes": [],
+    "note": "Scoped Codex review of hardware expansion attachment, base models and power-design conditions. Independent publisher review is still required."
+  },
+  {
+    "id": "cisco-ie3500-install",
+    "title": "Cisco IE3500, IE3505 Rugged Series Switches Hardware Installation Guide - Switch Installation [Cisco IE3500 Rugged Series]",
+    "url": "https://www.cisco.com/c/en/us/td/docs/IIOT/switches/ie35xx/hw-install-guide/b-ie35xx-hig/m_switch-install.html",
+    "type": "official-support",
+    "kind": "installation-guide",
+    "status": "reviewed",
+    "documentDate": "2025-08-06",
+    "lastCheckedAt": "2026-10-21T07:50:49Z",
+    "verifiedAt": "2026-10-21T07:59:40Z",
+    "lastMaterialChangeAt": null,
+    "contentHash": "sha256:8bcbc0cc2f7a8a3b00b6dc3a7b4116808dc66128ce62871038d1deab866a7249",
+    "supersedes": [],
+    "note": "Scoped Codex review of hardware expansion attachment, base models and power-design conditions. Independent publisher review is still required."
+  },
+  {
+    "id": "cisco-ie3500-hardware",
+    "title": "Cisco IE3500, IE3505 Rugged Series Switches Hardware Installation Guide - Cisco IE3500, IE3505 Rugged Series Switches [Cisco IE3500 Rugged Series]",
+    "url": "https://www.cisco.com/c/en/us/td/docs/IIOT/switches/ie35xx/hw-install-guide/b-ie35xx-hig/m_overview.html",
+    "type": "official-support",
+    "kind": "installation-guide",
+    "status": "reviewed",
+    "documentDate": "2025-08-06",
+    "lastCheckedAt": "2026-10-21T07:50:48Z",
+    "verifiedAt": "2026-10-21T07:59:40Z",
+    "lastMaterialChangeAt": null,
+    "contentHash": "sha256:8e19b3aafbaee6ed10c8371c423042a291f97ca3e0ee10beaa5c414197f1c3c2",
+    "supersedes": [],
+    "note": "Scoped Codex review of hardware expansion attachment, base models and power-design conditions. Independent publisher review is still required."
   }
 ]

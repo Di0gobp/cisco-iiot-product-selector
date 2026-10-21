@@ -2,6 +2,8 @@
 
 Counts cover source-reviewed exact identities, not a claim of current orderability or complete family coverage.
 
+The table counts **53 base PIDs**. A separate [expansion coverage matrix](expansion-modules.md) lists **19 selectable module PIDs**, their exact retained base mappings and deployment restrictions. The current registry contains 39 official sources and 964 assertions; all nine prior review issues remain open/partially resolved.
+
 | Family                              | Exact PIDs |
 | ----------------------------------- | ---------: |
 | IR1000                              |          2 |
@@ -68,3 +70,9 @@ Every source below was fetched and scoped for review. Vendor dates can be unknow
 - [Cisco Catalyst IW9165 Series Data Sheet](https://www.cisco.com/c/en/us/products/collateral/networking/industrial-wireless/catalyst-iw9165-series-ds.html) — datasheet; vendor date 2026-05-28; checked 2026-10-20.
 - [Cisco Catalyst IW9167 Heavy Duty Series Data Sheet](https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-iw9167-series/cat-iw9167e-heavy-duty-ap-ds.html) — datasheet; vendor date 2025-09-23; checked 2026-10-20.
 - [Industrial Ethernet Switches](https://www.cisco.com/site/us/en/products/networking/industrial-switches/index.html) — support-index; vendor date unknown; checked 2026-10-20.
+
+- [Cisco Catalyst IE3x00 Rugged Series Switches Hardware Installation Guide - Switch Installation [Cisco Catalyst IE3300 Rugged Series]](https://www.cisco.com/c/en/us/td/docs/switches/lan/cisco_ie3X00/Hardware/installation/guide/b_ie3x00_hig/b_ie2k-ip67-hig_chapter_010.html) — installation-guide; vendor date 2023-12-14; checked 2026-10-21.
+
+- [Cisco IE3500, IE3505 Rugged Series Switches Hardware Installation Guide - Switch Installation [Cisco IE3500 Rugged Series]](https://www.cisco.com/c/en/us/td/docs/IIOT/switches/ie35xx/hw-install-guide/b-ie35xx-hig/m_switch-install.html) — installation-guide; vendor date 2025-08-06; checked 2026-10-21.
+
+- [Cisco IE3500, IE3505 Rugged Series Switches Hardware Installation Guide - Cisco IE3500, IE3505 Rugged Series Switches [Cisco IE3500 Rugged Series]](https://www.cisco.com/c/en/us/td/docs/IIOT/switches/ie35xx/hw-install-guide/b-ie35xx-hig/m_overview.html) — installation-guide; vendor date 2025-08-06; checked 2026-10-21.

@@ -29,7 +29,7 @@ npm run test:e2e
 
 ## Phase B coverage
 
-**53 source-reviewed exact PIDs across 20 hardware families**, plus three explicit family research gaps. The registry contains **36 public official Cisco sources**. Exact identities, historical sales lifecycle, hardware capability, technical support and commercial entitlement are separate. Initial source review is by Codex; **human PR and deployment approval are required**. A data-sheet entry is not proof of current orderability.
+**53 source-reviewed exact base PIDs across 20 hardware families**, plus three explicit family research gaps and **19 separately selectable expansion-module PIDs**. The registry contains **39 public official Cisco sources and 964 scoped assertions**. Exact identities, historical sales lifecycle, hardware capability, technical support and commercial entitlement are separate. Initial source review is by Codex; **human PR and deployment approval are required**. A data-sheet entry is not proof of current orderability.
 
 | Families                                         | Reviewed exact PIDs                                     |
 | ------------------------------------------------ | ------------------------------------------------------- |
@@ -51,6 +51,7 @@ IW9165/IW9167 ordering tables use domain and operating-mode templates. Family re
 - Requirements for physical Ethernet count, dedicated copper/fixed fiber/SFP slots, uplinks, port rates, PoE output standard/budget, operating temperature, cellular/Wi-Fi, management, CV/SEA, industrial protocols/standards and lifecycle context.
 - Deterministic explanations with **Verified compatible**, **Conditionally compatible**, **Verified incompatible** and **Not yet verified** states. Unknown is not passed or failed; partial feature lists do not establish unsupported omissions. Scoped negatives require their actual context.
 - Exact-PID deep links; 2–4 product comparisons; CSV with restrictions and official source URLs. Formula-like CSV cells are neutralized.
+- Source-backed IE3300/3400/3500/3505 module selection, separate built-in/expansion port totals, shared PoE and slot checks, saved exact-PID configurations, BOM CSV and configuration JSON. See the [module coverage matrix and deployment restrictions](docs/expansion-modules.md). Meraki expansion is not verified; local firmware/license and installation conditions remain visible. Router modules are researched as a follow-up.
 - Direct documentation libraries, scoped evidence, provenance dates and review issues. Combo media count once; console, PoE input and optional module capacity are not silently counted as base Ethernet/PSE capabilities.
 - Selected official legacy lifecycle notices and conditional replacement suggestions. Verified EoS/EoL equipment is excluded from new-deployment results unless explicitly inspected; unknown lifecycle is never inferred active.
 
@@ -60,10 +61,11 @@ Commercial bundle checks keep new-order and upgrade thresholds separate, enforce
 
 ## Data, source policy and contributions
 
-- `schemas/catalog.schema.json`: normalized catalog **v1.1.0**; typed assertions, port inventories, modules, revisions, software/versions, offers, entitlements, management and lifecycle events.
+- `schemas/catalog.schema.json`: normalized catalog **v1.2.0**; typed assertions, separate base/module inventories, component dimensions and power, revisions, software/versions, offers, entitlements, management and lifecycle events.
 - `data/sources/`: URLs, titles, vendor/check/material-change dates, hashes, supersession and unresolved/partially resolved issue history.
 - `data/audits/`: immutable observation reports and a validated downloadable history index.
 - `src/lib/rules.ts`: pure matching and commercial-eligibility rules; `src/lib/ports.ts`: physical-port counting.
+- `src/lib/configurations.ts`: exact base/module and complete-configuration evaluation; `src/lib/saved-configurations.ts`: PID-based local persistence with fresh validation on load.
 - `data/competitors/`: empty future battlecard data. Future official vendor sources require an explicit manufacturer/domain declaration; no speculative competitor equivalence is populated.
 
 Read [data model](docs/data-model.md), [source/review policy](docs/source-policy.md) and [architecture](docs/architecture.md). Every material assertion needs source, excerpt/section, applicability, UTC verification date, confidence, interpretation and reviewer state. Prefer technical matrices and release notes for support claims. Preserve conflicts and superseded assertions. Family-to-PID mappings are marked derived/conditional when exact scope is incomplete.

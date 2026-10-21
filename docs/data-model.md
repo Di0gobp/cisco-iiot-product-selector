@@ -1,4 +1,4 @@
-# Data model v1.1.0
+# Data model v1.2.0
 
 `schemas/catalog.schema.json` declares normalized entity arrays. IDs are globally unique; a human-facing PID is unique case-insensitively. Models belong to a family/manufacturer; exact PIDs reference their model and an approved identity assertion extracted from an ordering table. The property `orderabilityAssertionId` records documented ordering-table identity, not real-time sales availability. Candidates never become matching products implicitly.
 
@@ -19,3 +19,13 @@ Applicability can identify feature conjunctions, one-of license requirements, so
 Future announced lifecycle dates are allowed; impossible dates and future verification/check dates are rejected. Product documentation references are validated. Sources can declare a manufacturer ID whose official domains must match the URL; legacy Cisco sources default only to Cisco domains. This supports future competitor research while preserving host-authority checks.
 
 Review issues retain open/partially-resolved/resolved status and resolution text. Audit history is immutable, path constrained, count checked and linked to existing source/assertion identities. Observation reports never claim unparsed technical or lifecycle changes. New reports include hashes of the semantic dataset and source registry so evidence scope can be traced independently of formatting.
+
+## Expansion modules v1.2.0
+
+`modules` contains independently reviewed exact orderable PIDs, module type, family reference IDs, identity/inventory assertion IDs and evidence links. These are components, not base `pids`; they never appear installed by default. Every module inventory group retains `origin: expansion` and its `moduleId`. The validator requires an official exact-PID identity excerpt and correct subject/inventory references.
+
+`moduleSupport` assertions distinguish `hardware` fit from `runtime` support, with exact base `applicability.pidIds`, scoped management/firmware/license context and nullable `maxQuantity`. Unknown pairings never inherit family support. `expansionCapacity` records documented slot IDs and a nullable absolute `maximumModules`; one documented attachment position is not silently converted into a verified absolute chassis maximum. `moduleRestrictions` preserves blocked protocol/security capabilities and explanatory conditions.
+
+`configurationPower` separates equipment draw, shared system PoE budget, base PSE-port count and per-port ceiling. A selected module does not add a second system budget. `physicalDimensions` stores source-backed component height/width/depth in mm, mass in kg and mounting constraints. Base and module geometry remain separate; assembled dimensions stay unknown. See [module evidence and limitations](expansion-modules.md).
+
+Requirements contain a per-base `configurations` map with module IDs, user-entered usable supply wattage and installation acknowledgement. Evaluation exposes base, expansion, proposed and mode-countable totals, deduplicates combo interfaces and retains unresolved deployment requirements. Saved/exported configurations use exact base and module PIDs plus context; loading reevaluates evidence and preserves unrecognized module PIDs as unknown. A saved compatibility label is never trusted. New audit summaries include a separate module counter; historical reports retain their original schema and coverage.

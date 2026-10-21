@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { assertion, fixtureCatalog, product, source } from '../fixtures';
+import { readFile } from 'node:fs/promises';
 
 test('research preview search, category filters, and source disclosure', async ({
   page,
@@ -38,6 +39,165 @@ test('research preview search, category filters, and source disclosure', async (
   ).toBeVisible();
   expect(errors).toEqual([]);
 });
+
+test('expansion selection recalculates, persists and exports exact component PIDs', async ({
+  page,
+}) => {
+  await page.goto('/#/product/IE-3300-8T2S-E');
+  const panel = page.locator('.expansion-panel');
+  await panel.getByLabel('Configuration management mode').selectOption('local');
+  await panel.getByLabel('Configuration firmware').fill('17.18.3');
+  await panel
+    .getByLabel('Confirmed base/runtime licenses')
+    .selectOption(['network-essentials']);
+  await panel.getByLabel('Required physical ports', { exact: true }).fill('18');
+  await panel.getByLabel('Ports required at this speed').fill('18');
+  await panel
+    .getByRole('button', { name: 'Add IEM-3300-8T=', exact: true })
+    .click();
+  const copper = panel
+    .locator('.configuration-totals')
+    .getByRole('row', { name: /^Dedicated copper/ });
+  await expect(copper.locator('td')).toHaveText(['8', '8', '16', '16']);
+  await expect(
+    panel
+      .locator('.configuration-totals')
+      .getByRole('row', { name: /^Physical Ethernet/ })
+      .locator('td'),
+  ).toHaveText(['10', '8', '18', '18']);
+  await page.reload();
+  await expect(page.locator('.selected-modules')).toContainText('IEM-3300-8T=');
+  await expect(copper.locator('td')).toHaveText(['8', '8', '16', '16']);
+  const bomPromise = page.waitForEvent('download');
+  await panel
+    .getByRole('button', { name: 'Export BOM CSV', exact: true })
+    .click();
+  const bom = await bomPromise;
+  const csv = await readFile((await bom.path())!, 'utf8');
+  expect(csv).toContain('"IE-3300-8T2S-E","1"');
+  expect(csv).toContain('"IEM-3300-8T=","1"');
+  const jsonPromise = page.waitForEvent('download');
+  await panel
+    .getByRole('button', { name: 'Download configuration JSON' })
+    .click();
+  const file = await jsonPromise;
+  const saved = JSON.parse(await readFile((await file.path())!, 'utf8'));
+  expect(saved.configurations[0].basePid).toBe('IE-3300-8T2S-E');
+  expect(saved.configurations[0].modulePids).toEqual(['IEM-3300-8T=']);
+  await page
+    .getByRole('button', { name: 'Add to comparison', exact: true })
+    .click();
+  await page.goto('/#/product/IE-3300-8T2S-A');
+  await page
+    .getByRole('button', { name: 'Add to comparison', exact: true })
+    .click();
+  await page.goto('/#/compare');
+  await expect(
+    page.getByRole('columnheader', { name: /IE-3300-8T2S-E/ }),
+  ).toContainText('IEM-3300-8T=');
+  await expect(
+    page.getByRole('row', { name: /^Hardware configuration/ }),
+  ).toContainText('18 proposed physical ports');
+  const comparisonPromise = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Export CSV with sources' }).click();
+  const comparison = await comparisonPromise;
+  expect(await readFile((await comparison.path())!, 'utf8')).toContain(
+    'IEM-3300-8T=',
+  );
+  await page.goto('/#/product/IE-3300-8T2S-E');
+  await panel
+    .getByRole('button', { name: 'Remove IEM-3300-8T=', exact: true })
+    .click();
+  await expect(copper.locator('td')).toHaveText(['8', '0', '8', '8']);
+  await expect(
+    panel
+      .locator('.configuration-totals')
+      .getByRole('row', { name: /^Physical Ethernet/ })
+      .locator('td'),
+  ).toHaveText(['10', '0', '10', '10']);
+  await expect(panel).toContainText('0/1 documented positions used');
+  await expect(panel).toContainText('Equipment consumption: 23 W');
+});
+
+test('incompatible PoE modules cannot be added and undocumented chassis expansion stays explicit', async ({
+  page,
+}) => {
+  await page.goto('/#/product/IE-3300-8T2S-E');
+  await expect(
+    page.getByRole('button', { name: 'Add IEM-3300-8P=', exact: true }),
+  ).toBeDisabled();
+  await page.goto('/#/product/IE-9320-24T4X-E');
+  await expect(page.locator('.expansion-panel')).toContainText(
+    'No official port-expansion module has been verified',
+  );
+  await expect(
+    page.locator('.expansion-panel').getByRole('button', { name: /Add IEM/ }),
+  ).toHaveCount(0);
+});
+
+test('Meraki expansion remains incompatible in the documented release and unknown in an unverified newer release', async ({
+  page,
+}) => {
+  await page.goto('/#/product/IE-3500-8T3S-E');
+  const panel = page.locator('.expansion-panel');
+  await panel
+    .getByLabel('Configuration management mode')
+    .selectOption('meraki');
+  await panel.getByLabel('Configuration firmware').fill('26.1.1');
+  await panel.getByLabel('Required physical ports', { exact: true }).fill('16');
+  await panel
+    .getByRole('button', { name: 'Add IEM-3500-8T=', exact: true })
+    .click();
+  await expect(panel.locator('.configuration-result .badge')).toHaveText(
+    'Verified incompatible',
+  );
+  await expect(
+    panel
+      .locator('.configuration-totals')
+      .getByRole('row', { name: /^Physical Ethernet/ })
+      .locator('td'),
+  ).toHaveText(['11', '8', '19', '11']);
+  await panel.getByLabel('Configuration firmware').fill('26.2.1');
+  await expect(panel.locator('.configuration-result .badge')).toHaveText(
+    'Not yet verified',
+  );
+  await expect(
+    panel
+      .locator('.configuration-totals')
+      .getByRole('row', { name: /^Physical Ethernet/ })
+      .locator('td'),
+  ).toHaveText(['11', '8', '19', '11']);
+});
+
+test('expanded hardware configuration is usable on mobile and passes automated accessibility checks', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/#/product/IE-3400-8P2S-E');
+  const panel = page.locator('.expansion-panel');
+  await panel
+    .getByRole('button', { name: 'Add IEM-3400-8P=', exact: true })
+    .click();
+  await panel.getByLabel('Required PoE load (W)').fill('481');
+  await expect(panel.locator('.configuration-result .badge')).toHaveText(
+    'Verified incompatible',
+  );
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= window.innerWidth,
+    ),
+  ).toBe(true);
+  const { default: AxeBuilder } = await import('@axe-core/playwright');
+  const analysis = await new AxeBuilder({ page })
+    .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
+    .analyze();
+  expect(
+    analysis.violations.map((v) => ({
+      id: v.id,
+      nodes: v.nodes.map((n) => n.target),
+    })),
+  ).toEqual([]);
+});
 test('catalog table and category filters work', async ({ page }) => {
   await page.goto('/#/catalog');
   await page.getByRole('button', { name: 'Routing', exact: true }).click();
@@ -59,7 +219,7 @@ test('catalog table and category filters work', async ({ page }) => {
 test('requirements reset and keyboard search work', async ({ page }) => {
   await page.goto('/');
   const ports = page.getByRole('spinbutton', {
-    name: 'Min. built-in copper ports',
+    name: 'Min. dedicated copper ports',
   });
   await ports.fill('16');
   await page.getByRole('checkbox', { name: 'Cyber Vision support' }).check();
@@ -100,7 +260,7 @@ test('audit distinguishes source retrieval from scoped source review', async ({
   ).toBeVisible();
   await expect(
     page.locator('.source-row').getByText('Source reviewed', { exact: true }),
-  ).toHaveCount(36);
+  ).toHaveCount(39);
   await expect(
     page.getByRole('heading', {
       name: 'IE3505 PoE ordering table duplicates the -A PID',
@@ -296,8 +456,8 @@ test('family reference never promotes a wildcard wireless SKU and audit history 
     (await report.getAttribute('href')) ?? '',
   );
   expect(response.ok()).toBe(true);
-  expect((await response.json()).summary.sourcesChecked).toBe(36);
-  const historical = page.locator('a[href*="/data/audits/"]').nth(1);
+  expect((await response.json()).summary.sourcesChecked).toBe(39);
+  const historical = page.locator('a[href*="/data/audits/"]').last();
   const previous = await page.request.get(
     (await historical.getAttribute('href')) ?? '',
   );

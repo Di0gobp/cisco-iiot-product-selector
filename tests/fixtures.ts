@@ -60,7 +60,7 @@ export function assertion(overrides: Partial<Assertion> = {}): Assertion {
 }
 export function fixtureCatalog(): Catalog & Record<string, unknown> {
   return {
-    schemaVersion: '1.1.0',
+    schemaVersion: '1.2.0',
     manufacturers: [{ id: 'test-manufacturer', name: 'Test manufacturer' }],
     families: [
       {

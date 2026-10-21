@@ -144,7 +144,7 @@ def audit(sources, catalog=None, issues=None, *, now=None, fetch_fn=fetch, sleep
     open_issues = [issue['id'] for issue in issues if issue.get('status', 'open') != 'resolved']
     requires_review = bool(outdated or open_issues or any(item['requiresHumanReview'] for item in results))
     canonical = lambda data: json.dumps(data, sort_keys=True, separators=(',', ':'), ensure_ascii=False).encode()
-    return {'schemaVersion': '1.1.0', 'generatedAt': stamp, 'catalogHash': 'sha256:' + hashlib.sha256(canonical(catalog)).hexdigest(), 'sourceRegistryHash': 'sha256:' + hashlib.sha256(canonical(sources)).hexdigest(), 'datasetSummary': {'pids': len(catalog.get('pids', [])), 'assertions': len(catalog.get('assertions', []))}, 'sources': results,
+    return {'schemaVersion': '1.1.0', 'generatedAt': stamp, 'catalogHash': 'sha256:' + hashlib.sha256(canonical(catalog)).hexdigest(), 'sourceRegistryHash': 'sha256:' + hashlib.sha256(canonical(sources)).hexdigest(), 'datasetSummary': {'pids': len(catalog.get('pids', [])), 'modules': len(catalog.get('modules', [])), 'assertions': len(catalog.get('assertions', []))}, 'sources': results,
             'summary': {'sourcesChecked': len(results), 'changedSources': sum(s['status'] == 'changed' for s in results),
                         'unreachableSources': sum(s['status'] in ('unreachable', 'robots-disallowed') for s in results),
                         'staleClaims': len(stale), 'potentiallyOutdatedClaims': len(outdated), 'openReviewIssues': len(open_issues)},

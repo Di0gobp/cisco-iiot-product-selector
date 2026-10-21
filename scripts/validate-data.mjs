@@ -97,11 +97,59 @@ export function validateData(catalog, sources, battlecards = [], issues = []) {
     check(c.familyId, catalog.families, 'candidate family');
     check(c.sourceId, sources, 'candidate source');
   }
-  for (const e of [
-    ...catalog.revisions,
-    ...catalog.modules,
-    ...catalog.lifecycleEvents,
-  ])
+  for (const module of catalog.modules) {
+    if (pidNames.has(module.pid.toUpperCase()))
+      errors.push(`Duplicate PID: ${module.pid}`);
+    pidNames.add(module.pid.toUpperCase());
+    for (const id of module.familyIds)
+      check(id, catalog.families, 'module family');
+    const identity = catalog.assertions.find(
+      (a) => a.id === module.identityAssertionId,
+    );
+    const inventory = catalog.assertions.find(
+      (a) => a.id === module.portInventoryAssertionId,
+    );
+    const source = sources.find((s) => s.id === identity?.sourceId);
+    if (
+      module.reviewStatus === 'approved' &&
+      (!identity ||
+        identity.subjectId !== module.id ||
+        identity.predicate !== 'orderability' ||
+        identity.value !== true ||
+        identity.status !== 'supported' ||
+        identity.reviewStatus !== 'approved' ||
+        identity.requiresHumanReview ||
+        identity.conflictsWith.length ||
+        !identity.evidence.excerpt.includes(module.pid) ||
+        !source?.type.startsWith('official-') ||
+        source.status !== 'reviewed')
+    )
+      errors.push(`Unverified module identity: ${module.id}`);
+    if (
+      !inventory ||
+      inventory.subjectId !== module.id ||
+      inventory.predicate !== 'portInventory' ||
+      inventory.reviewStatus !== 'approved' ||
+      inventory.status !== 'supported' ||
+      inventory.requiresHumanReview ||
+      inventory.conflictsWith.length ||
+      !Array.isArray(inventory.value) ||
+      inventory.value.some(
+        (p) => p.origin !== 'expansion' || p.moduleId !== module.id,
+      )
+    )
+      errors.push(`Invalid module port inventory: ${module.id}`);
+    for (const id of [
+      module.identityAssertionId,
+      module.portInventoryAssertionId,
+      ...module.assertionIds,
+    ]) {
+      check(id, catalog.assertions, 'module assertion');
+      if (catalog.assertions.find((a) => a.id === id)?.subjectId !== module.id)
+        errors.push(`Module assertion subject mismatch: ${module.id}`);
+    }
+  }
+  for (const e of [...catalog.revisions, ...catalog.lifecycleEvents])
     check(e.pidId, catalog.pids, 'PID');
   for (const e of catalog.software)
     check(e.manufacturerId, catalog.manufacturers, 'software manufacturer');
@@ -203,8 +251,30 @@ export function validateData(catalog, sources, battlecards = [], issues = []) {
     if (a.predicate === 'replacement')
       for (const id of a.value.pidIds)
         check(id, catalog.pids, 'replacement PID');
-    if (a.predicate === 'moduleSupport')
+    if (
+      a.predicate === 'moduleSupport' ||
+      a.predicate === 'moduleRestrictions'
+    ) {
       check(a.value.moduleId, catalog.modules, 'supported module');
+      if (a.subjectId !== a.value.moduleId)
+        errors.push(`Module support subject mismatch: ${a.id}`);
+      if (a.predicate === 'moduleSupport' && !a.applicability.pidIds.length)
+        errors.push(`Module support lacks exact base PIDs: ${a.id}`);
+      if (
+        a.predicate === 'moduleSupport' &&
+        a.value.scope === 'runtime' &&
+        !a.applicability.managementModeIds.length
+      )
+        errors.push(`Module runtime support lacks management scope: ${a.id}`);
+    }
+    if (a.predicate === 'expansionCapacity') {
+      check(a.subjectId, catalog.pids, 'expansion chassis');
+      if (
+        a.value.maximumModules !== null &&
+        a.value.maximumModules > a.value.slotIds.length
+      )
+        errors.push(`Module capacity exceeds documented slots: ${a.id}`);
+    }
     if (a.predicate === 'entitlement') {
       check(a.value.licenseId, catalog.licenses, 'entitlement license');
       check(a.value.featureId, catalog.features, 'entitlement feature');
@@ -382,6 +452,6 @@ if (
     process.exitCode = 1;
   } else
     console.log(
-      `Data valid: ${catalog.pids.length} PIDs, ${catalog.assertions.length} assertions, ${catalog.candidates.length} unverified research candidates, ${sources.length} source references. Schema success does not verify vendor facts.`,
+      `Data valid: ${catalog.pids.length} base PIDs, ${catalog.modules.length} expansion modules, ${catalog.assertions.length} assertions, ${catalog.candidates.length} unverified research candidates, ${sources.length} source references. Schema success does not verify vendor facts.`,
     );
 }

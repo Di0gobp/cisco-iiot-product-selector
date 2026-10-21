@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://example.invalid/iiot/catalog-1.1.0.schema.json",
-  "title": "IIoT normalized catalog v1.1",
+  "$id": "https://example.invalid/iiot/catalog-1.2.0.schema.json",
+  "title": "IIoT normalized catalog v1.2",
   "type": "object",
   "additionalProperties": false,
   "properties": {
     "schemaVersion": {
-      "const": "1.1.0"
+      "const": "1.2.0"
     },
     "manufacturers": {
       "type": "array",
@@ -253,18 +253,52 @@
     "module": {
       "type": "object",
       "additionalProperties": false,
+      "required": [
+        "id",
+        "pid",
+        "name",
+        "moduleType",
+        "familyIds",
+        "reviewStatus",
+        "identityAssertionId",
+        "portInventoryAssertionId",
+        "assertionIds"
+      ],
       "properties": {
         "id": {
           "type": "string",
           "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
         },
-        "pidId": {
+        "pid": {
           "type": "string",
-          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
+          "minLength": 1
         },
         "name": {
           "type": "string",
           "minLength": 1
+        },
+        "moduleType": {
+          "const": "ethernet-expansion"
+        },
+        "familyIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "reviewStatus": {
+          "enum": ["pending", "approved", "rejected"]
+        },
+        "identityAssertionId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
+        },
+        "portInventoryAssertionId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
         },
         "assertionIds": {
           "type": "array",
@@ -274,8 +308,7 @@
           },
           "uniqueItems": true
         }
-      },
-      "required": ["id", "pidId", "name", "assertionIds"]
+      }
     },
     "software": {
       "type": "object",
@@ -630,7 +663,11 @@
             "securityFeatures",
             "poeStandards",
             "replacement",
-            "licensingRule"
+            "licensingRule",
+            "expansionCapacity",
+            "configurationPower",
+            "physicalDimensions",
+            "moduleRestrictions"
           ]
         },
         "value": {},
@@ -831,13 +868,20 @@
               "value": {
                 "type": "object",
                 "additionalProperties": false,
+                "required": ["moduleId", "scope", "maxQuantity"],
                 "properties": {
                   "moduleId": {
                     "type": "string",
                     "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
+                  },
+                  "scope": {
+                    "enum": ["hardware", "runtime"]
+                  },
+                  "maxQuantity": {
+                    "type": ["integer", "null"],
+                    "minimum": 1
                   }
-                },
-                "required": ["moduleId"]
+                }
               }
             }
           }
@@ -1226,8 +1270,210 @@
               }
             }
           }
+        },
+        {
+          "if": {
+            "properties": {
+              "predicate": {
+                "const": "expansionCapacity"
+              }
+            },
+            "required": ["predicate"]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "$ref": "#/$defs/expansionCapacity"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "predicate": {
+                "const": "configurationPower"
+              }
+            },
+            "required": ["predicate"]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "$ref": "#/$defs/configurationPower"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "predicate": {
+                "const": "physicalDimensions"
+              }
+            },
+            "required": ["predicate"]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "$ref": "#/$defs/physicalDimensions"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "predicate": {
+                "const": "moduleRestrictions"
+              }
+            },
+            "required": ["predicate"]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "$ref": "#/$defs/moduleRestrictions"
+              }
+            }
+          }
         }
       ]
+    },
+    "expansionCapacity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maximumModules", "slotIds", "summary"],
+      "properties": {
+        "maximumModules": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "slotIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
+          },
+          "uniqueItems": true
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "configurationPower": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "consumptionWatts",
+        "systemPoeBudgetWatts",
+        "basePoePorts",
+        "maxPoePerPortWatts",
+        "summary"
+      ],
+      "properties": {
+        "consumptionWatts": {
+          "type": ["number", "null"],
+          "minimum": 0
+        },
+        "systemPoeBudgetWatts": {
+          "type": ["number", "null"],
+          "minimum": 0
+        },
+        "basePoePorts": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "maxPoePerPortWatts": {
+          "type": ["number", "null"],
+          "minimum": 0
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "physicalDimensions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "heightMm",
+        "widthMm",
+        "depthMm",
+        "weightKg",
+        "mounting",
+        "scope",
+        "assembledWidthIncrementMm"
+      ],
+      "properties": {
+        "heightMm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "widthMm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "depthMm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "weightKg": {
+          "type": ["number", "null"],
+          "exclusiveMinimum": 0
+        },
+        "mounting": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "const": "component"
+        },
+        "assembledWidthIncrementMm": {
+          "type": ["number", "null"],
+          "minimum": 0
+        }
+      }
+    },
+    "moduleRestrictions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "moduleId",
+        "blockedProtocols",
+        "blockedSecurityFeatures",
+        "summary"
+      ],
+      "properties": {
+        "moduleId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._:-]*$"
+        },
+        "blockedProtocols": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "blockedSecurityFeatures": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
     }
   }
 }
